@@ -37,7 +37,7 @@ $(document).ready(function(){
           let longitud = 43.3228796;
           for (i = 0; i < 3; i++) {
               L.marker([longitud, latitud], {
-                  draggable: true
+                  draggable: false
               }).addTo(map);
               latitud += 0.5;
               longitud += 0.2;

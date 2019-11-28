@@ -86,7 +86,7 @@
                     <div class="dropdown-divider"></div>
                     <!-- Registrarse -->
                     <label class="text-white">Registrarse</label>
-                    <button class="btn btn-outline-success" type="button">Registrarse</button>
+                    <button class="btn btn-success" type="button">Registrarse</button>
                 </ul>
             </div>
         </nav>
