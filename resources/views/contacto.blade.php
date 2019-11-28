@@ -12,12 +12,8 @@
     <!-- Botones -->
     <link rel="stylesheet" href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/cssBotones.css') }}" />
-    <!-- Mapa -->
-    <link rel="stylesheet" href="{{ URL::asset('https://unpkg.com/leaflet@1.5.1/dist/leaflet.css') }}" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-    <script src="{{ URL::asset('https://unpkg.com/leaflet@1.5.1/dist/leaflet.js') }}" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
-    <script src="{{ URL::asset('https://unpkg.com/esri-leaflet@2.3.1/dist/esri-leaflet.js') }}" integrity="sha512-Np+ry4Dro5siJ1HZ0hTwn2jsmu/hMNrYw1EIK9EjsEVbDge4AaQhjeTGRg2ispHg7ZgDMVrSDjNrzH/kAO9Law==" crossorigin=""></script>
-    <link rel="stylesheet" href="{{ URL::asset('css/mapacss.css') }}">
-    <script src="{{ URL::asset('js/mapa.js') }}"></script>
+    <!-- Formulario -->
+    <link rel="stylesheet" href="{{ URL::asset('css/formularioCSS.css') }}" />
     <title>Esturi</title>
 </head>
 
@@ -27,18 +23,6 @@
         <nav class="navbar bg-dark navbar-dark">
             <!-- Brand -->
             <a class="navbar-brand" href="{{route('welcome')}}">Esturi</a>
-
-            <div>
-                <div id="basemaps-wrapper" class="leaflet-bar">
-                    <select id="basemaps" class="form-control">
-                        <option value="Physical">Physical</option>
-                        <option value="Imagery">Imagery</option>
-                        <option value="ImageryClarity">Imagery (Clarity)</option>
-                        <option value="ImageryFirefly">Imagery (Firefly)</option>
-                        <option value="Streets">Streets</option>
-                    </select>
-                </div>
-            </div>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -90,8 +74,52 @@
                 </ul>
             </div>
         </nav>
-        <!-- Mapa -->
-        <div id="map"></div>
+        <!-- Formulario -->
+        <div id="formulario">
+            <h1>Formulario de contacto</h1>
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Nombre*</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Email*</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Mensaje*</label>
+                    <div class="col-sm-10">
+                        <textarea type="textarea" class="form-control" placeholder="Mensaje" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">Terminos & condificiones</div>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                He leido y acepto los terminos y condiciones*
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Deseo recibir informacion sobre futuras posibles ofertas*
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-outline-success">Enviar consulta</button>
+                    </div>
+                </div>
+            </form>
+            <p><i>*Campos obligatorios</i></p>
+        </div>
         <!-- Footer -->
         <footer class="page-footer font-small bg-dark">
             <div class="row justify-content-between">
@@ -100,7 +128,7 @@
                 </div>
                 <!-- Copyright -->
                 <div class="col-4 align-self-center text-center text-white">© 2019 Copyright:
-                    <a href="{{ URL::asset('https://mdbootstrap.com/education/bootstrap/') }}"> Esturi.com</a>
+                    <a href="{{URL::asset('https://mdbootstrap.com/education/bootstrap/')}}"> Esturi.com</a>
                 </div>
                 <!-- Add font awesome icons -->
                 <div class="col-4  align-self-center d-flex flex-row-reverse">
