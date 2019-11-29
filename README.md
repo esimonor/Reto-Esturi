@@ -4,7 +4,7 @@ Esturi es una web para encontrar tu establecimiento favorito en la ciudad que te
 
 ## Comenzando 🚀
 
-Clona [Esturi](https://github.com/agomezdo18dw/esturi) en local y sigue los pasos para tener una copia funciona del proyecto en local
+Clona [Esturi](https://github.com/agomezdo18dw/esturi) en local y sigue los pasos de **Pre-requisitos** e **Insitalacion** para tener una copia funciona del proyecto en local
 ```
 git clone https://github.com/agomezdo18dw/esturi.git
 ```
