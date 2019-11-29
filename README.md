@@ -30,7 +30,7 @@ composer global require laravel/installer
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 ```
 
-**Base de datos**
+**Base de datos**<br>
 Cualquier base de datos compatible con laravel
 
 ### Instalación 🔧
