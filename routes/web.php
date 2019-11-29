@@ -23,3 +23,11 @@ Route::get('/contacto', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
+Route::get('/modprofile', function () {
+    return view('modprofile');
+})->name('modprofile'); 
