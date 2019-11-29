@@ -76,25 +76,54 @@
                     <div class="dropdown-divider"></div>
                     <!-- Inicio de sesion -->
                     <label class="text-white">Inicio de sesion</label>
-                    <form class="form-inline">
+                    <form class="form-inline" method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="input-group col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Email</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" id="email">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}" aria-label="Email" aria-describedby="basic-addon1" required autocomplete="email" autofocus>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="input-group col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Contraseña</span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Password" aria-label="contra" aria-describedby="basic-addon1" id="contraseña">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" aria-label="contra" aria-describedby="basic-addon1" required autocomplete="current-password">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
-                        <button class="btn btn-outline-success" type="button">Iniciar Sesion</button>
+                        <button class="btn btn-outline-success" type="submit">Iniciar Sesion</button>
+                        <div class="form-group col">
+                            <div class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>
+                            </div>
+                            @if (Route::has('password.request'))
+                            <div class="col">
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                            </div>
+                            @endif
+                        </div>
                     </form>
                     <div class="dropdown-divider"></div>
                     <!-- Registrarse -->
                     <label class="text-white">Registrarse</label>
-                    <button id="botonRegistro" class="btn p-2 m-1" type="button"><b style="font-size:1.2em;">Registrarse</b></button>
+                    <a href="/register" id="botonRegistro" class="btn p-2 m-1"><b style="font-size:1.2em;">Registrarse</b></a>
                 </ul>
             </div>
         </nav>
