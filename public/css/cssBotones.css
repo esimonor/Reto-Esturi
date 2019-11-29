@@ -1,3 +1,4 @@
+/*-------BOTONES FOOTER------*/
 .fa {
     padding: 10px;
     font-size: 20px;
@@ -33,3 +34,18 @@
     background: #125688;
     color: white;
 }
+/*------FIN BOTONES FOOTER-----*/
+
+/*-------BOTON REGISTRO--------*/
+#botonRegistro {
+    background-color: #28a745;
+    border: 1px solid transparent;
+    color: whitesmoke;
+}
+
+#botonRegistro:hover {
+    background-color: #343a40;
+    border: 1px solid  #28a745;
+    color:  #28a745;
+}
+/*-----FIN BOTON REGISTRO------*/
