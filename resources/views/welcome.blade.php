@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/mapacss.css') }}">
     <script src="{{ URL::asset('js/mapa.js') }}"></script>
 
+    <link rel="stylesheet" href="{{ URL::asset('css/botoncss.css') }}">
     <title>Esturi</title>
 </head>
 
@@ -93,7 +94,7 @@
                     <div class="dropdown-divider"></div>
                     <!-- Registrarse -->
                     <label class="text-white">Registrarse</label>
-                    <button class="btn btn-success" type="button">Registrarse</button>
+                    <button id="botonRegistro" class="btn p-2 m-1" type="button"><b style="font-size:1.2em;">Registrarse</b></button>
                 </ul>
             </div>
         </nav>
