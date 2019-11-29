@@ -81,19 +81,19 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Nombre*</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Nombre">
+                        <input type="text" pattern="[^()/><\][\\\x22,;|]+" class="form-control" placeholder="Nombre">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Email*</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" pattern="[^()/><\][\\\x22,;|]+" class="form-control" placeholder="Email">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Mensaje*</label>
                     <div class="col-sm-10">
-                        <textarea type="textarea" class="form-control" placeholder="Mensaje" rows="5"></textarea>
+                        <textarea type="textarea" style="resize:none;" class="form-control" placeholder="Mensaje" rows="5"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -127,7 +127,7 @@
                     <b><u>Email de Contacto: </u></b><br>esturioficial@gmail.com
                 </div>
                 <!-- Copyright -->
-                <div class="col-4 align-self-center text-center text-white">© 2019 Copyright:
+                <div class="col-4 align-self-center text-center text-white">&copy 2019 Copyright:
                     <a href="{{URL::asset('https://mdbootstrap.com/education/bootstrap/')}}"> Esturi.com</a>
                 </div>
                 <!-- Add font awesome icons -->
