@@ -4,56 +4,65 @@ Esturi es una web para encontrar tu establecimiento favorito en la ciudad que te
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
-
+Clona [Esturi](https://github.com/agomezdo18dw/esturi) en local y sigue los pasos para tener una copia funciona del proyecto en local
+```
+git clone https://github.com/agomezdo18dw/esturi.git
+```
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+**Composer**
+```
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');
+```
+```
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+```
 
+**Laravel**
 ```
-Da un ejemplo
+sudo apt install php php-common php-bcmath php-json php-mbstring php-xml php-tokenizer php-zip
 ```
+```
+composer global require laravel/installer
+```
+```
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+```
+
+**Base de datos**
+Cualquier base de datos compatible con laravel
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
+Copiamos .env.example con el nombre .env
 ```
-Da un ejemplo
+cp .env.example .env
 ```
 
-_Y repite_
-
+Actualizamos dependencias
 ```
-hasta finalizar
+composer update
 ```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+Hacemos la clave de laravel
+```
+php artisan key:generate
+```
+
+Dentro del .env ponemos la base de datos en
+```
+DB_CONNECTION=mysql (base de datos que vayamos a usar (mariaDB=mysql))
+DB_HOST=127.0.0.1 (Host donde esta la base de datos)
+DB_PORT=3306 (Puerto de la base de datos)
+DB_DATABASE= (Nombre de la base de datos)
+DB_USERNAME= (Usuario de la base de datos)
+DB_PASSWORD= (Contraseña de la base de datos)
+```
 
 ## Ejecutando las pruebas ⚙️
 
 _Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
 
 ## Despliegue 📦
 
@@ -61,23 +70,9 @@ _Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+* [Laravel](https://laravel.com/)
+* [Composer](https://getcomposer.org/)
+* [Bootstrap 4.4](https://getbootstrap.com/)
 
 ## Autores ✒️
 
@@ -98,4 +93,4 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 
 
 ---
-⌨️ con ❤️ por [esturi]() 😊
+Gracias de ❤️ por todo el equipo de [esturi]() 😊
