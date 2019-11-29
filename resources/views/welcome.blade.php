@@ -99,7 +99,7 @@
                     <b><u>Email de Contacto: </u></b><br>esturioficial@gmail.com
                 </div>
                 <!-- Copyright -->
-                <div class="col-4 align-self-center text-center text-white">© 2019 Copyright:
+                <div class="col-4 align-self-center text-center text-white">&copy 2019 Copyright:
                     <a href="{{ URL::asset('https://mdbootstrap.com/education/bootstrap/') }}"> Esturi.com</a>
                 </div>
                 <!-- Add font awesome icons -->
