@@ -43,7 +43,7 @@
                         </select>
                     </li>
                     <div class="dropdown-divider"></div>
-                    <!-- Inforacion y Contacto -->
+                    <!-- Informacion y Contacto -->
                     <li class="nav-item">
                         <a class="nav-link" href="#">¿Quienes somos?</a>
                     </li>
@@ -56,29 +56,16 @@
             </div>
         </nav>
         <!-- Foto de perfil, nombre y correo del usuario -->
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-6 row">
                 <img src="{{ URL::asset('images/profile.png') }}" class="m-2 border rounded col-10">
-                <p class="h5 col-5">Nombre:John Doe</p>
-                <p class="h5 col-5">Correo:example@gmail.com</p>
-                <button class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
-                <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
-            </div>
-            <!-- Listado de lugares favoritos -->
-            <div class="col-3">
-                <div class="border bg-light">
-                <h4>Lugares favoritos</h4>
-                <div class="dropdown-divider"></div>
-                <p>No se han encontrado lugares favoritos</p>
-                </div>
-            </div>
-            <!-- Comentarios -->
-            <div class="col-3">
-                <div class="border bg-light">
-                <h4>Comentarios</h4>
-                <div class="dropdown-divider"></div>
-                <p>No se han encontrado comentarios</p>
-                </div>
+                <form class="col-12" method="GET">
+                    <label>Imagen</label> <input type="file" name="pic" accept="image/*"><br>
+                    <label>Nombre:</label><input type="text" name="nombre" value="nombre"/>
+                    <label>Correo:</label><input type="text" name="email" value="example@gmail.com"/>
+                    <a href="{{URL::asset('/') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
+                    <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
+                </form>
             </div>
         </div>
 
