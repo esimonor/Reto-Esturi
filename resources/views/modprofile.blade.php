@@ -61,8 +61,8 @@
                 <img src="{{ URL::asset('images/profile.png') }}" class="m-2 border rounded col-10">
                 <form class="col-12" method="GET">
                     <label>Imagen</label> <input type="file" name="pic" accept="image/*"><br>
-                    <label>Nombre:</label><input type="text" name="nombre" value="nombre"/>
-                    <label>Correo:</label><input type="text" name="email" value="example@gmail.com"/>
+                    <label>Nombre:</label><input type="text" name="nombre" pattern="[^()/><\][\\\x22,;|]+" value="nombre"/>
+                    <label>Correo:</label><input type="text" name="email" pattern="[^()/><\][\\\x22,;|]+" value="example@gmail.com"/>
                     <a href="{{URL::asset('/') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
                     <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
                 </form>
