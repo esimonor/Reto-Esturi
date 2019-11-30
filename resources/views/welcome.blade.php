@@ -9,7 +9,7 @@
     <body>
         <!-- Mapa -->
         <div id="map"></div>
-        
+
     </body>
     @include('includes.footer')
     @include('includes.js')
