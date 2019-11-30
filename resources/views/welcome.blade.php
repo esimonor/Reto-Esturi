@@ -3,16 +3,18 @@
 <title>Esturi</title>
 </head>
 
-<div class="container col-12">
-    @include('includes.nav')
+<body>
+    <div class="container col-12">
+        @include('includes.nav')
 
-    <body>
-        <!-- Mapa -->
-        <div id="map"></div>
-
-    </body>
-    @include('includes.footer')
+        <section>
+            <!-- Mapa -->
+            <div id="map"></div>
+        </section>
+        
+        @include('includes.footer')
+    </div>
     @include('includes.js')
-</div>
+</body>
 
 </html>
