@@ -53,8 +53,12 @@
                         </a>
                         @endif
                     </div>
-                    <div class="input-group col">
-                        <button class="btn btn-outline-success" type="submit">Iniciar Sesion</button>
+                    <div class="modal-footer">
+                        <div class="form-group row mb-0">
+                            <div class="input-group col">
+                                <button class="btn btn-outline-success" type="submit">Iniciar Sesion</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
