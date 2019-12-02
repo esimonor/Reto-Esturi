@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Esturi</title>
-	    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Estilos -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- fuentes -->
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+@include('includes.landing')
+<title>Esturi</title>
 </head>
+
 <body>
 	<nav>
 		<img id="logosmall" src="images/logosmall.png">
@@ -28,9 +20,14 @@
 			<h4 id="slogan">Encuentra lugares interesantes cerca de ti.</h4>
 		</aside>
 		<div>
-            <input id="registro" type="button" name="Registrarse" value="Registrate">
-            <br>
-            <input id="mapa" type="button" name="mapa" value="Ver mapa">
+			<!-- Button modal Resgistro-->
+			<button type="button" id="botonRegistro" class="btn p-2 m-1" data-toggle="modal" data-target="#registroModal">
+				<b style="font-size:1.2em;">Registrarse</b></a>
+			</button>
+			<!-- Modal Resgistro-->
+			@include('includes.modales.modalRegistro')
+			<br>
+			<a href="{{route('mapa')}}" class="btn btn-success">Ver mapa</a>
 		</div>
 	</article>
 
@@ -88,7 +85,7 @@
 	<br>
 	<hr>
 	<br>
-	
+
 	<article style="background-color: #28a745;" id="articulo4">
 		<h2 class="titulos">Contacto</h2>
 		<hr class="separador">
@@ -100,6 +97,8 @@
 		<br>
 		<button>Enviar</button>
 	</article>
-    @include('includes.footer')
+	@include('includes.footer')
+	@include('includes.js')
 </body>
+
 </html>
