@@ -37,23 +37,14 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                            <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group col">
-                        @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                        @endif
-                    </div>
                     <div class="modal-footer">
+                        <div class="form-group col">
+                            @if (Route::has('password.request'))
+                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                            @endif
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="input-group col">
                                 <button class="btn btn-outline-success" type="submit">Iniciar Sesion</button>
