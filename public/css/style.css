@@ -1,0 +1,150 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lato', sans-serif;
+	scroll-behavior: smooth;
+}
+body{
+	background-image: url("../images/BG.jpg");
+	background-repeat: no-repeat;
+}
+
+/*Navbar*/
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  margin-left: 50%;
+}
+
+li {
+  float: left;
+  display: block;
+  padding: 1%;
+}
+
+li:hover {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+#logosmall{
+	width: 10%;
+	float: left;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+/*Fin Navbar*/
+
+/*Texto aside*/
+#cajaSlogan{
+	width: 20%;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	margin-top: 8%;
+}
+#slogan{
+	font-size: 50px;
+	color: #3c3c3b
+}
+/*Fin texto aside*/
+
+/*Boton*/
+#registro{
+	background-color: #28a745;
+	color: whitesmoke;
+	border: 0px;
+	border-radius: 25px;
+	padding: 1%;
+	font-size: 1em;
+	width: 50%;
+	margin-left: 25%;
+	transition: 0.2s;
+}
+#registro:hover{
+	background-color: transparent; ;
+	color: #28a745;
+	border: 2px solid #28a745;
+	font-weight: bolder;
+}
+#mapa{
+	background-color: mediumturquoise;
+	border: 1px solid white;
+	margin-top: 5px;
+	color: whitesmoke;
+	padding: 0.5%;
+	margin-left: 47%;
+}
+/*fin boton*/
+
+/*Titulos*/
+.titulos{
+	color: whitesmoke;
+	font-size: 1.3em;
+	text-shadow: 1px 1px 10px  black;
+	margin-left: 45%;
+}
+
+/*Articulos*/
+article{
+	width: 100%;
+	height: 850px;
+}
+#ariculo2{
+	background-color: #28a745;
+	width: 100%;
+}
+.textoArticulo{
+	padding: 5%;
+	text-align: justify;
+	text-align: center;
+	font-size: 1.3em;
+}
+.iconos{
+	width: 50%;
+	text-align: center;
+}
+#tarjetas{
+	display: inline-block;
+	text-align: center;
+	padding: 5%;
+}
+.tarjeta1{
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	margin-left: 9%;
+}
+.tarjeta2{
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+}
+.tarjeta3{
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+}
+.titulo-tarjeta{
+	color: whitesmoke;
+	font-size: 1.5em;
+	text-align: center;
+	text-shadow: 1px 1px 10px black;
+}
+.contenido-tarjeta{
+	color: whitesmoke;
+}
+
+/*Linea*/
+.separador {
+  border-top: 1px dashed white;
+  box-shadow: 1px 1px 10px black;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+/*inputs*/
+#input{
+	width: 100%;
+	display: block;
+}
