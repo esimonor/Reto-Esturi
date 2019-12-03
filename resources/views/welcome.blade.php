@@ -71,15 +71,15 @@
 		<p class="textoArticulo">Somos tres estudiantes de segundo año de grado superior</p>
 		<div id="tarjetas">
 			<div style="margin: 0px;" class="tarjeta1">
-				<img class="iconos" src="images/profile.png">
+				<img class="iconos" src="images/AG.png">
 				<h3 class="titulo-tarjeta">Adrian</h3>
 			</div>
 			<div class="tarjeta2">
-				<img class="iconos" src="images/profile.png">
+				<img class="iconos" src="images/AO.png">
 				<h3 class="titulo-tarjeta">Aitor</h3>
 			</div>
 			<div class="tarjeta3">
-				<img class="iconos" src="images/profile.png">
+				<img class="iconos" src="images/EO.png">
 				<h3 class="titulo-tarjeta">Eneko</h3>
 			</div>
 		</div>
