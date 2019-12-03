@@ -26,16 +26,14 @@
             <!-- Idiomas -->
             <li class="nav-item inline">
                 <label class="text-white">Idioma</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Español</option>
-                    <option>Euskera</option>
-                    <option>Ingles</option>
-                </select>
+                <a href="{{route('locale', ['locale' => 'es'])}}">Español</a>
+                <a href="{{route('locale', ['locale' => 'eu'])}}">Euskera</a>
+                <a href="{{route('locale', ['locale' => 'en'])}}">Ingles</a>
             </li>
             <div class="dropdown-divider"></div>
             <!-- Inforacion y Contacto -->
             <li class="nav-item">
-                <a class="nav-link" href="#">¿Quienes somos?</a>
+                <a class="nav-link" href="#">@lang('¿Quienes somos?')</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('contacto')}}">Contacto</a>

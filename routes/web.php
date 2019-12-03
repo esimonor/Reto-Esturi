@@ -54,3 +54,8 @@ Route::get('/profile', function () {
 Route::get('/modprofile', function () {
     return view('modprofile');
 })->name('modprofile');
+
+Route::get('locale/{locale}', function($locale){
+	Session::put('locale',$locale);
+	return redirect()->back();
+})->name('locale');
