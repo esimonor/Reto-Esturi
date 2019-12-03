@@ -1,7 +1,7 @@
 <!-- Modal Registro -->
 <div id="registroModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+        <div class="modal-content bg-dark text-white">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Formulario registro</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -79,16 +79,22 @@
                         <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
                         <div class="col-md-6">
-                            <select name="role">
+                            <select name="rol">
+                                <option value="">Seleccione un Rol</option>
                                 <option value="user">Normal</option>
                                 <option value="owner">Dueño de un local</option>
                             </select>
+                            @error('rol')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="input-group col">
+                                <button type="submit" class="btn btn-outline-success">
                                     {{ __('Register') }}
                                 </button>
                             </div>
