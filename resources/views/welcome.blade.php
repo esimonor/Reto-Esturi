@@ -1,33 +1,82 @@
-@include('includes.landing')
+@include('includes.head')
+<!-- Estilos Landing page -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Fuentes Lanfing page-->
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 <title>Esturi</title>
 </head>
 
-<body>
-	<nav>
-		<img id="logosmall" src="images/logosmall.png">
-		<ul>
-			<li><a href="#articulo2">¿Qué es Esturi?</a></li>
-			<li><a href="#articulo3">Quiénes somos</a></li>
-			<li><a href="#articulo4">Contacto</a></li>
-			<li>Regístrarse</li>
-			<li>Iniciar sesión</li>
-			<li>ES</li>
-			<li>EN</li>
-		</ul>
+<body class="w-100">
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="#">
+			<img src="images/logosmall.png" width="60" height="60" class="d-inline-block align-center" alt="">
+			Esturi
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#articulo2">¿Qué es Esturi?</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#articulo3">¿Quiénes somos?</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#articulo4">Contacto</a>
+				</li>
+				@guest
+				@include('includes.modales.modalInicioSesion')
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#inicioSesionModal">Inicio sesion</a>
+				</li>
+				@include('includes.modales.modalRegistro')
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#registroModal">Registro</a>
+				</li>
+				@else
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{{ Auth::user()->name }}
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="#">Perfil</a>
+						<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+							@csrf
+						</form>
+					</div>
+				</li>
+				@endguest
+				<li class="nav-item">
+					<a class="nav-link" href="#">Es</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Eu</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">En</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
-	<article id="articulo1">
-		<aside id="cajaSlogan">
-			<h4 id="slogan">Encuentra lugares interesantes cerca de ti.</h4>
-		</aside>
+
+	<article class="text-center d-flex justify-content-center align-items-center" id="cajaSlogan">
 		<div>
-			<!-- Button modal Resgistro-->
-			<button type="button" id="botonRegistro" class="btn p-2 m-1" data-toggle="modal" data-target="#registroModal">
-				<b style="font-size:1.2em;">Registrarse</b></a>
-			</button>
-			<!-- Modal Resgistro-->
-			@include('includes.modales.modalRegistro')
-			<br>
-			<a href="{{route('mapa')}}" class="btn btn-success">Ver mapa</a>
+			<div>
+				<h4 id="slogan">Encuentra lugares interesantes cerca de ti.</h4>
+			</div>
+			<div class="mt-5">
+				@guest
+				<a href="" class="btn btn-outline-success w-75 p-2">Registrarse</a>
+				<br><br>
+				<a href="{{route('mapa')}}" class="btn btn-outline-danger">Ver mapa</a>
+				@else
+				<a href="{{route('home')}}" class="btn btn-outline-danger">Ver mapa</a>
+				@endguest
+			</div>
 		</div>
 	</article>
 
@@ -68,15 +117,15 @@
 		<p class="textoArticulo">Somos tres estudiantes de segundo año de grado superior</p>
 		<div id="tarjetas">
 			<div style="margin: 0px;" class="tarjeta1">
-				<img class="iconos" src="images/profile.png">
+				<img class="iconos" src="images/AG.png">
 				<h3 class="titulo-tarjeta">Adrian</h3>
 			</div>
 			<div class="tarjeta2">
-				<img class="iconos" src="images/profile.png">
+				<img class="iconos" src="images/AO.png">
 				<h3 class="titulo-tarjeta">Aitor</h3>
 			</div>
 			<div class="tarjeta3">
-				<img class="iconos" src="images/profile.png">
+				<img class="iconos" src="images/EO.png">
 				<h3 class="titulo-tarjeta">Eneko</h3>
 			</div>
 		</div>
