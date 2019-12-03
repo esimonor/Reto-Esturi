@@ -80,11 +80,6 @@
 			</div>
 		</div>
 	</article>
-
-	<br>
-	<hr>
-	<br>
-
 	<article style="background-color: #28a745;" id="articulo2">
 		<h2 class="titulos">¿Qué es Esturi?</h2>
 		<hr class="separador">
@@ -107,11 +102,6 @@
 			</div>
 		</div>
 	</article>
-
-	<br>
-	<hr>
-	<br>
-
 	<article style="background-color: #28a745;" id="articulo3">
 		<h2 class="titulos">Quiénes somos</h2>
 		<hr class="separador">
@@ -131,11 +121,6 @@
 			</div>
 		</div>
 	</article>
-
-	<br>
-	<hr>
-	<br>
-
 	<article style="background-color: #28a745;" id="articulo4">
 		<h2 class="titulos">Contacto</h2>
 		<hr class="separador">
