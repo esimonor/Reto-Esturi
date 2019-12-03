@@ -8,6 +8,13 @@ body{
 	background-image: url("../images/BG.jpg");
 	background-repeat: no-repeat;
 }
+
+/*NAV*/
+#navbar {
+	height: 3.5em;
+}
+/*FIN NAV*/
+
 #slogan{
 	font-size: 50px;
 	color: #3c3c3b;
