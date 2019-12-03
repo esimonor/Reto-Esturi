@@ -9,7 +9,7 @@
 </head>
 
 <body class="w-100">
-	<nav id="navbar"class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 		<a class="navbar-brand" href="#">
 			<img src="images/logosmall.png" width="60" height="60" class="d-inline-block align-center" alt="">
 			Esturi
@@ -21,10 +21,10 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#articulo2">¿Qué es Esturi?</a>
+					<a class="nav-link" href="#articulo2">@lang('¿Qué es Esturi?')</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#articulo3">¿Quiénes somos?</a>
+					<a class="nav-link" href="#articulo3">@lang('¿Quiénes somos?')</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#articulo4">Contacto</a>
@@ -55,9 +55,9 @@
 						Idiomas
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="#">Es</a>
-						<a class="dropdown-item" href="#">Eu</a>
-						<a class="dropdown-item" href="#">En</a>
+						<a class="dropdown-item" href="{{route('locale', ['locale' => 'es'])}}">Es</a>
+						<a class="dropdown-item" href="{{route('locale', ['locale' => 'eu'])}}">Eu</a>
+						<a class="dropdown-item" href="{{route('locale', ['locale' => 'en'])}}">En</a>
 					</div>
 				</li>
 			</ul>
@@ -66,10 +66,10 @@
 
 	<article class="text-center d-flex justify-content-center align-items-center mt-5" id="cajaSlogan">
 		<div>
-			<div >
+			<div>
 				<h4 id="slogan">Encuentra lugares interesantes cerca de ti.</h4>
 			</div>
-			<div class="mt-5" >
+			<div class="mt-5">
 				@guest
 				<a id="botonRegistro" class="btn btn-outline-success w-75 p-2" data-toggle="modal" data-target="#registroModal">Registrarse</a>
 				<br><br>
@@ -80,29 +80,39 @@
 			</div>
 		</div>
 	</article>
-	<article style="background-color: #28a745;" id="articulo2">
-		<h2 class="titulos">¿Qué es Esturi?</h2>
-		<hr class="separador">
-		<p class="textoArticulo">Esturi es una aplicacion creada para que disfrutes al maximo de la ciudad en la que te encuentres.</p>
-		<div id="tarjetas">
-			<div class="tarjeta1">
-				<img class="iconos" src="images/lupa.png">
-				<h3 class="titulo-tarjeta">Busqueda</h3>
-				<p class="contenido-tarjeta">Esturi te permite elegir entre una gran variedad de actividades y lugares.</p>
+
+	<article id="articulo2" class="text-center d-flex align-items-center justify-content-center   w-100">
+		<div class="container w-100">
+			<div class="row mb-5">
+				<div class="col">
+					<h2 class="titulos"><u>¿Qué es Esturi?</u></h2>
+				</div>
 			</div>
-			<div class="tarjeta2">
-				<img class="iconos" src="images/lista.png">
-				<h3 class="titulo-tarjeta">Filtra</h3>
-				<p class="contenido-tarjeta">Filtra las actividades que mas te interesen.</p>
+			<div class="row mb-5">
+				<div class="col">
+					<p class="textoArticulo">Esturi es una aplicacion creada para que disfrutes al maximo de la ciudad en la que te encuentres.</p>
+				</div>
 			</div>
-			<div class="tarjeta3">
-				<img class="iconos" src="images/lista.png">
-				<h3 class="titulo-tarjeta">Lorem ipsum</h3>
-				<p class="contenido-tarjeta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<div class="row justify-content-between" id="tarjetas">
+				<div class="col tarjeta1">
+					<img class="iconos" src="images/lupa.png">
+					<h3 class="titulo-tarjeta">Busqueda</h3>
+					<p class="contenido-tarjeta">Esturi te permite elegir entre una gran variedad de actividades y lugares.</p>
+				</div>
+				<div class="col tarjeta2">
+					<img class="iconos" src="images/lista.png">
+					<h3 class="titulo-tarjeta">Filtra</h3>
+					<p class="contenido-tarjeta">Filtra las actividades que mas te interesen.</p>
+				</div>
+				<div class="col tarjeta3">
+					<img class="iconos" src="images/lista.png">
+					<h3 class="titulo-tarjeta">Lorem ipsum</h3>
+					<p class="contenido-tarjeta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
 			</div>
 		</div>
 	</article>
-	<article style="background-color: #28a745;" id="articulo3">
+	<article id="articulo3">
 		<h2 class="titulos">Quiénes somos</h2>
 		<hr class="separador">
 		<p class="textoArticulo">Somos tres estudiantes de segundo año de grado superior</p>
@@ -121,7 +131,7 @@
 			</div>
 		</div>
 	</article>
-	<article style="background-color: #28a745;" id="articulo4">
+	<article id="articulo4">
 		<h2 class="titulos">Contacto</h2>
 		<hr class="separador">
 		<label class="textoArticulo">Nombre:</label> <input type="text" name="nombre" id="nombre">

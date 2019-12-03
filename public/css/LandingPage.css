@@ -9,11 +9,6 @@ body{
 	background-repeat: no-repeat;
 }
 
-/*NAV*/
-#navbar {
-	height: 3.5em;
-}
-/*FIN NAV*/
 
 #slogan{
 	font-size: 50px;
@@ -23,48 +18,12 @@ body{
 
 /*Texto aside*/
 #cajaSlogan{
-	height: 500px;
+	height: 50em;
 }
 
 /*Fin texto aside*/
 
-/*Boton*/
-#registro{
-	background-color: #28a745;
-	color: whitesmoke;
-	border: 1px solid #28a745;
-	border-radius: 25px;
-	padding: 1%;
-	font-size: 1em;
-	width: 50%;
-	margin-left: 25%;
-	transition: 0.2s;
-}
-#registro:hover{
-	background-color: transparent; ;
-	color: #28a745;
-	border: 1px solid #28a745;
-	font-weight: bolder;
-}
-#mapa{
-	background-color: #cf1010;
-	border: 1px solid whitesmoke;
-	color: whitesmoke;
-	padding: 0.5%;
-	margin-left: 47%;
-	transition: 1s;
-}
-
-#mapa:hover{
-	background-color: #640505;
-}
-.textoBoton{
-	padding: 2%;
-	text-align: justify;
-	text-align: center;
-	font-size: 1.3em;
-}
-/*fin boton*/
+/*Boton en el CSS de botones*/
 
 /*Titulos*/
 .titulos{
@@ -74,17 +33,21 @@ body{
 	text-shadow: 1px 1px 10px  black;
 	padding-top: 1.5em;
 }
-
 /*Articulos*/
 article{
 	width: 99%;
 	height: 700px;
 }
+#articulo2, #articulo3, #articulo4{
+	height: 52.1em;
+}
+
 #articulo2, #articulo4{
 	width: 100%;
 	background: rgb(29,167,14);
 	background: linear-gradient(173deg, rgba(29,167,14,1) 0%, rgba(10,159,56,1) 30%, rgba(0,255,124,1) 100%);
 	text-align: center;
+	
 }
 #articulo3{
 	width: 100%;
