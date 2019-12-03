@@ -16,3 +16,5 @@
     <link rel="stylesheet" href="{{ URL::asset('css/cssBotones.css') }}" />
     <!-- Perfil -->
     <link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
+    <!-- Footer -->
+    <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}" />

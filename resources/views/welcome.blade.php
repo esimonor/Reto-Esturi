@@ -9,60 +9,7 @@
 </head>
 
 <body class="w-100">
-	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-		<a class="navbar-brand" href="#">
-			<img src="images/logosmall.png" width="60" height="60" class="d-inline-block align-center" alt="">
-			Esturi
-		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#articulo2">@lang('¿Qué es Esturi?')</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#articulo3">@lang('¿Quiénes somos?')</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#articulo4">Contacto</a>
-				</li>
-				@guest
-				<li class="nav-item">
-					<a class="nav-link" data-toggle="modal" data-target="#inicioSesionModal">Inicio sesion</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" data-toggle="modal" data-target="#registroModal">Registro</a>
-				</li>
-				@else
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						{{ Auth::user()->name }}
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="#">Perfil</a>
-						<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-							@csrf
-						</form>
-					</div>
-				</li>
-				@endguest
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Idiomas
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="{{route('locale', ['locale' => 'es'])}}">Es</a>
-						<a class="dropdown-item" href="{{route('locale', ['locale' => 'eu'])}}">Eu</a>
-						<a class="dropdown-item" href="{{route('locale', ['locale' => 'en'])}}">En</a>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	@include('includes.navLanding')
 
 	<article class="text-center d-flex justify-content-center align-items-center mt-5" id="cajaSlogan">
 		<div>
@@ -75,14 +22,14 @@
 				<br><br>
 				<a id="botonInicioSesion" href="{{route('mapa')}}" class="btn btn-outline-danger">Ver mapa</a>
 				@else
-				<a is="botonInicioSesion" href="{{route('home')}}" class="btn btn-outline-danger">Ver mapa</a>
+				<a id="botonInicioSesion" href="{{route('home')}}" class="btn btn-outline-danger">Ver mapa</a>
 				@endguest
 			</div>
 		</div>
 	</article>
 
-	<article id="articulo2" class="text-center d-flex align-items-center justify-content-center   w-100">
-		<div class="container w-100">
+	<article id="articulo2" class="text-center d-flex align-items-center justify-content-center w-100">
+		<div class="container2 container mt-5 mb-5">
 			<div class="row mb-5">
 				<div class="col">
 					<h2 class="titulos"><u>¿Qué es Esturi?</u></h2>
@@ -93,54 +40,77 @@
 					<p class="textoArticulo">Esturi es una aplicacion creada para que disfrutes al maximo de la ciudad en la que te encuentres.</p>
 				</div>
 			</div>
-			<div class="row justify-content-between" id="tarjetas">
+			<div class="row d-flex justify-content-between mb-5" id="tarjetas">
 				<div class="col tarjeta1">
 					<img class="iconos" src="images/lupa.png">
-					<h3 class="titulo-tarjeta">Busqueda</h3>
+					<h3 class="titulo-tarjeta mt-4">Busqueda</h3>
 					<p class="contenido-tarjeta">Esturi te permite elegir entre una gran variedad de actividades y lugares.</p>
 				</div>
-				<div class="col tarjeta2">
+				<div class="col tarjeta2 text-center">
 					<img class="iconos" src="images/lista.png">
-					<h3 class="titulo-tarjeta">Filtra</h3>
+					<h3 class="titulo-tarjeta mt-4">Filtra</h3>
 					<p class="contenido-tarjeta">Filtra las actividades que mas te interesen.</p>
 				</div>
 				<div class="col tarjeta3">
 					<img class="iconos" src="images/lista.png">
-					<h3 class="titulo-tarjeta">Lorem ipsum</h3>
+					<h3 class="titulo-tarjeta mt-4">Lorem ipsum</h3>
 					<p class="contenido-tarjeta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 				</div>
 			</div>
 		</div>
 	</article>
-	<article id="articulo3">
-		<h2 class="titulos">Quiénes somos</h2>
-		<hr class="separador">
-		<p class="textoArticulo">Somos tres estudiantes de segundo año de grado superior</p>
-		<div id="tarjetas">
-			<div style="margin: 0px;" class="tarjeta1">
-				<img class="iconos" src="images/AG.png">
-				<h3 class="titulo-tarjeta">Adrian</h3>
+
+	<article id="articulo3" class="text-center d-flex align-items-center justify-content-center w-100">
+		<div class="container2 container mt-5 mb-5">
+			<div class="row mb-5">
+				<div class="col">
+					<h2 class="titulos"><u>¿Quiénes somos?</u></h2>
+				</div>
 			</div>
-			<div class="tarjeta2">
-				<img class="iconos" src="images/AO.png">
-				<h3 class="titulo-tarjeta">Aitor</h3>
+			<div class="row mb-5">
+				<div class="col">
+					<p class="textoArticulo">Somos tres estudiantes de segundo año de grado superior</p>
+				</div>
 			</div>
-			<div class="tarjeta3">
-				<img class="iconos" src="images/EO.png">
-				<h3 class="titulo-tarjeta">Eneko</h3>
+			<div class="row d-flex justify-content-between mb-5" id="tarjetas">
+				<div class="col tarjeta1">
+					<img class="caras" src="images/AG.png">
+					<h3 class="titulo-tarjeta mt-4">Adrian</h3>
+					<p class="contenido-tarjeta">Jefe</p>
+				</div>
+				<div class="col tarjeta2">
+					<img class="caras" src="images/AO.png">
+					<h3 class="titulo-tarjeta mt-4">Aitor</h3>
+					<p class="contenido-tarjeta">Ayudante</p>
+				</div>
+				<div class="col tarjeta3">
+					<img class="caras" src="images/EO.png">
+					<h3 class="titulo-tarjeta mt-4">Eneko</h3>
+					<p class="contenido-tarjeta">Diseño Grafico</p>
+				</div>
 			</div>
 		</div>
 	</article>
+
 	<article id="articulo4">
-		<h2 class="titulos">Contacto</h2>
-		<hr class="separador">
-		<label class="textoArticulo">Nombre:</label> <input type="text" name="nombre" id="nombre">
-		<br>
-		<label class="textoArticulo">Correo:</label> <input type="text" name="correo" id="correo">
-		<br>
-		<label class="textoArticulo">Mensaje:</label> <textarea name="nombre" id="nombre"></textarea>
-		<br>
-		<button>Enviar</button>
+		<div class="container">
+			<h2 class="titulos text-center"><u>Contacto</u></h2>
+			<form class="">
+				<div class="form-group">
+					<label class="textoArticulo">Nombre</label>
+					<input type="text" class="form-control" id="contra" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<label class="textoArticulo">Email address</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+				</div>
+				<div class="form-group">
+					<label class="textoArticulo">Mensaje</label>
+					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				</div>
+				<button type="submit" class="mb-5 btn btn-danger">Enviar</button>
+			</form>
+		</div>
 	</article>
 	@include('includes.footer')
 	@include('includes.js')

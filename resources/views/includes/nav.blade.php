@@ -3,18 +3,6 @@
     <!-- Brand -->
     <a class="navbar-brand" href="{{route('welcome')}}">Esturi</a>
 
-    <div>
-        <div id="basemaps-wrapper" class="leaflet-bar">
-            <select id="basemaps" class="form-control">
-                <option value="Physical">Physical</option>
-                <option value="Imagery">Imagery</option>
-                <option value="ImageryClarity">Imagery (Clarity)</option>
-                <option value="ImageryFirefly">Imagery (Firefly)</option>
-                <option value="Streets">Streets</option>
-            </select>
-        </div>
-    </div>
-
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>

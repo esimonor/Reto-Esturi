@@ -9,6 +9,11 @@ body{
 	background-repeat: no-repeat;
 }
 
+/*Nav*/
+li{
+	cursor: pointer;
+}
+/*Fin nav*/
 
 #slogan{
 	font-size: 50px;
@@ -20,7 +25,6 @@ body{
 #cajaSlogan{
 	height: 50em;
 }
-
 /*Fin texto aside*/
 
 /*Boton en el CSS de botones*/
@@ -33,60 +37,23 @@ body{
 	text-shadow: 1px 1px 10px  black;
 	padding-top: 1.5em;
 }
-/*Articulos*/
-article{
-	width: 99%;
-	height: 700px;
-}
-#articulo2, #articulo3, #articulo4{
-	height: 52.1em;
-}
 
 #articulo2, #articulo4{
-	width: 100%;
 	background: rgb(29,167,14);
 	background: linear-gradient(173deg, rgba(29,167,14,1) 0%, rgba(10,159,56,1) 30%, rgba(0,255,124,1) 100%);
-	text-align: center;
-	
 }
 #articulo3{
-	width: 100%;
 	background: rgb(56,1,1);
 	background: linear-gradient(186deg, rgba(56,1,1,1) 0%, rgba(207,16,16,1) 30%, rgba(255,0,0,1) 100%);
-	text-align: center;
 }
 .textoArticulo{
-	padding: 2%;
-	text-align: justify;
-	text-align: center;
 	font-size: 1.3em;
-	margin-top: 2%;
 	color:whitesmoke;
 }
 .iconos{
-	width: 50%;
-	text-align: center;
+	width: 15em;
 }
-.tarjetas{
-	display: inline-block;
-	text-align: center;
-	padding: 2% 0;
-}
-.tarjeta1{
-	display: inline-block;
-	width: 30%;
-	text-align: center;
-}
-.tarjeta2{
-	display: inline-block;
-	width: 30%;
-	text-align: center;
-}
-.tarjeta3{
-	display: inline-block;
-	width: 30%;
-	text-align: center;
-}
+
 .titulo-tarjeta{
 	color: whitesmoke;
 	font-size: 1.5em;
@@ -105,10 +72,16 @@ article{
 	width: 10%;
 	font-weight: bold;
 }
-/*Linea*/
-.separador {
-  border-top: 1px dashed white;
-  box-shadow: 1px 1px 10px black;
-  margin-left: 40%;
-  margin-right: 40%;
+
+.caras {
+	width: 20em;
+}
+
+img {
+	margin: 0;
+	padding: 0;
+}
+
+.container2 {
+	max-width: 1400px;
 }
