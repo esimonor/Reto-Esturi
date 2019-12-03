@@ -44,8 +44,22 @@
 }
 
 #botonRegistro:hover {
-    background-color: #343a40;
+    background-color:rgba(0, 0, 0, 0);
     border: 1px solid  #28a745;
     color:  #28a745;
 }
 /*-----FIN BOTON REGISTRO------*/
+
+/*----BOTON INICIO SESION------*/
+#botonInicioSesion {
+    background-color: #dc3545;
+    border: 1px solid transparent;
+    color: whitesmoke;
+}
+
+#botonInicioSesion:hover {
+    background-color:rgba(0, 0, 0, 0);
+    border: 1px solid  #dc3545;
+    color:  #dc3545;
+}
+/*---FIN BOTON INICIO SESION---*/
