@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content bg-dark text-white">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Formulario inicio de sesion</h5>
+                <h5 class="modal-title" id="exampleModalLabel">@lang('Formulario inicio de sesion')</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,7 +12,7 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <label for="email" class="col-md-4 col-form-label text-md-right">@lang('Correo Electronico')</label>
 
                         <div class="col-md-6">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                        <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
 
                         <div class="col-md-6">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -41,13 +41,13 @@
                         <div class="form-group col">
                             @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
+                                @lang('¿Olvidaste tu contraseña?')
                             </a>
                             @endif
                         </div>
                         <div class="form-group row mb-0">
                             <div class="input-group col">
-                                <button class="btn btn-outline-success" type="submit">Iniciar Sesion</button>
+                                <button class="btn btn-outline-success" type="submit">@lang('Iniciar Sesion')</button>
                             </div>
                         </div>
                     </div>

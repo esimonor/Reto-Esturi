@@ -1,5 +1,77 @@
 {
     "¿Quiénes somos?" : "Who are we?",
 
-    "¿Quienes somos?": "Who are we?"
+    "¿Quienes somos?": "Who are we?",
+
+    "Correo Electronico": "E-mail",
+
+    "¿Qué es Esturi?": "What is Esturi?",
+
+    "Contraseña": "Password",
+
+    "¿Olvidaste tu contraseña?": "Did you forget your password?",
+
+    "Iniciar Sesion": "Log in",
+
+    "Formulario inicio de sesion": "Form to Log in",
+
+    "Formulario registro": "Form to Sign in",
+
+    "Nombre": "Name",
+
+    "Apellido": "Surname",
+
+    "Confirmar contraseña": "Confirm password",
+
+    "Rol": "Role",
+
+    "Seleccione un Rol": "Select Role",
+
+    "Normal": "Normal",
+
+    "Dueño de un local": "Owner of a local",
+
+    "Registrarse": "Sign in",
+
+    "Contacto": "Contact",
+
+    "Inicio sesion": "Log in",
+
+    "Registro": "Sign in",
+
+    "Idiomas": "Languages",
+
+    "Encuentra lugares interesantes cerca de ti": "Find interesting places near you",
+
+    "Ver mapa": "See map",
+
+    "¿Qué es Esturi?": "What is Esturi?",
+
+    "Esturi es una aplicacion creada para que disfrutes al maximo de la ciudad en la que te encuentres": "Esturi is an application created for you to enjoy to the fullest of the city where you are",
+
+    "Busqueda": "Search",
+
+    "Esturi te permite elegir entre una gran variedad de actividades y lugares": "Esturi allows you to choose from a wide variety of activities and places",
+
+    "Filtra": "Filter",
+
+    "Filtra las actividades que mas te interesen": "Filter the activities that interest you most",
+
+    "Comentarios": "Comments",
+
+    "Valora los sitios que has visitado": "Rate the sites you have visited",
+
+    "Somos tres estudiantes de segundo año de grado superior": "We are three superior grade's second year students",
+
+    "Jefe": "Boss",
+
+    "Administrador": "Administrator",
+
+    "Diseño Grafico": "Graphic designer",
+
+    "Mensaje": "Message",
+
+    "Enviar": "Send",
+
+    "Email de Contacto:": "Contact E-mail:"
 }

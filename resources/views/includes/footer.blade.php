@@ -2,7 +2,7 @@
 <footer class="page-footer font-small bg-dark" >
     <div id="footer" class="row justify-content-between">
         <div class="col-4 align-self-center text-white pl-4">
-            <b><u>Email de Contacto: </u></b><br>esturioficial@gmail.com
+            <b><u>@lang('Email de Contacto:')</u></b><br>esturioficial@gmail.com
         </div>
         <!-- Copyright -->
         <div class="col-4 align-self-center text-center text-white">&copy 2019 Copyright:

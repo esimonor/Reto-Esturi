@@ -1,5 +1,77 @@
 {
     "¿Quiénes somos?" : "Zeintzuk gara?",
     
-    "¿Quienes somos?": "Zeintzuk gara?"
+    "¿Quienes somos?": "Zeintzuk gara?",
+
+    "Correo Electronico": "Helbide elektronikoa",
+
+    "¿Qué es Esturi?": "Zer da Esturi?",
+
+    "Contraseña": "Pasahitza",
+
+    "¿Olvidaste tu contraseña?": "Pasahitza ahaztu zaizu?",
+
+    "Iniciar Sesion": "Saioan Sartu",
+
+    "Formulario inicio de sesion": "Saioa hasteko formularioa",
+
+    "Formulario registro": "Erregistratzeko formulario",
+
+    "Nombre": "Izena",
+
+    "Apellido": "Abizena",
+
+    "Confirmar contraseña": "Pasahitza baieztatu",
+
+    "Rol": "Rola",
+
+    "Seleccione un Rol": "Rola aukeratu",
+
+    "Normal": "Normala",
+
+    "Dueño de un local": "Toki baten jabea",
+
+    "Registrarse": "Erregistratu",
+
+    "Contacto": "Kontaktua",
+
+    "Inicio sesion": "Saioa Sartu",
+
+    "Registro": "Erregistratu",
+
+    "Idiomas": "Hizkuntzak",
+
+    "Encuentra lugares interesantes cerca de ti": "Aurkitu leku interesgarriak zure inguruan",
+
+    "Ver mapa": "Mapa Ikusi",
+
+    "¿Qué es Esturi?": "Zer da Esturi?",
+
+    "Esturi es una aplicacion creada para que disfrutes al maximo de la ciudad en la que te encuentres": "Zauden tokian zauden hiriaz ahalik eta gehien gozatzeko sortutako aplikazioa da",
+
+    "Busqueda": "Bilatzea",
+
+    "Esturi te permite elegir entre una gran variedad de actividades y lugares": "Esturik askotariko jarduerak eta tokiak aukeratzeko aukera ematen du",
+
+    "Filtra": "Filtratu",
+
+    "Filtra las actividades que mas te interesen": "Iragazi gehien interesatzen zaizun jarduerak",
+
+    "Comentarios": "Komentarioak",
+
+    "Valora los sitios que has visitado": "Baloratu bisitatu dituzun guneak",
+
+    "Somos tres estudiantes de segundo año de grado superior": "Goi mailako bigarren urtean gauden 3 ikasle gara",
+
+    "Jefe": "Burua",
+
+    "Administrador": "Administratzaile",
+
+    "Diseño Grafico": "Diseinu Grafikoa",
+
+    "Mensaje": "Mezua",
+
+    "Enviar": "Bidali",
+
+    "Email de Contacto:": "Kontaktuko emaila:"
 }

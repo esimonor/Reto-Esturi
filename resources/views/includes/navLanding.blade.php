@@ -16,14 +16,14 @@
 					<a class="nav-link" href="#articulo3">@lang('¿Quiénes somos?')</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#articulo4">Contacto</a>
+					<a class="nav-link" href="#articulo4">@lang('Contacto')</a>
 				</li>
 				@guest
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="modal" data-target="#inicioSesionModal">Inicio sesion</a>
+					<a class="nav-link" data-toggle="modal" data-target="#inicioSesionModal">@lang('Inicio sesion')</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="modal" data-target="#registroModal">Registro</a>
+					<a class="nav-link" data-toggle="modal" data-target="#registroModal">@lang('Registro')</a>
 				</li>
 				@else
 				<li class="nav-item dropdown">
@@ -41,7 +41,7 @@
 				@endguest
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Idiomas
+						@lang('Idiomas')
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" href="{{route('locale', ['locale' => 'es'])}}">Es</a>
