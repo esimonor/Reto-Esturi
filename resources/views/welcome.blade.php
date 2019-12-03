@@ -1,36 +1,82 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Esturi</title>
-	    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Estilos -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- fuentes -->
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+@include('includes.head')
+<!-- Estilos Landing page -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Fuentes Lanfing page-->
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+<title>Esturi</title>
 </head>
-<body>
-	<nav>
-		<img id="logosmall" src="images/logosmall.png">
-		<ul>
-			<li><a href="#articulo2">¿Qué es Esturi?</a></li>
-			<li><a href="#articulo3">Quiénes somos</a></li>
-			<li><a href="#articulo4">Contacto</a></li>
-			<li>Regístrarse</li>
-			<li>Iniciar sesión</li>
-			<li>ES</li>
-			<li>EN</li>
-		</ul>
+
+<body class="w-100">
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="#">
+			<img src="images/logosmall.png" width="60" height="60" class="d-inline-block align-center" alt="">
+			Esturi
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#articulo2">¿Qué es Esturi?</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#articulo3">¿Quiénes somos?</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#articulo4">Contacto</a>
+				</li>
+				@guest
+				@include('includes.modales.modalInicioSesion')
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#inicioSesionModal">Inicio sesion</a>
+				</li>
+				@include('includes.modales.modalRegistro')
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#registroModal">Registro</a>
+				</li>
+				@else
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{{ Auth::user()->name }}
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="#">Perfil</a>
+						<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+							@csrf
+						</form>
+					</div>
+				</li>
+				@endguest
+				<li class="nav-item">
+					<a class="nav-link" href="#">Es</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Eu</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">En</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
-	<article id="articulo1">
-		<aside id="cajaSlogan">
-			<h4 id="slogan">Encuentra lugares interesantes cerca de ti.</h4>
-		</aside>
+
+	<article class="text-center d-flex justify-content-center align-items-center" id="cajaSlogan">
 		<div>
-            <input id="registro" type="button" name="Registrarse" value="Registrate">
-            <br>
-            <input id="mapa" type="button" name="mapa" value="Ver mapa">
+			<div>
+				<h4 id="slogan">Encuentra lugares interesantes cerca de ti.</h4>
+			</div>
+			<div class="mt-5">
+				@guest
+				<a href="" class="btn btn-outline-success w-75 p-2">Registrarse</a>
+				<br><br>
+				<a href="{{route('mapa')}}" class="btn btn-outline-danger">Ver mapa</a>
+				@else
+				<a href="{{route('home')}}" class="btn btn-outline-danger">Ver mapa</a>
+				@endguest
+			</div>
 		</div>
 	</article>
 
@@ -88,7 +134,7 @@
 	<br>
 	<hr>
 	<br>
-	
+
 	<article style="background-color: #28a745;" id="articulo4">
 		<h2 class="titulos">Contacto</h2>
 		<hr class="separador">
@@ -100,6 +146,8 @@
 		<br>
 		<button>Enviar</button>
 	</article>
-    @include('includes.footer')
+	@include('includes.footer')
+	@include('includes.js')
 </body>
+
 </html>
