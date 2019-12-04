@@ -3,7 +3,7 @@
 
     "¿Quienes somos?": "Who are we?",
 
-    "Correo Electronico": "E-mail",
+    "Correo electronico": "E-mail",
 
     "¿Qué es Esturi?": "What is Esturi?",
 
@@ -39,7 +39,23 @@
 
     "Registro": "Sign in",
 
+    "Perfil": "Profile",
+
+    "Cerrar sesion": "Log out",
+
     "Idiomas": "Languages",
+
+    "Tipo de mapa": "Map type",
+
+    "Fisico": "Physical",
+
+    "Satelite": "Imagery",
+
+    "Satelite (Claro)": "Imagery (Clarity)",
+
+    "Satelite (Luciernaga)": "Imagery (Firefly)",
+
+    "Calles": "Streets",
 
     "Encuentra lugares interesantes cerca de ti": "Find interesting places near you",
 
@@ -61,7 +77,7 @@
 
     "Somos tres estudiantes de segundo año de grado superior": "We are three superior grade's second year students",
 
-    "Jefe": "Boss",
+    "Jefe, diseñador y programador": "Boss, designer and programmer",
 
     "Administrador": "Administrator",
 
@@ -71,5 +87,31 @@
 
     "Enviar": "Send",
 
-    "Email de Contacto:": "Contact E-mail:"
+    "Email de Contacto:": "Contact E-mail:",
+
+    "Reiniciar contraseña": "Reset password",
+
+    "Enviar link de reinicio de contraseña": "Send Password Reset Link",
+
+    "Verifica tu correo electronico": "Verify Your Email Address",
+
+    "Se te ha enviado al correo electronico otro link de verificacion.": "A fresh verification link has been sent to your email address.",
+
+    "Antes de continuar, porfavor comprueba tu correo electronico para el link de veridicacion.": "Before proceeding, please check your email for a verification link.",
+
+    "Si no has recivido ningun correo electronico": "If you did not receive the email",
+
+    "pulsa aqui para mandar otro": "click here to request another",
+    
+    "Confirmar": "Confirm", 
+
+    "Reiniciar": "Reset", 
+
+    "Verificacion": "Verify", 
+
+    "Inicio": "Home", 
+
+    "Modificar perfil": "Update profile", 
+
+    "Perfil de": "Profile"
 }

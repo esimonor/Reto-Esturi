@@ -3,7 +3,7 @@
     
     "¿Quienes somos?": "Zeintzuk gara?",
 
-    "Correo Electronico": "Helbide elektronikoa",
+    "Correo electronico": "Helbide elektronikoa",
 
     "¿Qué es Esturi?": "Zer da Esturi?",
 
@@ -35,11 +35,27 @@
 
     "Contacto": "Kontaktua",
 
-    "Inicio sesion": "Saioa Sartu",
+    "Inicio sesion": "Saioa hasi",
 
     "Registro": "Erregistratu",
 
+    "Perfil": "Perfila",
+
+    "Cerrar sesion": "Saioa itxi",
+    
     "Idiomas": "Hizkuntzak",
+
+    "Tipo de mapa": "Mapa mota",
+
+    "Fisico": "Fisikoa",
+
+    "Satelite": "Satelite",
+
+    "Satelite (Claro)": "Satelite (Argia)",
+
+    "Satelite (Luciernaga)": "Satelite (Ipurtargi)",
+
+    "Calles": "Kaleak",
 
     "Encuentra lugares interesantes cerca de ti": "Aurkitu leku interesgarriak zure inguruan",
 
@@ -61,7 +77,7 @@
 
     "Somos tres estudiantes de segundo año de grado superior": "Goi mailako bigarren urtean gauden 3 ikasle gara",
 
-    "Jefe": "Burua",
+    "Jefe, diseñador y programador": "Burua, diseinatzaile eta programatzaile",
 
     "Administrador": "Administratzaile",
 
@@ -71,5 +87,31 @@
 
     "Enviar": "Bidali",
 
-    "Email de Contacto:": "Kontaktuko emaila:"
+    "Email de Contacto:": "Kontaktuko emaila:",
+
+    "Reiniciar contraseña": "Pasahitza berriztu",
+
+    "Enviar link de reinicio de contraseña": "Pasahitza berriztatzeko linka bidali",
+
+    "Verifica tu correo electronico": "Zure helbide eletronikoa egiaztatu",
+
+    "Se te ha enviado al correo electronico otro link de verificacion.": "Helbide elektronikora beste egiaztatze link bat bidali zaizu.",
+
+    "Antes de continuar, porfavor comprueba tu correo electronico para el link de veridicacion.": "Jarraitu baino lehen, mesedez zure helbide elektronikoan bilatu egiaztatze linka.",
+
+    "Si no has recivido ningun correo electronico": "Ez baduzu posta elektronikoa jaso",
+
+    "pulsa aqui para mandar otro": "hemen klik egin beste bat bidaltzeko",
+
+    "Confirmar": "Konfirmatu", 
+
+    "Reiniciar": "Berrezarri", 
+
+    "Verificacion": "Berifikazioa", 
+
+    "Inicio": "Hasiera", 
+
+    "Modificar perfil": "Profile eguneratu", 
+
+    "Perfil de": "Perfila"
 }
