@@ -1,10 +1,10 @@
 @include('includes.head')
 
-<title>Contacto</title>
+<title>@lang('Contacto')</title>
 </head>
 
 <body>
-    <div class="container col-12">
+    <div class="container">
         @include('includes.nav')
         
         <section>

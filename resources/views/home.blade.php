@@ -1,22 +1,11 @@
 @include('includes.head')
 @include('includes.mapa')
-<title>Esturi</title>
+<title>@lang('Inicio')</title>
 </head>
 
 <body>
     <div class="container col-12">
-        @include('includes.nav')
-        <div>
-        <div id="basemaps-wrapper" class="leaflet-bar">
-            <select id="basemaps" class="form-control">
-                <option value="Physical">Physical</option>
-                <option value="Imagery">Imagery</option>
-                <option value="ImageryClarity">Imagery (Clarity)</option>
-                <option value="ImageryFirefly">Imagery (Firefly)</option>
-                <option value="Streets">Streets</option>
-            </select>
-        </div>
-    </div>
+        @include('includes.navs.nav')
         <section>
             <!-- Mapa -->
             <div id="map"></div>

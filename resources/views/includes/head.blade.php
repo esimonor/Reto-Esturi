@@ -18,3 +18,6 @@
     <link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
     <!-- Footer -->
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}" />
+    <!-- Incluimos los modales -->
+    @include('includes.modales.modalInicioSesion')
+    @include('includes.modales.modalRegistro')

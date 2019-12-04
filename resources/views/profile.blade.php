@@ -1,18 +1,18 @@
 @include('includes.head')
 
-<title>Perfil de </title>
+<title>@lang('Perfil de') {{Auth::user()->name}}</title>
 </head>
 
 <body>
     <div class="container col-12">
-        @include('includes.nav')
+        @include('includes.navs.nav')
 
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row">
             <div class="col-6 row">
                 <img src="{{ URL::asset('images/profile.png') }}" class="m-2 border rounded col-10">
-                <p class="h5 col-5">Nombre:John Doe</p>
-                <p class="h5 col-5">Correo:example@gmail.com</p>
+                <p class="h5 col-5">Nombre:  {{Auth::user()->name}} {{Auth::user()->lastName}}</p>
+                <p class="h5 col-5">Correo:  {{Auth::user()->email}}</p>
                 <button class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
                 <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
             </div>

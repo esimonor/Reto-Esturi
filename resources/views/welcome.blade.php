@@ -1,15 +1,13 @@
 @include('includes.head')
-@include('includes.modales.modalInicioSesion')
-@include('includes.modales.modalRegistro')
 <!-- Estilos Landing page -->
-<link rel="stylesheet" type="text/css" href="css/LandingPage.css">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/LandingPage.css') }}">
 <!-- Fuentes Lanfing page-->
-<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+<link href="{{ URL::asset('https://fonts.googleapis.com/css?family=Lato&display=swap') }}" rel="stylesheet">
 <title>Esturi</title>
 </head>
 
 <body class="w-100">
-	@include('includes.navLanding')
+	@include('includes.navs.navLanding')
 
 	<article class="text-center d-flex justify-content-center align-items-center mt-5" id="cajaSlogan">
 		<div>
@@ -20,6 +18,7 @@
 				@guest
 				<a id="botonRegistro" class="btn btn-outline-success w-75 p-2" data-toggle="modal" data-target="#registroModal">@lang('Registrarse')</a>
 				<br><br>
+				<a id="botonInicioSesion" class="btn btn-outline-danger mr-4" data-toggle="modal" data-target="#inicioSesionModal">@lang('Inicio sesion')</a>
 				<a id="botonInicioSesion" href="{{route('mapa')}}" class="btn btn-outline-danger">@lang('Ver mapa')</a>
 				@else
 				<a id="botonInicioSesion" href="{{route('home')}}" class="btn btn-outline-danger">@lang('Ver mapa')</a>
@@ -42,17 +41,17 @@
 			</div>
 			<div class="row d-flex justify-content-between mb-5" id="tarjetas">
 				<div class="col tarjeta1">
-					<img class="iconos" src="images/lupa.png">
+					<img class="iconos" src="{{ URL::asset('images/lupa.png') }}">
 					<h3 class="titulo-tarjeta mt-4">@lang('Busqueda')</h3>
 					<p class="contenido-tarjeta">@lang('Esturi te permite elegir entre una gran variedad de actividades y lugares').</p>
 				</div>
 				<div class="col tarjeta2 text-center">
-					<img class="iconos" src="images/lista.png">
+					<img class="iconos" src="{{ URL::asset('images/lista.png') }}">
 					<h3 class="titulo-tarjeta mt-4">@lang('Filtra')</h3>
 					<p class="contenido-tarjeta">@lang('Filtra las actividades que mas te interesen').</p>
 				</div>
 				<div class="col tarjeta3">
-					<img class="iconos" src="images/comentario.png">
+					<img class="iconos" src="{{ URL::asset('images/comentario.png') }}">
 					<h3 class="titulo-tarjeta mt-4">@lang('Comentarios')</h3>
 					<p class="contenido-tarjeta">@lang('Valora los sitios que has visitado').</p>
 				</div>
@@ -74,17 +73,17 @@
 			</div>
 			<div class="row d-flex justify-content-between mb-5" id="tarjetas">
 				<div class="col tarjeta1">
-					<img class="caras" src="images/AG.png">
+					<img class="caras" src="{{ URL::asset('images/AG.png') }}">
 					<h3 class="titulo-tarjeta mt-4">Adrián G.</h3>
-					<p class="contenido-tarjeta">@lang('Jefe')</p>
+					<p class="contenido-tarjeta">@lang('Jefe, diseñador y programador')</p>
 				</div>
 				<div class="col tarjeta2">
-					<img class="caras" src="images/AO.png">
+					<img class="caras" src="{{ URL::asset('images/AO.png') }}">
 					<h3 class="titulo-tarjeta mt-4">Aitor O.</h3>
 					<p class="contenido-tarjeta">@lang('Administrador')</p>
 				</div>
 				<div class="col tarjeta3">
-					<img class="caras" src="images/EO.png">
+					<img class="caras" src="{{ URL::asset('images/EO.png') }}">
 					<h3 class="titulo-tarjeta mt-4">Eneko S.</h3>
 					<p class="contenido-tarjeta">@lang('Diseño Grafico')</p>
 				</div>
