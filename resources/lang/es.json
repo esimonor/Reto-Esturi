@@ -3,7 +3,7 @@
 
     "¿Quienes somos?": "¿Quienes somos?",
 
-    "Correo Electronico": "Correo Electronico",
+    "Correo electronico": "Correo Electronico",
 
     "¿Qué es Esturi?": "¿Qué es Esturi?",
 
@@ -39,7 +39,23 @@
 
     "Registro": "Registro",
 
+    "Perfil": "Perfil",
+
+    "Cerrar sesion": "Cerrar sesion",
+
     "Idiomas": "Idiomas",
+
+    "Tipo de mapa": "Tipo de mapa",
+
+    "Fisico": "Fisico",
+
+    "Satelite": "Satelite",
+
+    "Satelite (Claro)": "Satelite (Claro)",
+
+    "Satelite (Luciernaga)": "Satelite (Luciernaga)",
+
+    "Calles": "Calles",
 
     "Encuentra lugares interesantes cerca de ti": "Encuentra lugares interesantes cerca de ti",
 
@@ -61,7 +77,7 @@
 
     "Somos tres estudiantes de segundo año de grado superior": "Somos tres estudiantes de segundo año de grado superior",
 
-    "Jefe": "Jefe",
+    "Jefe, diseñador y programador": "Jefe, diseñador y programador",
 
     "Administrador": "Administrador",
 
@@ -71,9 +87,31 @@
 
     "Enviar": "Enviar",
 
-    "Email de Contacto:": "Email de Contacto:"
+    "Email de Contacto:": "Email de Contacto:",
 
+    "Reiniciar contraseña": "Reiniciar contraseña",
 
+    "Enviar link de reinicio de contraseña": "Enviar link de reinicio de contraseña",
 
+    "Verifica tu correo electronico": "Verifica tu correo electronico",
 
+    "Se te ha enviado al correo electronico otro link de verificacion.": "Se te ha enviado al correo electronico otro link de verificacion.",
+
+    "Antes de continuar, porfavor comprueba tu correo electronico para el link de veridicacion.": "Antes de continuar, porfavor comprueba tu correo electronico para el link de veridicacion.",
+
+    "Si no has recivido ningun correo electronico": "Si no has recivido ningun correo electronico",
+
+    "pulsa aqui para mandar otro": "pulsa aqui para mandar otro",
+
+    "Confirmar": "Confirmar", 
+
+    "Reiniciar": "Reiniciar", 
+
+    "Verificacion": "Verificacion", 
+
+    "Inicio": "Inicio", 
+
+    "Modificar perfil": "Modificar perfil",
+
+    "Perfil de": "Perfil de"
 }
