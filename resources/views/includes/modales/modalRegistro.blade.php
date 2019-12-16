@@ -9,14 +9,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" id="registro" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">@lang('Nombre')</label>
 
                         <div class="col-md-6">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+                            <p id="errorName"></p>
                             @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -79,8 +79,7 @@
                         <label for="role" class="col-md-4 col-form-label text-md-right">@lang('Rol')</label>
 
                         <div class="col-md-6">
-                            <select name="rol">
-                                <option value="">@lang('Seleccione un Rol')</option>
+                            <select name="rol" id="rol">
                                 <option value="user">@lang('Normal')</option>
                                 <option value="owner">@lang('Dueño de un local')</option>
                             </select>
@@ -94,7 +93,7 @@
                     <div class="modal-footer">
                         <div class="form-group row mb-0">
                             <div class="input-group col">
-                                <button type="submit" class="btn btn-outline-success">
+                                <button type="submit" class="btn btn-outline-success" id="Registrarse" disabled="true">
                                     @lang('Registrarse')
                                 </button>
                             </div>
