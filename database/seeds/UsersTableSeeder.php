@@ -12,9 +12,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Adrian',
-            'lastName' => 'Gomez',
-            'email' => 'agomezdo18dw@ikzubirimanteo.com',
+            'name' => 'Andres',
+            'lastName' => 'Rojas',
+            'email' => 'arojaspe18dw@ikzubirimanteo.com',
             'password' => 'andatza',
             'role' => 'admin'
         ]);
@@ -29,6 +29,13 @@ class UsersTableSeeder extends Seeder
             'name' => 'Aitor',
             'lastName' => 'Ortiz de Zarate',
             'email' => 'aortizdezaratega18dw@ikzubirimanteo.com',
+            'password' => 'andatza',
+            'role' => 'admin'
+        ]);
+         DB::table('users')->insert([
+            'name' => 'Samuel',
+            'lastName' => 'Rodriguez',
+            'email' => 'srodriguezam17dw@ikzubirimanteo.com',
             'password' => 'andatza',
             'role' => 'admin'
         ]);
