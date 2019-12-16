@@ -6,7 +6,7 @@
         </div>
         <!-- Copyright -->
         <div class="col-12 col-md-4 align-self-center text-center text-white">&copy 2019 Copyright:
-            <a href="{{ URL::asset('https://mdbootstrap.com/education/bootstrap/') }}"> Esturi.com</a>
+            <a href="{{ URL::asset('https://mdbootstrap.com/education/bootstrap/') }}">Esturi.com</a>
         </div>
         <!-- Add font awesome icons -->
         <div class="col-12 col-md-4 text-center justify-content-center  align-self-center d-flex flex-row-reverse">
