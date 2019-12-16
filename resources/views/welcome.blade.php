@@ -40,17 +40,17 @@
 				</div>
 			</div>
 			<div class="row d-flex justify-content-between mb-5" id="tarjetas">
-				<div class="col tarjeta1">
+				<div class="col-xl-4 col-md-12 tarjeta1">
 					<img class="iconos" src="{{ URL::asset('images/lupa.png') }}">
 					<h3 class="titulo-tarjeta mt-4">@lang('Busqueda')</h3>
 					<p class="contenido-tarjeta">@lang('Esturi te permite elegir entre una gran variedad de actividades y lugares').</p>
 				</div>
-				<div class="col tarjeta2 text-center">
+				<div class="col-xl-4 col-md-12 tarjeta2 text-center">
 					<img class="iconos" src="{{ URL::asset('images/lista.png') }}">
 					<h3 class="titulo-tarjeta mt-4">@lang('Filtra')</h3>
 					<p class="contenido-tarjeta">@lang('Filtra las actividades que mas te interesen').</p>
 				</div>
-				<div class="col tarjeta3">
+				<div class="col-xl-4 col-md-12 tarjeta3">
 					<img class="iconos" src="{{ URL::asset('images/comentario.png') }}">
 					<h3 class="titulo-tarjeta mt-4">@lang('Comentarios')</h3>
 					<p class="contenido-tarjeta">@lang('Valora los sitios que has visitado').</p>
