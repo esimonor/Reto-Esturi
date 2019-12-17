@@ -7,7 +7,7 @@ $(document).ready(function () {
         let password = document.getElementById('password').value;
         let confirmpassword = document.getElementById('password-confirm').value;
 
-      if (password=="" || confirmpassword==""){
+      if (password != confirmpassword){
             $("#Registrarse").attr("disabled", true);
         }
         else{
