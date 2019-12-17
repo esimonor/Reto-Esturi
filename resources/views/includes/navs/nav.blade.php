@@ -22,7 +22,7 @@
                     {{ Auth::user()->name }}
                 </a>
                 <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item bg-dark text-light" href="#">@lang('Perfil')</a>
+                    <a class="dropdown-item bg-dark text-light" href="{{ URL::asset('profile') }}">@lang('Perfil')</a>
                     <a class="dropdown-item bg-dark text-light" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">@lang('Cerrar sesion')</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf

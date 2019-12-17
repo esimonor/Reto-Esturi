@@ -5,7 +5,7 @@
 
 <body>
     <div class="container">
-        @include('includes.nav')
+        @include('includes.navs.nav')
         
         <section>
             <!-- Formulario Contacto-->
