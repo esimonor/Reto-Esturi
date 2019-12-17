@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- JQuery -->
     <script src="{{ URL::asset('js/jquery-3.4.1.min.js') }}"></script>
+    <!--Validacion-->
+    <script src="{{ URL::asset('js/validacion.js') }}"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/bootstrap.min.css') }}">
     <!-- Botones -->
