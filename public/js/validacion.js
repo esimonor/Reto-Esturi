@@ -1,24 +1,20 @@
 $(document).ready(function () {
     $('#errorName').hide();
-    $('#registro').onkeyup(function () {
+    $('#registro').keyup(function () {
         let name = document.getElementById('name').value;
         let lastname = document.getElementById('lastname').value;
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
         let confirmpassword = document.getElementById('password-confirm').value;
 
-        if (name=="" || lastname=="" || email=="" || password=="" || confirmpassword==""){
-            $("#Registrarse").attr("disabled",true);
+      if (password=="" || confirmpassword==""){
+            $("#Registrarse").attr("disabled", true);
         }
-        else if(password!=confirmpassword){
-            $("#Registrarse").attr("disabled",true);
+        else{
+            $("#Registrarse").attr("disabled", false);
         }
-        else {
-            $("#Registrarse").attr("disabled",false);
-        }
-
         /*if (empty(name) || empty(lastname) || empty(email) || empty(password) || empty(confirmpassword) ) {
-            $('#Registrarse').prop('disabled', true);
+            document.getElementById("Registrarse").disabled = true;
             
             console.log("No dejes los campos vacios");
         }
@@ -33,7 +29,7 @@ $(document).ready(function () {
         }
         else {
             console.log('si');
-            $('#Registrarse').prop('disabled', false);
+            document.getElementById("Registrarse").disabled = false;
         }*/
     });
 
@@ -57,12 +53,6 @@ $(document).ready(function () {
             return false;
         else
             return true;
-    }
-
-    //Funcion que devuelve el valor del select (rol) seleccionado
-    let rolVer = () => {
-        let parrafo = $('#rol').val();
-        return parrafo
     }*/
     
 });
