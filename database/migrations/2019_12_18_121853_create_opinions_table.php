@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEstablishmentsTable extends Migration
+class CreateOpinionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateEstablishmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('establishments', function (Blueprint $table) {
+        Schema::create('opinion', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('type');
-            $table->string('localization');
-            $table->string('link');
-            $table->unsignedBigInteger('owner');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('sites_id');
             $table->timestamps();
 
-            $table->foreign('owner')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('sites_id')->references('id')->on('establishments');
         });
     }
 
@@ -33,6 +31,6 @@ class CreateEstablishmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('establishments');
+        Schema::dropIfExists('opinion');
     }
 }
