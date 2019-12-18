@@ -32,7 +32,16 @@ $(document).ready(function () {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
   }).addTo(map);
   var searchControl = L.esri.Geocoding.geosearch().addTo(map);
-  var results = L.layerGroup().addTo(map);
+  var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
+  marker.bindPopup("<b>Aquarium!</b><br>Pez por aqui, pez por haya");
+
+  var marker2 = L.marker([43.327559, -1.970836]).addTo(map);
+  marker2.bindPopup("<b>IES Zubiri Manteo!</b><br>Si quieres aprender Laravel, este es el lugar ideal.");
+
+  var marker3 = L.marker([43.315552, -1.988778]).addTo(map);
+  marker3.bindPopup("<b>Bataplan!</b><br>Se lia!");
+
+  /*var results = L.layerGroup().addTo(map);
   L.control.scale().addTo(map);
   let latitud = -1.9921275;
   let longitud = 43.3228796;
@@ -42,5 +51,5 @@ $(document).ready(function () {
     }).addTo(map);
     latitud += 0.5;
     longitud += 0.2;
-  }
+  }*/
 });
