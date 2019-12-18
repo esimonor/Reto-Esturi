@@ -9,14 +9,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" id="registro" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">@lang('Nombre')</label>
 
                         <div class="col-md-6">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+                            <p id="errorName"></p>
                             @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -57,7 +57,7 @@
                         <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
 
                         <div class="col-md-6">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required minlength="8" autocomplete="new-password">
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -71,7 +71,7 @@
                         <label for="password-confirm" class="col-md-4 col-form-label text-md-right">@lang('Confirmar contraseña')</label>
 
                         <div class="col-md-6">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required minlength="8" autocomplete="new-password">
                         </div>
                     </div>
 
@@ -79,10 +79,9 @@
                         <label for="role" class="col-md-4 col-form-label text-md-right">@lang('Rol')</label>
 
                         <div class="col-md-6">
-                            <select name="rol">
-                                <option value="">@lang('Seleccione un Rol')</option>
-                                <option value="user">@lang('Normal')</option>
-                                <option value="owner">@lang('Dueño de un local')</option>
+                            <select name="rol" id="rol">
+                                <option value="user">@lang('Estandar')</option>
+                                <option value="owner">@lang('Dueño')</option>
                             </select>
                             @error('rol')
                             <span class="invalid-feedback" role="alert">
@@ -94,7 +93,7 @@
                     <div class="modal-footer">
                         <div class="form-group row mb-0">
                             <div class="input-group col">
-                                <button type="submit" class="btn btn-outline-success">
+                                <button type="submit" class="btn btn-outline-success" disabled="true" id="Registrarse">
                                     @lang('Registrarse')
                                 </button>
                             </div>
