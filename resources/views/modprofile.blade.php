@@ -4,7 +4,7 @@
 
 <body>
     <div class="container col-12">
-        @include('includes.navs.nav')
+        @include('includes.navs.navUser')
 
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row d-flex justify-content-center">
