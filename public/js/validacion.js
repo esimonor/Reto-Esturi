@@ -6,53 +6,48 @@ $(document).ready(function () {
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
         let confirmpassword = document.getElementById('password-confirm').value;
+        let longitudcon = password.length;
+        let valid = 0;
 
-      if (password != confirmpassword){
-            $("#Registrarse").attr("disabled", true);
+        if (name =="" || lastname =="" || email==""){
+            
         }
         else{
+            valid += 1;
+        }
+        
+        if (longitudcon<8){
+            
+        }
+        else{
+            valid+=1;
+        }
+
+        if (password != confirmpassword){
+           
+        }
+        else{
+            valid+=1;
+        }
+
+        if (valid == 3){
             $("#Registrarse").attr("disabled", false);
         }
-        /*if (empty(name) || empty(lastname) || empty(email) || empty(password) || empty(confirmpassword) ) {
-            document.getElementById("Registrarse").disabled = true;
-            
-            console.log("No dejes los campos vacios");
+        else{
+            $("#Registrarse").attr("disabled", true);
         }
-        else if (emailVer(email)) {
-            console.log("email no valido");
-        }
-        else if (passwords(password, confirmpassword)) {
-            console.log("Las contraseñas son diferentes");
-        }
-        else if(rolVer() === "select"){
-            console.log("Selecciona un rol");
-        }
-        else {
-            console.log('si');
-            document.getElementById("Registrarse").disabled = false;
-        }*/
+        
     });
 
-    /*let empty = (string) => {
-        if (string === "")
-            return true
-        else
-            return false
-    }
-
-    let emailVer = (email) => {
+    /*let emailVer = (email) => {
         var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if(regex.test(email))
             return false;
         else
             return true;
     }
-
-    let passwords = (password, confirmpassword) => {
-        if (password == confirmpassword)
-            return false;
-        else
-            return true;
-    }*/
+    }
+    pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+    */
     
 });
