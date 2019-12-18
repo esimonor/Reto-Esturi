@@ -80,8 +80,8 @@
 
                         <div class="col-md-6">
                             <select name="rol" id="rol">
-                                <option value="user">@lang('Normal')</option>
-                                <option value="owner">@lang('Dueño de un local')</option>
+                                <option value="user">@lang('Estandar')</option>
+                                <option value="owner">@lang('Dueño')</option>
                             </select>
                             @error('rol')
                             <span class="invalid-feedback" role="alert">
@@ -93,7 +93,7 @@
                     <div class="modal-footer">
                         <div class="form-group row mb-0">
                             <div class="input-group col">
-                                <button type="submit" class="btn btn-outline-success" id="Registrarse">
+                                <button type="submit" class="btn btn-outline-success" disabled="true" id="Registrarse">
                                     @lang('Registrarse')
                                 </button>
                             </div>
