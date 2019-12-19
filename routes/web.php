@@ -40,3 +40,5 @@ Route::get('locale/{locale}', function($locale){
 	Session::put('locale',$locale);
 	return redirect()->back();
 })->name('locale');
+
+Route::post("/modprofile","UserController@update")->name("update");
