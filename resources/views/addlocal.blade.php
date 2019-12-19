@@ -9,11 +9,12 @@
         <div class="row d-flex justify-content-center">
             <div class="col-6 row">
                 <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-10">
+                
+            <form class="col-12" method="POST" action="{{route("addLocal")}}">
                 @csrf
-                <form class="col-12" method="GET">
                 <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
                     <label>Imagen</label> <input type="file" name="pic" accept="image/*"><br>
-                    <label>Nombre:</label><input type="text" name="nombre" />
+                    <label>Nombre:</label><input type="text" name="name" />
                     <br>
                     <label>Descripcion:</label><input type="text" name="desc" />
                     <br>
@@ -21,7 +22,7 @@
                     <label>Cierre:</label><input type="time" name="cierre" />
                     <br>
                     <label>Tipo:</label>
-                    <select>
+                    <select name="type">
                         <option value="bar">Bar</option>
                         <option value="restaurante">Restaurante</option>
                         <option value="cafe">Cafetería</option>
@@ -30,7 +31,8 @@
                         <option value="discoteca">Discoteca</option>
                         <option value="gym">Gimnasio</option>
                         <option value="LI">Lugar de interes</option>
-                      </select>
+                    </select>
+                <input type="hidden" name="ownerId" disabled="true" value="{{Auth::user()->id}}" />
                     <br>
                     <label>Localizacion:</label><input type="text" name="coordenadas"/>
                     <br>

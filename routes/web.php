@@ -40,6 +40,8 @@ Route::get('/addlocal', function () {
     return view('addlocal');
 })->name('addlocal');
 
+Route::post("/addlocal", "OwnerController@addlocal")->name("addLocal");
+
 Route::get('/homeOwner', 'OwnerController@redirect')->name('homeOwner');
 
 Route::get('locale/{locale}', function($locale){

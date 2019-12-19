@@ -12,8 +12,8 @@
                 <img src="{{ URL::asset('images/profile.png') }}" class="m-2 border rounded col-10">
                 <form class="col-12" method="GET">
                     <label>Imagen</label> <input type="file" name="pic" accept="image/*"><br>
-                    <label>Nombre:</label><input type="text" name="nombre" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->name}}" />
-                    <label>Apellido:</label><input type="text" name="nombre" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->lastName}}" />
+                    <label>Nombre:</label><input type="text" name="name" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->name}}" />
+                    <label>Apellido:</label><input type="text" name="lastname" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->lastName}}" />
                     <br>
                     <label>Correo:</label><input type="text" name="email" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->email}}" />
                     <br>
