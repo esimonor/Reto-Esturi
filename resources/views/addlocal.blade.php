@@ -32,7 +32,7 @@
                         <option value="gym">Gimnasio</option>
                         <option value="LI">Lugar de interes</option>
                     </select>
-                <input type="hidden" name="ownerId" disabled="true" value="{{Auth::user()->id}}" />
+                <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
                     <label>Localizacion:</label><input type="text" name="coordenadas"/>
                     <br>

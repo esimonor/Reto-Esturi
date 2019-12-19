@@ -12,13 +12,14 @@ class OwnerController extends Controller
 
     public function addlocal(Request $request)
     {
-        $id=$request->input("ownerId");
+        
         $name=$request->input("name");
         $type=$request->input("type");
-        //$localization=$request->input("coordenadas");"localization"=>$localization,
+        $localization=$request->input("coordenadas");
+        $id=$request->input("ownerId");
 
         Owner::insert([
-            ["name"=>$name,"type"=>$type]
+            ["name"=>$name,"type"=>$type, 'localization'=>$localization,'owner'=>$id]
         ]);
     }
 }
