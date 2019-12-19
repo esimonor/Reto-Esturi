@@ -18,7 +18,6 @@ class CreateEstablishmentsTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('localization');
-            $table->string('link');
             $table->unsignedBigInteger('owner');
             $table->timestamps();
 
