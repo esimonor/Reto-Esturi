@@ -36,6 +36,12 @@ Route::get('/modprofile', function () {
     return view('modprofile');
 })->name('modprofile');
 
+Route::get('/addlocal', function () {
+    return view('addlocal');
+})->name('addlocal');
+
+Route::get('/homeOwner', 'OwnerController@redirect')->name('homeOwner');
+
 Route::get('locale/{locale}', function($locale){
 	Session::put('locale',$locale);
 	return redirect()->back();

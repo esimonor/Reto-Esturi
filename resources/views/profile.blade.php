@@ -17,7 +17,7 @@
                 <p class="h5 col-10">Tu rol:  {{Auth::user()->role}}</p>
                 @if (Auth::user()->role=="owner")
                 <a href="#" class="btn btn-outline-success m-2 col-4">Ver local</a>
-                <a href="#" class="btn btn-outline-warning m-2 col-4">Añadir local</a>
+                <a href="{{route('addlocal')}}" class="btn btn-outline-warning m-2 col-4">Añadir local</a>
                 @endif
                 
                 <button class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
