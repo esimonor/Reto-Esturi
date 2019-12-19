@@ -3,7 +3,6 @@
 </head>
 
 <body>
-    <?php $_SESSION['id_user']=Auth::user()->id;?>
     <div class="container col-12">
         @include('includes.navs.navUser')
 
