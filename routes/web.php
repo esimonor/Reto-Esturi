@@ -41,5 +41,8 @@ Route::get('locale/{locale}', function($locale){
 	return redirect()->back();
 })->name('locale');
 
+
 Route::get('/estandar', 'EstandarController@index')->name('estandar');
 Route::get('/owner', 'OwnerController@index')->name('owner');
+
+Route::post("/modprofile","UserController@update")->name("update");
