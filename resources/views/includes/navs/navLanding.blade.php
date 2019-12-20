@@ -31,7 +31,11 @@
 						{{ Auth::user()->name }}
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="{{ URL::asset('profile') }}">@lang('Perfil')</a>
+						@if (Auth::user()->role=="owner")
+                        	<a class="dropdown-item bg-dark text-light" href="{{ URL::asset('homeOwner') }}">@lang('Perfil')</a>  
+                    	@else
+                        	<a class="dropdown-item bg-dark text-light" href="{{ URL::asset('profile') }}">@lang('Perfil')</a>
+						@endif
 						<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">@lang('Cerrar sesion')</a>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 							@csrf
