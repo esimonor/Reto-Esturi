@@ -39,5 +39,9 @@ class CategoriasSeeder extends Seeder
             'nombre' => 'restaurantes',
             'descripcion' => 'restaurantes'
         ]);
+        DB::table('categorias')->insert([
+            'nombre' => 'museos',
+            'descripcion' => 'museos'
+        ]);
     }
 }
