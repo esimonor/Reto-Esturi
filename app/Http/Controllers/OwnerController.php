@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class OwnerController extends Controller
 {
+    public function __construct(){
+		$this->middleware('role:owner');
+	}
+    public function index(){
+    	return "Soy un owner";
+    }
     public function redirect(){
         return view("homeOwner");
     }
@@ -21,5 +27,4 @@ class OwnerController extends Controller
         Owner::insert([
             ["name"=>$name,"type"=>$type, 'localization'=>$localization,'owner'=>$id]
         ]);
-    }
 }

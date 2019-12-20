@@ -15,28 +15,28 @@ class UsersTableSeeder extends Seeder
             'name' => 'Andres',
             'lastName' => 'Rojas',
             'email' => 'arojaspe18dw@ikzubirimanteo.com',
-            'password' => 'andatza',
+            'password' => bcrypt('andatza'),
             'role' => 'admin'
         ]);
         DB::table('users')->insert([
             'name' => 'Eneko',
             'lastName' => 'Simon',
             'email' => 'esimonor18dw@ikzubirimanteo.com',
-            'password' => 'andatza',
+            'password' => bcrypt('andatza'),
             'role' => 'admin'
         ]);
         DB::table('users')->insert([
             'name' => 'Aitor',
             'lastName' => 'Ortiz de Zarate',
             'email' => 'aortizdezaratega18dw@ikzubirimanteo.com',
-            'password' => 'andatza',
+            'password' => bcrypt('andatza'),
             'role' => 'admin'
         ]);
          DB::table('users')->insert([
             'name' => 'Samuel',
             'lastName' => 'Rodriguez',
             'email' => 'srodriguezam17dw@ikzubirimanteo.com',
-            'password' => 'andatza',
+            'password' => bcrypt('andatza'),
             'role' => 'admin'
         ]);
     }
