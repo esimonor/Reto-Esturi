@@ -36,7 +36,7 @@
                     <br>
                     <label>Localizacion:</label><input type="text" name="coordenadas"/>
                     <br>
-                    <a href="{{URL::asset('profile') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
+                    <a href="{{URL::asset('homeOwner') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
                     <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
                 </form>
             </div>
