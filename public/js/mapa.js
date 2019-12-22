@@ -43,4 +43,8 @@ $(document).ready(function () {
     latitud += 0.5;
     longitud += 0.2;
   }
+  map.on('click', function(e) {
+    var locate= e.latlng.lat + ", " + e.latlng.lng;
+    document.getElementById("coord").value = locate; 
+});
 });
