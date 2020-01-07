@@ -22,7 +22,7 @@ Route::get('/contacto', function () {
 // ----------------------------------------
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified')->middleware('vistadeloginsegunelrol');
 
 // ----------------------------------------
 
@@ -46,3 +46,21 @@ Route::get('/estandar', 'EstandarController@index')->name('estandar');
 Route::get('/owner', 'OwnerController@index')->name('owner');
 
 Route::post("/modprofile","UserController@update")->name("update");
+
+Route::get('hola',function(){
+	$a=Auth::user();
+	return $a->role;
+});
+
+
+
+
+//rutas temporales para que funcione el middleware que redirecciona segun el rol del usuario luego se haran en controlador
+Route::get('admvis',function(){
+	return view('vistadelusuarioadministrador');
+});
+Route::get('usrvis',function(){
+	return view('estandariniciosecionprimeraves');
+});Route::get('ownvis',function(){
+	return view('vistadelusuariopropietario');
+});

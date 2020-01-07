@@ -41,4 +41,29 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getRole(){
         return ($this->role);
     }
+
+
+    public function administrador(){
+        if($this->role=="admin"){
+            return true;
+        }else
+            return false;
+        
+    }
+
+    public function userr(){
+        if($this->role=="user"){
+            return true;
+        }else
+            return false;
+        
+    }
+
+    public function owner(){
+        if($this->role=="owner"){
+            return true;
+        }else
+            return false;
+        
+    }
 }
