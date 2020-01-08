@@ -11,6 +11,7 @@
 <body>
     <div class="container col-12">
         @include('includes.navs.navUser')
+<form class="col-12" method="PATCH" action="/gustosusuarios/{{Auth::user()->idvalor()}}">
 <div class="col-12">
  <div class="card-deck">
   <div class="card align-items-center">
@@ -92,10 +93,13 @@
 </div>
 	<div class="row justify-content-center">
 		<div>
-			<button type="button" class="btn btn-primary">Enviar</button>
+      {{csrf_field()}}
+			<button class="btn btn-outline-success m-2 col-4">enviar-</button>
 		</div>
 	</div>
 </div>
+</form>
+
 
         @include('includes.footer')
     </div>

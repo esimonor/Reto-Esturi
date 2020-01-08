@@ -27,11 +27,11 @@ class vistaalaquesedirigeelusuarioaliniciarsecionsegunsurol
         }
         if($a->userr()){
             //hay que poner en la base de datos un campo que se llame primerlogin y este en true
-            if($a->primerlogin==1){
+            if($a->primerlogin()){
                 //desprues de que el usuario envie el formulario de estandariniciosecionprimeraves el valor del campo primer login cambiara a false asi que no entrara mas a este formulario cuando vuelva a iniciar sesion solo entrara si el quiere
-                return redirect("usrvis");
+                return redirect("gustosusuarios/create");
             }else{
-                return $next($request);
+                return "funciona";//$next($request);
             }
         }
         if ($a->owner()) {

@@ -29,10 +29,11 @@ Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');
 
-Route::get('/categorias', function () {
+/*
+Route::get('/categorias', function () { borrar esta ruta cuando funcione la que va con controlador
     return view('categorias');
 })->name('categorias');
-
+*/
 // ----------------------------------------
 Auth::routes(['verify' => true]);
 
@@ -99,3 +100,8 @@ Route::get('usrvis',function(){
 
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@index")->name("listusers");
+
+
+
+//controlador de recursos para los gustos de los usuarios
+Route::resource('gustosusuarios','controladordegustosdelosusuario');

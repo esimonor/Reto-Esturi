@@ -9,7 +9,7 @@ class OwnerController extends Controller
     public function __construct(){
 		$this->middleware('role:owner');
 	}
-    }
+    
     public function addlocal(Request $request)
     {
         

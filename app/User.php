@@ -66,4 +66,25 @@ class User extends Authenticatable implements MustVerifyEmail
             return false;
         
     }
+
+
+
+    public function primerlogin(){
+        if($this->primerlogin==1){
+            return true;
+        }else
+            return false;
+        
+    }
+
+    public function idvalor(){
+        $a=$this->id;
+        return $a;
+        
+    }
+
+
+
+
+
 }
