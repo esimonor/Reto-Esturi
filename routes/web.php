@@ -42,7 +42,7 @@ Route::get('/addlocal', function () {
 
 Route::post("/addlocal", "OwnerController@addlocal")->name("addLocal");
 
-Route::get('/homeOwner', 'OwnerController@index')->name('homeOwner');
+Route::get('/homeOwner', 'OwnerController@show')->name('homeOwner');
 
 Route::get('locale/{locale}', function($locale){
 	Session::put('locale',$locale);
@@ -55,5 +55,6 @@ Route::get('/owner', 'OwnerController@index')->name('owner');
 
 Route::post("/modprofile","UserController@update")->name("update");
 
+Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 //Aun no hay vista, descomentar y usar cuando se tenga la vista necesaria
-//Route::post("/modprofile","OwnerController@updatelocal")->name("updatelocal");
+Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");

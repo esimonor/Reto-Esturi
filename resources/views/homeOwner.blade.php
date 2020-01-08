@@ -23,10 +23,11 @@
                 <button class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
                 <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
             </div>
+            @if (isset($sites))
                 @foreach($sites as $site)
                     @include('includes/site')
                 @endforeach
-            
+            @endif
         </div>
 
         @include('includes.footer')

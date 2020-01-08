@@ -19,7 +19,7 @@ class OwnerController extends Controller
         return view("homeOwner");
     }
 
-    public function index(){
+    public function show(){
         $sites = Owner::all()->where('owner','=',session('id'));
 
         return view('homeOwner')->with('sites',$sites);
@@ -39,15 +39,23 @@ class OwnerController extends Controller
         return redirect('homeOwner');
     }
 
+    public function editlocal ($id){
+        $sites=Owner::all()->where('id','=',$id);
+        foreach ($sites as $site){
+            return view('modsite')->with('sites',$site);
+            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/
+        }
+    }
     public function updatelocal(Request $request){
         $name=$request->input("name");
         $type=$request->input("type");
         $localization=$request->input("coordenadas");
-        $ownerId=$request->input("ownerId");
         $id=$request->input("id");
 
         Owner::where('id',$id)
-            ->update(['name'=>$name,'type'=>$type,'localization'=>$localization,'owner'=>$ownerId]);
+            ->update(['name'=>$name,'type'=>$type,'localization'=>$localization]);
+        
+        return redirect('homeOwner');
     }
 
 
