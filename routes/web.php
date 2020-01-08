@@ -59,6 +59,7 @@ Route::get('locale/{locale}', function($locale){
 })->name('locale');
 
 //Ruta para listar usuarios
-Route::get('/listUsers', function () {
-    return view('listUsers');
-})->name('listUsers');
+Route::get("/listUsers", "AdminController@index")->name("listusers");
+
+//Ruta para eliminar usuarios
+Route::get("/listUsers", "AdminController@index")->name("listusers");
