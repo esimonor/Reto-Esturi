@@ -59,11 +59,15 @@ Route::post("/modprofile","UserController@update")->name("update");
 
 
 //rutas temporales para que funcione el middleware que redirecciona segun el rol del usuario luego se haran en controlador
-Route::get('admvis',function(){
-	return view('vistadelusuarioadministrador');
-});
+Route::get('homeAdmin',function(){
+	return view('homeAdmin');
+})->name('homeAdmin');
 Route::get('usrvis',function(){
 	return view('estandariniciosecionprimeraves');
 });Route::get('ownvis',function(){
 	return view('vistadelusuariopropietario');
 });
+
+
+//Ruta para listar usuarios
+Route::get("/listUsers", "AdminController@index")->name("listusers");

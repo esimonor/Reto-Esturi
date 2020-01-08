@@ -23,7 +23,7 @@ class vistaalaquesedirigeelusuarioaliniciarsecionsegunsurol
         if ($a->administrador()) {
             //si el roll del usuario es administrador se redirige a la vista de administradores
             //return redirect('vistadelusuarioadministrador');
-            return redirect('admvis');    
+            return redirect('homeAdmin');    
         }
         if($a->userr()){
             //hay que poner en la base de datos un campo que se llame primerlogin y este en true
