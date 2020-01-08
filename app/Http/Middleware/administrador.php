@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
+
+use Closure;
+
+class administrador
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if(Auth::user()->administrador()){
+            return $next($request);
+        }else{
+            return redirect('/');
+        }
+    }
+}

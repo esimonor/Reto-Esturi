@@ -11,6 +11,16 @@
 |
 */
 
+
+//donde se quiera que solo pueda entrar el usuario administrador poner ->middleware('administrador');
+//  " " ->middleware('usuarionormal');
+//  " " ->middleware('usuariopropietario');
+
+
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -30,6 +40,7 @@ Route::get('/mapa', 'landingController@mapa')->name('mapa');
 
 Route::get('/profile', function () {
     return view('profile');
+    return view('profile');
 })->name('profile');
 
 Route::get('/modprofile', function () {
@@ -47,7 +58,20 @@ Route::get('locale/{locale}', function($locale){
 
 
 Route::get('/estandar', 'EstandarController@index')->name('estandar');
+
+
+
 Route::get('/owner', 'OwnerController@index')->name('owner');
+
+
+
+
+//Ruta para el prefil de owner
+Route::get('homeOwner',function(){
+	return view('homeOwner');
+})->name('homeOwner')->middleware('administrador');
+
+
 
 Route::post("/modprofile","UserController@update")->name("update");
 

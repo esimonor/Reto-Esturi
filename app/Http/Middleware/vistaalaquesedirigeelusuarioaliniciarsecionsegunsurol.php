@@ -36,7 +36,7 @@ class vistaalaquesedirigeelusuarioaliniciarsecionsegunsurol
         }
         if ($a->owner()) {
             //si el usuario es propietario se redirige a la vista de propietario
-            return redirect("ownvis");
+            return redirect("homeOwner");
         }       
     }
 }
