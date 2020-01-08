@@ -36,6 +36,10 @@ Route::get('/modprofile', function () {
     return view('modprofile');
 })->name('modprofile');
 
+Route::get('/eliminarperfil', function () {
+    return view('eliminarperfil');
+})->name('eliminarperfil');
+
 Route::get('locale/{locale}', function($locale){
 	Session::put('locale',$locale);
 	return redirect()->back();
@@ -47,10 +51,9 @@ Route::get('/owner', 'OwnerController@index')->name('owner');
 
 Route::post("/modprofile","UserController@update")->name("update");
 
-Route::get('hola',function(){
-	$a=Auth::user();
-	return $a->role;
-});
+
+
+
 
 
 
