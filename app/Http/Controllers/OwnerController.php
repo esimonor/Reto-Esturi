@@ -10,6 +10,12 @@ class OwnerController extends Controller
         return view("homeOwner");
     }
 
+    public function index(){
+        $sites = Owner::all()->where('owner','=',session('id'));
+
+        return view('homeOwner')->with('sites',$sites);
+    }
+
     public function addlocal(Request $request)
     {
         
@@ -21,5 +27,6 @@ class OwnerController extends Controller
         Owner::insert([
             ["name"=>$name,"type"=>$type, 'localization'=>$localization,'owner'=>$id]
         ]);
+        return redirect('homeOwner');
     }
 }

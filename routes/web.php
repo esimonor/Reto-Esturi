@@ -42,9 +42,11 @@ Route::get('/addlocal', function () {
 
 Route::post("/addlocal", "OwnerController@addlocal")->name("addLocal");
 
-Route::get('/homeOwner', 'OwnerController@redirect')->name('homeOwner');
+Route::get('/homeOwner', 'OwnerController@index')->name('homeOwner');
 
 Route::get('locale/{locale}', function($locale){
 	Session::put('locale',$locale);
 	return redirect()->back();
 })->name('locale');
+
+//Route::get('/sites','OwnerController@index');

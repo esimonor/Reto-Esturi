@@ -23,17 +23,10 @@
                 <button class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
                 <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
             </div>
-
-            <div class="col-4">
-                <div>
-                    <h4>Tu establecimiento</h4>
-                    <hr>
-                    <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-8">
-                    <p>Nombre:</p>
-                    <p>Dueñ@: {{Auth::user()->name}} {{Auth::user()->lastName}}</p>
-                    <p>Valoración:</p>
-                </div>
-            </div>
+                @foreach($sites as $site)
+                    @include('includes/site')
+                @endforeach
+            
         </div>
 
         @include('includes.footer')
