@@ -36,7 +36,7 @@
 			</div>
 			<div class="row mb-5">
 				<div class="col">
-					<p class="textoArticulo">@lang('Esturi es una aplicacion creada para que disfrutes al maximo de la ciudad en la que te encuentres').</p>
+					<p class="textoArticulo">@lang('EsturiA es una aplicacion creada para que disfrutes al maximo de la ciudad en la que te encuentres').</p>
 				</div>
 			</div>
 			<div class="row d-flex justify-content-between mb-5" id="tarjetas">
