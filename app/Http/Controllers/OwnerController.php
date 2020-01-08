@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 
 class OwnerController extends Controller
 {
+    public function __construct(){
+		$this->middleware('role:owner');
+	}
+    public function index(){
+    	return "Soy un owner";
+    }
+
+
+
     public function redirect(){
         return view("homeOwner");
     }
@@ -29,4 +38,17 @@ class OwnerController extends Controller
         ]);
         return redirect('homeOwner');
     }
+
+    public function updatelocal(Request $request){
+        $name=$request->input("name");
+        $type=$request->input("type");
+        $localization=$request->input("coordenadas");
+        $ownerId=$request->input("ownerId");
+        $id=$request->input("id");
+
+        Owner::where('id',$id)
+            ->update(['name'=>$name,'type'=>$type,'localization'=>$localization,'owner'=>$ownerId]);
+    }
+
+
 }
