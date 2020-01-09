@@ -1,4 +1,5 @@
 @include('includes.head')
+@include('includes.mapa')
 <title>@lang('Añadir local')</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
                 @csrf
                 <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
                     <label>Imagen</label> <input type="file" name="pic" accept="image/*"><br>
-                    <label>Nombre:</label><input type="text" name="name" />
+                    <label>Nombre:</label><input type="text" name="name" />*
                     <br>
                     <label>Descripcion:</label><input type="text" name="desc" />
                     <br>
@@ -31,10 +32,12 @@
                         <option value="discoteca">Discoteca</option>
                         <option value="gym">Gimnasio</option>
                         <option value="LI">Lugar de interes</option>
-                    </select>
+                    </select>*
                 <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
-                    <label>Localizacion:</label><input type="text" name="coordenadas"/>
+                    <label>Localizacion:</label><input type="text" id="coord" name="coordenadas"/>*
+                    <!-- Mapa -->
+                    <div id="map" style="weight: 300px; height: 300px"></div>
                     <br>
                     <a href="{{URL::asset('homeOwner') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
                     <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>

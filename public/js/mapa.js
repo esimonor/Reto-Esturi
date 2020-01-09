@@ -41,15 +41,9 @@ $(document).ready(function () {
   var marker3 = L.marker([43.315552, -1.988778]).addTo(map);
   marker3.bindPopup("<b>Bataplan!</b><br>Se lia!");
 
-  /*var results = L.layerGroup().addTo(map);
-  L.control.scale().addTo(map);
-  let latitud = -1.9921275;
-  let longitud = 43.3228796;
-  for (i = 0; i < 3; i++) {
-    L.marker([longitud, latitud], {
-      draggable: false
-    }).addTo(map);
-    latitud += 0.5;
-    longitud += 0.2;
-  }*/
+   //Al hacer click se guardan las coordenadas en la vista addlocal
+   map.on('click', function(e) {
+    var locate= e.latlng.lat + ", " + e.latlng.lng;
+    document.getElementById("coord").value = locate; 
+});
 });
