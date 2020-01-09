@@ -16,22 +16,18 @@
                         <tr class="border">
                             <th class="border border-dark col-1">ID</th>
                             <th class="border border-dark col-1">Nombre</th>
-                            <th class="border border-dark col-1">Apellido</th>
-                            <th class="border border-dark col-1">Correo</th>
+                            <th class="border border-dark col-1">Categoria</th>
+                            <th class="border border-dark col-1">Owner ID</th>
                             <th class="border border-dark col-1">Eliminar usuarios</th>
                         <tr>
                     <!--Lista los usuarios junto a su nombre, apellido, ID, y correo-->
-                    @foreach ($users as $user)
+                    @foreach ($establishments as $establishment)
                     <tr>
-                        <td class="border border-dark">{{$user->id}}</td>
-                        <td class="border border-dark">{{$user->name}}</td>
-                        <td class="border border-dark">{{$user->lastName}}</td>
-                        <td class="border border-dark">{{$user->email}}</td>
-                        @if ($user->id==Auth::user()->id)
-                            
-                        @else
-                        <td class="border border-dark"><a href="{{route('deleteusers',[$user->id])}}" class="text-danger col-10">Eliminar</a></td>
-                        @endif
+                        <td class="border border-dark">{{$establishment->id}}</td>
+                        <td class="border border-dark">{{$establishment->name}}</td>
+                        <td class="border border-dark">{{$establishment->type}}</td>
+                        <td class="border border-dark">{{$establishment->owner}}</td>
+                        <td class="border border-dark"><a href="{{route('deleteEstablishments',[$establishment->id])}}" class="text-danger col-10">Eliminar</a></td>
                     </tr>
                     @endforeach
                     </table>               

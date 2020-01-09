@@ -84,10 +84,17 @@ Route::get('usrvis',function(){
 });
 
 //Ruta para listar usuarios
-Route::get("/listUsers", "AdminController@index")->name("listusers");
+Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
 //Ruta para eliminar usuarios
 Route::get("/listUsers", "AdminController@index")->name("listusers");
 Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 
 Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
+Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
+
+//Ruta para listar establecimientos 
+Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("listEstablishments");
+
+//Ruta para eliminar establecimientos
+Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")->name("deleteEstablishments");
