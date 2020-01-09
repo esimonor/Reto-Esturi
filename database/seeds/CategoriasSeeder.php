@@ -16,12 +16,12 @@ class CategoriasSeeder extends Seeder
             'descripcion' => 'fiestas'
         ]);
         DB::table('categorias')->insert([
-            'nombre' => 'musica',
-            'descripcion' => 'musica'
+            'nombre' => 'centro comerciales',
+            'descripcion' => 'centro comerciales'
         ]);
         DB::table('categorias')->insert([
-            'nombre' => 'deportes',
-            'descripcion' => 'deportes'
+            'nombre' => 'gimnasios',
+            'descripcion' => 'gimnasios'
         ]);
         DB::table('categorias')->insert([
             'nombre' => 'cines',
