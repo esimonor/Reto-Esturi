@@ -59,7 +59,13 @@ Route::get('locale/{locale}', function($locale){
 })->name('locale');
 
 //Ruta para listar usuarios
-Route::get("/listUsers", "AdminController@index")->name("listusers");
+Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
 //Ruta para eliminar usuarios
-Route::get("/listUsers/{id}", "AdminController@destroy")->name("deleteusers");
+Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
+
+//Ruta para listar establecimientos 
+Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("listEstablishments");
+
+//Ruta para eliminar establecimientos
+Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")->name("deleteEstablishments");
