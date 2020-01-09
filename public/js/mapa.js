@@ -43,6 +43,7 @@ $(document).ready(function () {
     latitud += 0.5;
     longitud += 0.2;
   }
+  //Al hacer click se guardan las coordenadas en la vista addlocal
   map.on('click', function(e) {
     var locate= e.latlng.lat + ", " + e.latlng.lng;
     document.getElementById("coord").value = locate; 
