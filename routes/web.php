@@ -106,3 +106,14 @@ Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")-
 
 //Elimina el sitio
 Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
+
+
+
+
+
+
+//middlewares que solo dejan parar al usuario que tiene el nombre del propio middleware
+//->middleware('administrador');
+//->middleware('usuario');
+//->middleware('propietario');
+
