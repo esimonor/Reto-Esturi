@@ -62,4 +62,4 @@ Route::get('locale/{locale}', function($locale){
 Route::get("/listUsers", "AdminController@index")->name("listusers");
 
 //Ruta para eliminar usuarios
-Route::get("/listUsers", "AdminController@index")->name("listusers");
+Route::get("/listUsers/{id}", "AdminController@destroy")->name("deleteusers");

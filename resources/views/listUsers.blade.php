@@ -12,14 +12,13 @@
             <div class="col-12 row m-2 d-flex justify-content-center">
                 <h4 class="d-flex justify-content-center col-9 m-1">Usuario administrador:{{Auth::user()->name}} {{Auth::user()->lastName}}</h4>
                 <br>
-                <form>
                     <table class="col-12 row m-2 d-flex justify-content-center">
                         <tr class="border">
-                            <th class="border border-dark">ID</th>
-                            <th class="border border-dark">Nombre</th>
-                            <th class="border border-dark">Apellido</th>
-                            <th class="border border-dark">Correo</th>
-                            <th class="border border-dark">Eliminar seleccionados</th>
+                            <th class="border border-dark col-1">ID</th>
+                            <th class="border border-dark col-1">Nombre</th>
+                            <th class="border border-dark col-1">Apellido</th>
+                            <th class="border border-dark col-1">Correo</th>
+                            <th class="border border-dark col-1">Eliminar usuarios</th>
                         <tr>
                     <!--Lista los usuarios junto a su nombre, apellido, ID, y correo-->
                     @foreach ($users as $user)
@@ -28,12 +27,14 @@
                         <td class="border border-dark">{{$user->name}}</td>
                         <td class="border border-dark">{{$user->lastName}}</td>
                         <td class="border border-dark">{{$user->email}}</td>
-                        <td class="border border-dark"><input type="checkbox" id="eliminar"/></td>
+                        @if ($user->id==Auth::user()->id)
+                            
+                        @else
+                        <td class="border border-dark"><a href="{{route('deleteusers',[$user->id])}}" class="text-danger col-10">Eliminar</a></td>
+                        @endif
                     </tr>
                     @endforeach
-                    </table>
-                    <input type="button" class="btn btn-danger col-12 m-1" value="Eliminar seleccionados"/>
-                </form>               
+                    </table>               
                 <a type="button" class="btn btn-primary col-6 m-1" href="{{ URL::asset('homeAdmin') }}">Volver</a>
                 </div>
             </div>
