@@ -19,6 +19,10 @@ Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');
 
+Route::get('/categorias', function () {
+    return view('categorias');
+})->name('categorias');
+
 // ----------------------------------------
 Auth::routes(['verify' => true]);
 
