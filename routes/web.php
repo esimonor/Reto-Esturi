@@ -77,11 +77,13 @@ Route::get('/owner', 'OwnerController@index')->name('owner');
 Route::post("/modprofile","UserController@update")->name("update");
 
 //rutas temporales para que funcione el middleware que redirecciona segun el rol del usuario luego se haran en controlador
-Route::get('usrvis',function(){
-	return view('estandariniciosecionprimeraves');
-});Route::get('ownvis',function(){
+Route::get('ownvis',function(){
 	return view('homeOwner');
 });
+
+
+//controlador para modificar los gustos
+Route::resource('gustos','ControladordeGustos');
 
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");

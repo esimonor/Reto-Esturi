@@ -66,4 +66,11 @@ class User extends Authenticatable implements MustVerifyEmail
             return false;
         
     }
+
+
+    public function idvalor(){
+        $val=$this->id;
+        intval($val);
+        return $val;
+    }
 }
