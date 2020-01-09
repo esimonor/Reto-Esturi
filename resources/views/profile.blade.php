@@ -20,7 +20,7 @@
                 <a href="#" class="btn btn-outline-warning m-2 col-4">Añadir local</a>
                 @endif
                 
-                <button class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
+                <a href="{{ URL::asset('eliminarperfil') }}" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</a>
                 <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
             </div>
             <!-- Listado de lugares favoritos -->
