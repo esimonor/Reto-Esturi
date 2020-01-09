@@ -32,18 +32,39 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 Route::get('/mapa', 'landingController@mapa')->name('mapa');
 
+//Ruta perfil usuario estandar
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
+//Ruta formulario modificar perfil
 Route::get('/modprofile', function () {
     return view('modprofile');
 })->name('modprofile');
+//Ruta al formulario para añadir un local
+Route::get('/addlocal', function () {
+    return view('addlocal');
+})->name('addlocal');
 
 Route::get('/eliminarperfil', function () {
     return view('eliminarperfil');
 })->name('eliminarperfil');
 
+Route::post("/addlocal", "OwnerController@addlocal")->name("addLocal");
+
+//Ruta para el prefil de owner
+Route::get('/homeOwner', 'OwnerController@show')->name('homeOwner');
+
+Route::get('/eliminarperfil', function () {
+    return view('eliminarperfil');
+})->name('eliminarperfil');
+
+//Ruta al perfil admin
+Route::get('/homeAdmin', function () {
+    return view('homeAdmin');
+})->name('homeAdmin');
+
+//Cambio de idiomas
 Route::get('locale/{locale}', function($locale){
 	Session::put('locale',$locale);
 	return redirect()->back();
@@ -55,23 +76,18 @@ Route::get('/owner', 'OwnerController@index')->name('owner');
 
 Route::post("/modprofile","UserController@update")->name("update");
 
-
-
-
-
-
-
-
 //rutas temporales para que funcione el middleware que redirecciona segun el rol del usuario luego se haran en controlador
-Route::get('homeAdmin',function(){
-	return view('homeAdmin');
-})->name('homeAdmin');
 Route::get('usrvis',function(){
 	return view('estandariniciosecionprimeraves');
 });Route::get('ownvis',function(){
-	return view('vistadelusuariopropietario');
+	return view('homeOwner');
 });
-
 
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@index")->name("listusers");
+
+//Ruta para eliminar usuarios
+Route::get("/listUsers", "AdminController@index")->name("listusers");
+Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
+
+Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");

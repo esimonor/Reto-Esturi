@@ -40,6 +40,7 @@ $(document).ready(function () {
 
   var marker3 = L.marker([43.315552, -1.988778]).addTo(map);
   marker3.bindPopup("<b>Bataplan!</b><br>Se lia!");
+
   
   var museos = L.layerGroup([marker]);
   var centros = L.layerGroup([marker2]);
@@ -51,4 +52,12 @@ $(document).ready(function () {
     "fiestas": fiestas
   };
   var layer= L.control.layers(overlayMaps).addTo(map);
+
+
+  //Al hacer click se guardan las coordenadas en la vista addlocal
+  map.on('click', function(e) {
+    var locate= e.latlng.lat + ", " + e.latlng.lng;
+    document.getElementById("coord").value = locate; 
+});
+
 });

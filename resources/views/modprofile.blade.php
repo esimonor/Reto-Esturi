@@ -19,36 +19,22 @@
                     <br>
                     <label>Correo:</label><input type="text" name="email" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->email}}" />
                     <br>
+                    
+                    @if (Auth::user()->role=='owner')
+                    <a href="{{URL::asset('homeOwner') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
+                    
+                    @else
                     <a href="{{URL::asset('profile') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
+                    @endif
+
                     <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
                 </form>
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="page-footer font-small bg-dark col-12">
-            <div class="row justify-content-between">
-                <div class="col-4 align-self-center text-white pl-4">
-                    <b><u>Email de Contacto: </u></b><br>esturioficial@gmail.com
-                </div>
-                <!-- Copyright -->
-                <div class="col-4 align-self-center text-center text-white">&copy 2019 Copyright:
-                    <a href="{{ URL::asset('https://mdbootstrap.com/education/bootstrap/') }}"> Esturi.com</a>
-                </div>
-                <!-- Add font awesome icons -->
-                <div class="col-4  align-self-center d-flex flex-row-reverse">
-                    <a href="#" class="fa fa-youtube mr-3"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-facebook "></a>
-                </div>
-            </div>
-        </footer>
+        @include('includes.footer')
     </div>
-    <!-- Optional JavaScript -->
-    <!-- Popper.js, then Bootstrap JS -->
-    <script src="{{ URL::asset('js/bootstrap/popper.min.js') }}"></script>
-    <script src="{{ URL::asset('js/bootstrap/bootstrap.min.js') }}"></script>
+    @include('includes.js')
 </body>
 
 </html>
