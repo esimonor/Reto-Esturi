@@ -55,5 +55,13 @@ class OwnerController extends Controller
         return redirect('homeOwner');
     }
 
+    public function destroy($id){
+        $sites = Owner::all()->where("id","=",$id);
+        foreach ($sites as $site){
+            Owner::where("id",$id)->delete();
+            return redirect("homeOwner");
+        }
+    }
+
 
 }

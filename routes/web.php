@@ -88,8 +88,11 @@ Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
 //Ruta para eliminar usuarios
 Route::get("/listUsers", "AdminController@index")->name("listusers");
+
+//Envía los datos al formulario de editar sitio
 Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 
+//Edita el sitio con los datos del formulario
 Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
 
@@ -98,3 +101,6 @@ Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("
 
 //Ruta para eliminar establecimientos
 Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")->name("deleteEstablishments");
+
+//Elimina el sitio
+Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');

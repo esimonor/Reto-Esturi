@@ -42,6 +42,8 @@
                     <br>
                     <a href="{{URL::asset('homeOwner') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
                     <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
+                    <a class="btn btn-danger" value="{{$sites->id}}" href="{{route('deletelocal',[$sites->id])}}">Eliminar establecimiento</a>
+
                 </form>
             </div>
         </div>

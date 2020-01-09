@@ -4,10 +4,6 @@
 </head>
 
 <body>
-    <?php
-    $id=Auth::user()->id;
-    session(['id' => $id]);
-    ?>
     <div class="container col-12">
         @include('includes.navs.nav')
         <section>
