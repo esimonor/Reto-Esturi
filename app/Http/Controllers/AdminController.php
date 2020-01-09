@@ -33,12 +33,12 @@ class AdminController extends Controller
         }
     }
 
-    public function eliminarusuario($id)  {   
+    public function eliminarusuario($id)  {
         //Elimina el usuario de la base datos   
         $users = User::all()->where("id","=",$id);    
         foreach ($users as $user) {    
             User::where("id",$id)->delete();    
-            return redirect()->back();
+            return redirect("/home");
         }   
     }
 }

@@ -79,7 +79,8 @@ Route::post("/modprofile","UserController@update")->name("update");
 //rutas temporales para que funcione el middleware que redirecciona segun el rol del usuario luego se haran en controlador
 Route::get('usrvis',function(){
 	return view('estandariniciosecionprimeraves');
-});Route::get('ownvis',function(){
+});
+Route::get('ownvis',function(){
 	return view('homeOwner');
 });
 
@@ -87,14 +88,19 @@ Route::get('usrvis',function(){
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
 //Ruta para eliminar usuarios
-Route::get("/listUsers", "AdminController@index")->name("listusers");
-Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
-
-Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
+
+Route::get("/profile/{id}", "AdminController@eliminarusuario")->name("profile");
 
 //Ruta para listar establecimientos 
 Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("listEstablishments");
 
 //Ruta para eliminar establecimientos
 Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")->name("deleteEstablishments");
+
+
+Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
+
+Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
+
+
