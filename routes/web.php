@@ -88,3 +88,6 @@ Route::get("/listUsers", "AdminController@index")->name("listusers");
 
 //Ruta para eliminar usuarios
 Route::get("/listUsers", "AdminController@index")->name("listusers");
+Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
+
+Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
