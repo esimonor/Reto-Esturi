@@ -20,7 +20,28 @@
                 <a href="{{route('addlocal')}}" class="btn btn-outline-warning m-2 col-4">Añadir local</a>
                 @endif
                 
-                <button class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
+                <button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
+                <!--Ventana de confirmacion eliminar cuenta-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">¿Seguro que quieres borrar tu cuenta?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Si eliminas tu cuenta perderas todos tus datos, y no podras volver a utilizarla. 
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">No borrar</button>
+                              <a class="btn btn-danger" href="{{route('deleteusers',[Auth::user()->id])}}" class="text-danger col-10">Borrar cuenta</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                 <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
             </div>
             <!-- Listado de lugares favoritos -->

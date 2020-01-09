@@ -17,7 +17,7 @@ class AdminController extends Controller
         $users = User::all()->where("id","=",$id);    
         foreach ($users as $user) {    
             User::where("id",$id)->delete();    
-            return redirect("/listUsers");  
+            return redirect()->back();
         }   
     }
 
@@ -33,5 +33,14 @@ class AdminController extends Controller
             Owner::where("id",$id)->delete();    
             return redirect("/listEstablishments");  
         }
+    }
+
+    public function eliminarusuario($id)  {   
+        //Elimina el usuario de la base datos   
+        $users = User::all()->where("id","=",$id);    
+        foreach ($users as $user) {    
+            User::where("id",$id)->delete();    
+            return redirect()->back();
+        }   
     }
 }
