@@ -35,21 +35,20 @@ $(document).ready(function () {
   var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
   marker.bindPopup("<b>Aquarium!</b><br>Pez por aqui, pez por haya");
 
-  var marker2 = L.marker([43.327559, -1.970836]).addTo(map);
-  marker2.bindPopup("<b>IES Zubiri Manteo!</b><br>Si quieres aprender Laravel, este es el lugar ideal.");
+  var marker2 = L.marker([43.305941, -1.973445]).addTo(map);
+  marker2.bindPopup("<b>Arcco!</b><br>Centro comercial.");
 
   var marker3 = L.marker([43.315552, -1.988778]).addTo(map);
   marker3.bindPopup("<b>Bataplan!</b><br>Se lia!");
+  
+  var museos = L.layerGroup([marker]);
+  var centros = L.layerGroup([marker2]);
+  var fiestas = L.layerGroup([marker3]);
 
-  /*var results = L.layerGroup().addTo(map);
-  L.control.scale().addTo(map);
-  let latitud = -1.9921275;
-  let longitud = 43.3228796;
-  for (i = 0; i < 3; i++) {
-    L.marker([longitud, latitud], {
-      draggable: false
-    }).addTo(map);
-    latitud += 0.5;
-    longitud += 0.2;
-  }*/
+  var overlayMaps = {
+    "museos": museos,
+    "centros": centros,
+    "fiestas": fiestas
+  };
+  var layer= L.control.layers(overlayMaps).addTo(map);
 });
