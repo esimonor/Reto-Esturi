@@ -22,7 +22,7 @@ Route::get('/contacto', function () {
 // ----------------------------------------
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified')->middleware('vistadeloginsegunelrol');
 
 // ----------------------------------------
 
@@ -36,6 +36,10 @@ Route::get('/modprofile', function () {
     return view('modprofile');
 })->name('modprofile');
 
+Route::get('/eliminarperfil', function () {
+    return view('eliminarperfil');
+})->name('eliminarperfil');
+
 Route::get('locale/{locale}', function($locale){
 	Session::put('locale',$locale);
 	return redirect()->back();
@@ -46,3 +50,24 @@ Route::get('/estandar', 'EstandarController@index')->name('estandar');
 Route::get('/owner', 'OwnerController@index')->name('owner');
 
 Route::post("/modprofile","UserController@update")->name("update");
+
+
+
+
+
+
+
+
+//rutas temporales para que funcione el middleware que redirecciona segun el rol del usuario luego se haran en controlador
+Route::get('homeAdmin',function(){
+	return view('homeAdmin');
+})->name('homeAdmin');
+Route::get('usrvis',function(){
+	return view('estandariniciosecionprimeraves');
+});Route::get('ownvis',function(){
+	return view('vistadelusuariopropietario');
+});
+
+
+//Ruta para listar usuarios
+Route::get("/listUsers", "AdminController@index")->name("listusers");
