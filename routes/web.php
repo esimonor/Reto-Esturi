@@ -53,7 +53,7 @@ Route::get('/eliminarperfil', function () {
 Route::post("/addlocal", "OwnerController@addlocal")->name("addLocal");
 
 //Ruta para el prefil de owner
-Route::get('/homeOwner', 'OwnerController@redirect')->name('homeOwner');
+Route::get('/homeOwner', 'OwnerController@show')->name('homeOwner');
 
 Route::get('/eliminarperfil', function () {
     return view('eliminarperfil');
