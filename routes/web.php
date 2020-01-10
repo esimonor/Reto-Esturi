@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +9,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -24,15 +22,13 @@ Route::get('/categorias', function () {
 })->name('categorias');
 
 // ----------------------------------------
+
 Auth::routes(['verify' => true]);
-
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified')->middleware('vistadeloginsegunelrol');
-
 // ----------------------------------------
-
 Route::get('/mapa', 'landingController@mapa')->name('mapa');
-
 //Ruta perfil usuario estandar
+
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
@@ -41,6 +37,7 @@ Route::get('/profile', function () {
 Route::get('/modprofile', function () {
     return view('modprofile');
 })->name('modprofile');
+
 //Ruta al formulario para añadir un local
 Route::get('/addlocal', function () {
     return view('addlocal');
@@ -70,16 +67,14 @@ Route::get('locale/{locale}', function($locale){
 	return redirect()->back();
 })->name('locale');
 
-
 Route::get('/estandar', 'EstandarController@index')->name('estandar');
-Route::get('/owner', 'OwnerController@index')->name('owner');
 
-Route::post("/modprofile","UserController@update")->name("update");
+Route::get('/owner', 'OwnerController@index')->name('owner');Route::post("/modprofile","UserController@update")->name("update");//rutas temporales para que funcione el middleware que redirecciona segun el rol del usuario luego se haran en controlador
 
-//rutas temporales para que funcione el middleware que redirecciona segun el rol del usuario luego se haran en controlador
 Route::get('usrvis',function(){
 	return view('estandariniciosecionprimeraves');
 });
+
 Route::get('ownvis',function(){
 	return view('homeOwner');
 });
@@ -87,10 +82,17 @@ Route::get('ownvis',function(){
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
+//Ruta para eliminar usuarios como administrador
+Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
+
 //Ruta para eliminar usuarios
 Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
 
-Route::get("/profile/{id}", "AdminController@eliminarusuario")->name("profile");
+//Envía los datos al formulario de editar sitio
+Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
+
+//Edita el sitio con los datos del formulario
+Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 
 //Ruta para listar establecimientos 
 Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("listEstablishments");
@@ -98,9 +100,5 @@ Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("
 //Ruta para eliminar establecimientos
 Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")->name("deleteEstablishments");
 
-
-Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
-
-Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
-
-
+//Elimina el sitio
+Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
