@@ -11,6 +11,7 @@
 <body>
     <div class="container col-12">
         @include('includes.navs.navUser')
+<form class="col-12" method="POST" action="/gustos/{{Auth::user()->idvalor()}}">
 <div class="col-12">
  <div class="card-deck">
   <div class="card align-items-center">
@@ -92,10 +93,15 @@
 </div>
 	<div class="row justify-content-center">
 		<div>
-			<button type="button" class="btn btn-primary">Enviar</button>
+     <!-- <form class="col-12" method="POST" action="/gustosdelusuarioestandar"> -->
+      <input type="hidden" name="_method" value="PUT">
+      {{csrf_field()}}
+			<button class="btn btn-outline-success m-2 col-4">Enviar</button>
+    <!--</form>-->
 		</div>
 	</div>
 </div>
+</form>
 
         @include('includes.footer')
     </div>
