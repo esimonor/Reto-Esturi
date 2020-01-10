@@ -1,6 +1,6 @@
 @include('includes.head')
 
-<title>@lang('Perfil de') {{Auth::user()->name}}</title>
+<title>@lang('Perfil de') {{Auth::user()->name()}}</title>
 </head>
 
 <body>
@@ -36,7 +36,16 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-dismiss="modal">No borrar</button>
+                              <!-- los if son porque segun el usuario que sea envia los datos de borrar a un controlador u otro-->
+                              @if(Auth::user()->role=='owner')
                               <a class="btn btn-danger" href="{{route('deleteusers',[Auth::user()->id])}}" class="text-danger col-10">Borrar cuenta</a>
+                              @endif
+                              @if(Auth::user()->role=='user')
+                              <a class="btn btn-danger" href="owndrop/{{Auth::user()->id}}" class="text-danger col-10">Borrar cuenta --</a>
+                              @endif
+                              @if(Auth::user()->role=='admin')
+                              <a class="btn btn-danger" href="{{route('deleteusers',[Auth::user()->id])}}" class="text-danger col-10">Borrar cuenta ---</a>
+                              @endif
                             </div>
                           </div>
                         </div>

@@ -21,8 +21,15 @@ class UserController extends Controller
 
               return redirect("/profile");
 }
+
+    public function usuarioborrasupropiacuenta($id)  {   
+        //Elimina el usuario de la base datos   
+        User::where("id",$id)->delete();        
+            return view('welcome'); 
+        }   
+    }
     
 
 
 
-}
+

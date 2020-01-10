@@ -1,5 +1,5 @@
 <?php
-
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -96,6 +96,11 @@ Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 
 //Edita el sitio con los datos del formulario
 Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
+
+//ruta para que un usuario 
+Route::get('/owndrop/{id}','UserController@usuarioborrasupropiacuenta')->name('owndrop');
+
+//ruta para que el administrador borre usuarios
 Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
 
 //Ruta para listar establecimientos 
@@ -116,4 +121,6 @@ Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
 //->middleware('administrador');
 //->middleware('usuario');
 //->middleware('propietario');
-
+Route::get('aa',function(){
+    User::where('id',5)->restore();
+});
