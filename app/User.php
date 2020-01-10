@@ -73,4 +73,8 @@ class User extends Authenticatable implements MustVerifyEmail
         intval($val);
         return $val;
     }
+
+    public function categorias(){
+        return $this->belongsToMany(Categoria::class);
+    }
 }
