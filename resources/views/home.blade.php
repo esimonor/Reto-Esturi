@@ -6,7 +6,11 @@
 <body>
     <div class="container col-12">
         @include('includes.navs.nav')
-        <section>
+        @if (isset($sites))
+            @foreach($sites as $site)
+                @include('includes/tarjetas')
+            @endforeach
+        @endif        <section>
             <!-- Mapa -->
             <div id="map"></div>
         </section>
