@@ -19,19 +19,21 @@
                             <th class="border border-dark col-1">Apellido</th>
                             <th class="border border-dark col-1">Correo</th>
                             <th class="border border-dark col-1">Eliminar usuarios</th>
+                            <th class="border border-dark col-1">Editar</th>
                         <tr>
                     <!--Lista los usuarios junto a su nombre, apellido, ID, y correo-->
                     @foreach ($users as $user)
                     <tr>
                         <td class="border border-dark">{{$user->id}}</td>
-                        <td class="border border-dark">{{$user->name}}</td>
-                        <td class="border border-dark">{{$user->lastName}}</td>
-                        <td class="border border-dark">{{$user->email}}</td>
+                        <td class="border border-dark"><input type="text" value="{{$user->name}}"/></td>
+                        <td class="border border-dark"><input type="text" value="{{$user->lastName}}"/></td>
+                        <td class="border border-dark"><input type="text" value="{{$user->email}}"/></td>
                         @if ($user->id==Auth::user()->id)
-                            
+                        <td class="border border-dark" style="background-color: darkgrey"></td>
                         @else
                         <td class="border border-dark"><a href="{{route('deleteusers',[$user->id])}}" class="text-danger col-10">Eliminar</a></td>
                         @endif
+                        <td class="border border-dark"><a href="#" class="text-warning">Editar</a></td>
                     </tr>
                     @endforeach
                     </table>               

@@ -40,7 +40,7 @@ class AdminController extends Controller
         $users = User::all()->where("id","=",$id);    
         foreach ($users as $user) {    
             User::where("id",$id)->delete();    
-            return redirect()->back();
+            return redirect("welcome");
         }   
     }
 }
