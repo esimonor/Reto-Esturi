@@ -30,7 +30,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 // ----------------------------------------
 
-Route::get('/mapa', 'landingController@mapa')->name('mapa');
+Route::get('/mapa', 'SiteController@showSites')->name('mapa');
 
 //Ruta perfil usuario estandar
 Route::get('/profile', function () {
