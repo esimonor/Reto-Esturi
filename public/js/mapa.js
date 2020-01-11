@@ -56,6 +56,16 @@ $(document).ready(function () {
   var marker8 = L.marker([43.321589, -1.949238]).addTo(map);
   marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");
 
+  //var lugar = document.getElementById('2').value;
+  //console.log(lugar);
+  var lugar = document.getElementById('2').value;
+  var cosa = lugar.length;
+  console.log(lugar);
+  var x = lugar.slice(0,16);
+  var y = lugar.slice(19,37);
+  var marker9 = L.marker([x,y]).addTo(map);
+  marker9.bindPopup("<b>Esto es una prueba</b>");
+
   var museos = L.layerGroup([marker]);
   var centros = L.layerGroup([marker2]);
   var fiestas = L.layerGroup([marker3]);
@@ -64,6 +74,8 @@ $(document).ready(function () {
   var monumentos = L.layerGroup([marker6]);
   var bares = L.layerGroup([marker7]);
   var restaurantes = L.layerGroup([marker8]);
+  var prueba = L.layerGroup([marker9]);
+
 
   var overlayMaps = {
     "museos": museos,
@@ -73,7 +85,8 @@ $(document).ready(function () {
     "cines": cines,
     "monumentos": monumentos,
     "bares": bares,
-    "restaurantes": restaurantes
+    "restaurantes": restaurantes,
+    "basedatos": prueba
 
   };
   var layer= L.control.layers(overlayMaps).addTo(map);

@@ -21,7 +21,9 @@
                     ?>
                 @include('includes/tarjetas')
                 <?php
-                echo '<input id="',$i,'" type="hidden" value="{{ $site->localization }}" />';
+                $coord=$site->localization;
+                echo '<input id="',$i,'" type="hidden" value="', $coord ,'" />';
+                //echo '<input class="',$i,'" type="hidden" value="{{ $site->name }}" />';
                 $i++;
                 }
             ?>
