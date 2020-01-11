@@ -33,28 +33,28 @@ $(document).ready(function () {
   }).addTo(map);
   var searchControl = L.esri.Geocoding.geosearch().addTo(map);
   var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
-  marker.bindPopup("<b>Aquarium!</b><br>1 Plaza de Carlos Blasco Imaz<br> 20003 Donostia, Gipuzkoa");
+  marker.bindPopup("<b>Aquarium</b><br>1 Plaza de Carlos Blasco Imaz<br> 20003 Donostia, Gipuzkoa");
 
   var marker2 = L.marker([43.305941, -1.973445]).addTo(map);
-  marker2.bindPopup("<b>Arcco!</b><br>Plaza de Irún <br>6, 20011 Donostia-San Sebastian, SS");
+  marker2.bindPopup("<b>Arcco</b><br>Plaza de Irún <br>6, 20011 Donostia-San Sebastian, SS");
 
   var marker3 = L.marker([43.315552, -1.988778]).addTo(map);
-  marker3.bindPopup("<b>Bataplan!</b><br>Kontxa Pasealekua<br> 12, 20007 Donostia, Gipuzkoa");
+  marker3.bindPopup("<b>Bataplan</b><br>Kontxa Pasealekua<br> 12, 20007 Donostia, Gipuzkoa");
 
   var marker4 = L.marker([43.323342, -1.977731]).addTo(map);
-  marker4.bindPopup("<b>Altafit!</b><br>Peña y Goñi Kalea<br>12, 14, 20002 Donostia-San Sebastian, SS");
+  marker4.bindPopup("<b>Altafit</b><br>Peña y Goñi Kalea<br>12, 14, 20002 Donostia-San Sebastian, SS");
 
   var marker5 = L.marker([43.322437, -1.974759]).addTo(map);
-  marker5.bindPopup("<b>Cine Trueba!</b><br>Secundino Esnaola Kalea<br> 2, 4, 20001 Donostia, SS");
+  marker5.bindPopup("<b>Cine Trueba</b><br>Secundino Esnaola Kalea<br> 2, 4, 20001 Donostia, SS");
 
   var marker6 = L.marker([43.321834, -2.005437]).addTo(map);
-  marker6.bindPopup("<b>Peine del Viento!</b><br>Eduardo Chillida Pasealekua<br> 20008 Donostia, Gipuzkoa");
+  marker6.bindPopup("<b>Peine del Viento</b><br>Eduardo Chillida Pasealekua<br> 20008 Donostia, Gipuzkoa");
 
   var marker7 = L.marker([43.324096, -1.983742]).addTo(map);
-  marker7.bindPopup("<b>Bar Néstor!</b><br>Arrandegi Kalea<br>11, 20003 Donostia, Gipuzkoa");
+  marker7.bindPopup("<b>Bar Néstor</b><br>Arrandegi Kalea<br>11, 20003 Donostia, Gipuzkoa");
 
   var marker8 = L.marker([43.321589, -1.949238]).addTo(map);
-  marker8.bindPopup("<b>Arzak!</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");
+  marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");
 
   var museos = L.layerGroup([marker]);
   var centros = L.layerGroup([marker2]);

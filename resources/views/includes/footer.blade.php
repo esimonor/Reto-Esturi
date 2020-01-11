@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small bg-dark" >
+<footer class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark" >
     <div id="footer" class="row justify-content-between">
         <div class="col-12 d-flex justify-content-center col-md-4 align-self-center text-white pl-4">
             <b><u>@lang('Email de Contacto:')</u></b><br>esturioficial@gmail.com

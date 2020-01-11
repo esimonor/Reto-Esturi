@@ -41,10 +41,10 @@
                               <a class="btn btn-danger" href="{{route('deleteusers',[Auth::user()->id])}}" class="text-danger col-10">Borrar cuenta</a>
                               @endif
                               @if(Auth::user()->role=='user')
-                              <a class="btn btn-danger" href="owndrop/{{Auth::user()->id}}" class="text-danger col-10">Borrar cuenta --</a>
+                              <a class="btn btn-danger" href="owndrop/{{Auth::user()->id}}" class="text-danger col-10">Borrar cuenta</a>
                               @endif
                               @if(Auth::user()->role=='admin')
-                              <a class="btn btn-danger" href="{{route('deleteusers',[Auth::user()->id])}}" class="text-danger col-10">Borrar cuenta ---</a>
+                              <a class="btn btn-danger" href="{{route('deleteusers',[Auth::user()->id])}}" class="text-danger col-10">Borrar cuenta</a>
                               @endif
                             </div>
                           </div>
