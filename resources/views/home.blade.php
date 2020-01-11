@@ -11,10 +11,20 @@
     $i=1;
     @endphp
         @if (isset($sites))
-            @foreach($sites as $site)
+            <!--@foreach($sites as $site)
                 @include('includes/tarjetas')
                 <input id="1" type="hidden" value="{{ $site->localization }}" />
-            @endforeach
+            @endforeach-->
+            <?php
+                $i=1;
+                foreach ($sites as $site){
+                    ?>
+                @include('includes/tarjetas')
+                <?php
+                echo '<input id="',$i,'" type="hidden" value="{{ $site->localization }}" />';
+                $i++;
+                }
+            ?>
         @endif
     </div>
     <div class="container col-6 float-left">
