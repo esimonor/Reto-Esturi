@@ -58,7 +58,12 @@
                 <div class="border bg-light">
                     <h4>Lugares favoritos</h4>
                     <div class="dropdown-divider"></div>
-                    <p>No se han encontrado lugares favoritos</p>
+                  
+                    @forelse($user->establishment as $stablishment)
+                      {{$stablishment->name}}<br><hr>
+                    @empty                    
+                      <p>No se han encontrado lugares favoritos</p>
+                    @endforelse
                 </div>
             </div>
             <!-- Comentarios -->

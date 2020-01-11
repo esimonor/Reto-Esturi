@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Establishment;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -87,5 +88,19 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     
     use SoftDeletes;
-    //protected $dates=['deleted_at'];
+    
+
+    public function establishment(){
+        return $this->belongsToMany('App\Establishment');
+    }
 }
+
+
+
+
+
+
+
+
+
+

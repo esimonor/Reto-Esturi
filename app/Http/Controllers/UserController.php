@@ -2,13 +2,31 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Establishment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
     /*
     Hace update del usuario y redirige a modprofile
     */
+
+    public function perfil(){
+        $idusuario=Auth::user()->idvalor();
+        $user=User::find($idusuario);
+        return view('profile',compact('user'));
+    }
+
+
+
+
+
+
+
+
+
     public function update(Request $request)
 {
     $name='profile.png';
@@ -24,7 +42,7 @@ class UserController extends Controller
     $db->ruta=$name;
     $db->save();
 
-              return view('profile');
+              return redirect('/');
 }
 
     public function usuarioborrasupropiacuenta($id)  {   

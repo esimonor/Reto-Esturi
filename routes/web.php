@@ -33,9 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 Route::get('/mapa', 'SiteController@showSites')->name('mapa');
 
 //Ruta perfil usuario estandar
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
+Route::get('/profile','UserController@perfil')->name('profile'); 
 
 //Ruta formulario modificar perfil
 Route::get('/modprofile', function () {
