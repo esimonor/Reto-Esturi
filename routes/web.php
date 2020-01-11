@@ -10,7 +10,7 @@ use App\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+ 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -97,7 +97,9 @@ Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 //Edita el sitio con los datos del formulario
 Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 
-//ruta para que un usuario 
+//ruta para que un usuario  pueda borrar su propia cuenta
+Route::post("/modprofile","UserController@update")->name("update");
+//ruta para que un usuario pueda modificar su perfil
 Route::get('/owndrop/{id}','UserController@usuarioborrasupropiacuenta')->name('owndrop');
 
 //ruta para que el administrador borre usuarios

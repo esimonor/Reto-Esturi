@@ -11,15 +11,20 @@ class UserController extends Controller
     */
     public function update(Request $request)
 {
-    $name=$request->input('name');
-    $lastname=$request->input('lastname');
-    $email=$request->input('email');
-    $id=$request->input('id');
+    $name='profile.png';
+    if($request->hasFile('file')){
+        $file=$request->file('file');
+        $name=time().$file->getClientOriginalName();
+        $file->move(public_path().'/images/',$name);
+    }
+    $db=User::find($request->id);
+    $db->name=$request->name;
+    $db->lastName=$request->lastname;
+    $db->email=$request->email;
+    $db->ruta=$name;
+    $db->save();
 
-    User::where('id', $id)
-              ->update(['name' => $name, 'lastname'=>$lastname, 'email'=>$email]);
-
-              return redirect("/profile");
+              return view('profile');
 }
 
     public function usuarioborrasupropiacuenta($id)  {   

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('role');
             $table->boolean('primerlogin')->default(1);
+            $table->string('ruta')->default('profile.png');
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

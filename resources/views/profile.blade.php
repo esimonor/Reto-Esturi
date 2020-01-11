@@ -10,7 +10,7 @@
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row">
             <div class="col-6 row">
-                <img src="{{ URL::asset('images/profile.png') }}" class="m-2 border rounded col-10">
+                <img src="/images/{{Auth::user()->ruta }}" class="m-2 border rounded col-10">
                 <p class="h5 col-5">Nombre:  {{Auth::user()->name}}</p>
                 <p class="h5 col-5">Apellido: {{Auth::user()->lastName}}</p>
                 <p class="h5 col-10">Correo:  {{Auth::user()->email}}</p>
