@@ -7,9 +7,13 @@
     @include('includes.navs.nav')
     <div class="container">
     <div class="container col-6 float-left">
+    @php 
+    $i=1;
+    @endphp
         @if (isset($sites))
             @foreach($sites as $site)
                 @include('includes/tarjetas')
+                <input id="1" type="hidden" value="{{ $site->localization }}" />
             @endforeach
         @endif
     </div>
