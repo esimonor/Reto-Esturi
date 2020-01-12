@@ -60,36 +60,19 @@ $(document).ready(function () {
   var bucle = document.getElementById("res_final").value;
 
   //for(var count=1;count<bucle;count++){}
-  var lugar = document.getElementById(count).value;
-    var x = lugar.slice(0,16);
-    var y = lugar.slice(19,99);
+    var x=0;
+    var y=0;
+    var lugar;
+  while(bucle>0){
+    lugar = document.getElementById(bucle).value;
+    x = lugar.slice(0,16);
+    y = lugar.slice(18,99);
     var marker9 = L.marker([x,y]).addTo(map);
-    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
+    marker9.bindPopup("<b>Esto es una prueba"+bucle+"</b>");
+    bucle--;
+  }
 
-    var lugar = document.getElementById("1").value;
-    var x = lugar.slice(0,16);
-    var y = lugar.slice(19,99);
-    var marker9 = L.marker([x,y]).addTo(map);
-    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
-    
-    var lugar = document.getElementById("2").value;
-    var x = lugar.slice(0,16);
-    var y = lugar.slice(19,99);
-    var marker9 = L.marker([x,y]).addTo(map);
-    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
-    
-    var lugar = document.getElementById("3").value;
-    var x = lugar.slice(0,16);
-    var y = lugar.slice(19,99);
-    var marker9 = L.marker([x,y]).addTo(map);
-    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
-    
-    var lugar = document.getElementById("4").value;
-    var x = lugar.slice(0,16);
-    var y = lugar.slice(19,99);
-    var marker9 = L.marker([x,y]).addTo(map);
-    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
-
+  
   /*var museos = L.layerGroup([marker]);
   var centros = L.layerGroup([marker2]);
   var fiestas = L.layerGroup([marker3]);

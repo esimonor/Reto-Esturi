@@ -32,8 +32,11 @@
         </section>
         
     </div>
+    
     </div>
     <div class="container col-12 float-left">
+    <br>
+    <br>
         @include('includes.footer')
     </div>
     @include('includes.js')
