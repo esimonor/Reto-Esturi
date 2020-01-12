@@ -32,7 +32,7 @@ $(document).ready(function () {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
   }).addTo(map);
   var searchControl = L.esri.Geocoding.geosearch().addTo(map);
-  var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
+  /*var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
   marker.bindPopup("<b>Aquarium</b><br>1 Plaza de Carlos Blasco Imaz<br> 20003 Donostia, Gipuzkoa");
 
   var marker2 = L.marker([43.305941, -1.973445]).addTo(map);
@@ -54,19 +54,43 @@ $(document).ready(function () {
   marker7.bindPopup("<b>Bar Néstor</b><br>Arrandegi Kalea<br>11, 20003 Donostia, Gipuzkoa");
 
   var marker8 = L.marker([43.321589, -1.949238]).addTo(map);
-  marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");
+  marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");*/
 
-  //var lugar = document.getElementById('2').value;
-  //console.log(lugar);
-  var lugar = document.getElementById('2').value;
-  var cosa = lugar.length;
-  console.log(lugar);
-  var x = lugar.slice(0,16);
-  var y = lugar.slice(19,37);
-  var marker9 = L.marker([x,y]).addTo(map);
-  marker9.bindPopup("<b>Esto es una prueba</b>");
 
-  var museos = L.layerGroup([marker]);
+  var bucle = document.getElementById("res_final").value;
+
+  //for(var count=1;count<bucle;count++){}
+  var lugar = document.getElementById(count).value;
+    var x = lugar.slice(0,16);
+    var y = lugar.slice(19,99);
+    var marker9 = L.marker([x,y]).addTo(map);
+    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
+
+    var lugar = document.getElementById("1").value;
+    var x = lugar.slice(0,16);
+    var y = lugar.slice(19,99);
+    var marker9 = L.marker([x,y]).addTo(map);
+    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
+    
+    var lugar = document.getElementById("2").value;
+    var x = lugar.slice(0,16);
+    var y = lugar.slice(19,99);
+    var marker9 = L.marker([x,y]).addTo(map);
+    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
+    
+    var lugar = document.getElementById("3").value;
+    var x = lugar.slice(0,16);
+    var y = lugar.slice(19,99);
+    var marker9 = L.marker([x,y]).addTo(map);
+    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
+    
+    var lugar = document.getElementById("4").value;
+    var x = lugar.slice(0,16);
+    var y = lugar.slice(19,99);
+    var marker9 = L.marker([x,y]).addTo(map);
+    marker9.bindPopup("<b>Esto es una prueba"+count+"</b>");
+
+  /*var museos = L.layerGroup([marker]);
   var centros = L.layerGroup([marker2]);
   var fiestas = L.layerGroup([marker3]);
   var gimnasio = L.layerGroup([marker4]);
@@ -74,10 +98,10 @@ $(document).ready(function () {
   var monumentos = L.layerGroup([marker6]);
   var bares = L.layerGroup([marker7]);
   var restaurantes = L.layerGroup([marker8]);
-  var prueba = L.layerGroup([marker9]);
+  var prueba = L.layerGroup([marker9]);*/
 
 
-  var overlayMaps = {
+  /*var overlayMaps = {
     "museos": museos,
     "centros": centros,
     "fiestas": fiestas,
@@ -89,7 +113,7 @@ $(document).ready(function () {
     "basedatos": prueba
 
   };
-  var layer= L.control.layers(overlayMaps).addTo(map);
+  var layer= L.control.layers(overlayMaps).addTo(map);*/
 
 
   //Al hacer click se guardan las coordenadas en la vista addlocal
