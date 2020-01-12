@@ -63,12 +63,15 @@ $(document).ready(function () {
     var x=0;
     var y=0;
     var lugar;
+    var tipo;
   while(bucle>0){
     lugar = document.getElementById(bucle).value;
+    tipo = document.getElementById("desc"+bucle).value;
+    var nombre = document.getElementById("name"+bucle).value;
     x = lugar.slice(0,16);
     y = lugar.slice(18,99);
     var marker9 = L.marker([x,y]).addTo(map);
-    marker9.bindPopup("<b>Esto es una prueba"+bucle+"</b>");
+    marker9.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     bucle--;
   }
 

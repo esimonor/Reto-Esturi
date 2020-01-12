@@ -18,7 +18,11 @@
                 @include('includes/tarjetas')
                 <?php
                 $coord=$site->localization;
+                $desc=$site->type;
                 echo '<input id="',$i,'" type="hidden" value="', $coord ,'" />';
+                echo '<input id="name',$i,'" type="hidden" value="',$site->name ,'" />';
+                echo '<input id="desc',$i,'" type="hidden" value="', $desc ,'" />';
+
                 $i++;
                 }
                 echo '<input id="res_final" type="hidden" value="', $i-1 ,'" />';
