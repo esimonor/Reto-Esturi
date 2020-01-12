@@ -17,6 +17,8 @@ class CreateUsersEstablishment extends Migration
             $table->bigIncrements('id');
             $table->integer('establishment_id');
             $table->integer('user_id');
+            $table->string('comentarios')->nullable();
+            $table->boolean('lfavorito')->default(0);
             $table->timestamps();
         });
     }

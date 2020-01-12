@@ -15,9 +15,16 @@ class UserController extends Controller
 
     public function perfil(){
         $idusuario=Auth::user()->idvalor();
-        $user=User::find($idusuario);
+        $user=User::find($idusuario);      
+        
+
+        //return $user->establishment;
         return view('profile',compact('user'));
-    }
+        }
+        
+
+
+    
 
 
 

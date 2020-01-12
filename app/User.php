@@ -91,7 +91,7 @@ class User extends Authenticatable implements MustVerifyEmail
     
 
     public function establishment(){
-        return $this->belongsToMany('App\Establishment');
+        return $this->belongsToMany('App\Establishment')->withPivot('comentarios','lfavorito');
     }
 }
 

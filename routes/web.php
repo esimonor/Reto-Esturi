@@ -1,5 +1,7 @@
 <?php
 use App\User;
+use App\Establishment;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,6 +116,15 @@ Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
 
 
 
+
+//esta es la ruta de la pagina de cada sitio
+Route::get("/local/{id}","SiteController@localactual");
+Route::resource('sitio','SiteController');
+
+Route::get('ver',function(){;
+    $comprobar=Establishment::get()->where('user_id',5)->where('establishment_id',2);
+    return $comprobar;
+});
 
 
 
