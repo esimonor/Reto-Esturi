@@ -75,13 +75,44 @@ $(document).ready(function () {
     var nombre = document.getElementById("name"+bucle).value;
     x = lugar.slice(0,16);
     y = lugar.slice(18,99);
-    var marker9 = L.marker([x,y]).addTo(map);
-    marker9.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    if(tipo=="museos"){
+      var marker1 = L.marker([x,y]).addTo(map);
+    marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    }
+    if(tipo=="centros"){
+      var marker2 = L.marker([x,y]).addTo(map);
+    marker2.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    }
+    if(tipo=="fiestas"){
+      var marker3 = L.marker([x,y]).addTo(map);
+    marker3.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    }
+    if(tipo=="gimnasio"){
+      var marker4 = L.marker([x,y]).addTo(map);
+    marker4.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    }
+    if(tipo=="cines"){
+      var marker5 = L.marker([x,y]).addTo(map);
+    marker5.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    }
+    if(tipo=="monumentos"){
+      var marker6 = L.marker([x,y]).addTo(map);
+    marker6.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    }
+    if(tipo=="bares"){
+      var marker7 = L.marker([x,y]).addTo(map);
+    marker7.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    }
+    if(tipo=="restaurantes"){
+      var marker8 = L.marker([x,y]).addTo(map);
+    marker8.bindPopup("<b>"+nombre+"</b><br>"+tipo);
+    }
+    
     bucle--;
   }
 
   
-  /*var museos = L.layerGroup([marker]);
+  var museos = L.layerGroup([marker1]);
   var centros = L.layerGroup([marker2]);
   var fiestas = L.layerGroup([marker3]);
   var gimnasio = L.layerGroup([marker4]);
@@ -89,10 +120,9 @@ $(document).ready(function () {
   var monumentos = L.layerGroup([marker6]);
   var bares = L.layerGroup([marker7]);
   var restaurantes = L.layerGroup([marker8]);
-  var prueba = L.layerGroup([marker9]);*/
 
 
-  /*var overlayMaps = {
+  var overlayMaps = {
     "museos": museos,
     "centros": centros,
     "fiestas": fiestas,
@@ -100,14 +130,8 @@ $(document).ready(function () {
     "cines": cines,
     "monumentos": monumentos,
     "bares": bares,
-    "restaurantes": restaurantes,
-    "basedatos": prueba
-
+    "restaurantes": restaurantes
   };
-  var layer= L.control.layers(overlayMaps).addTo(map);*/
-
-
-  
-
+  var layer= L.control.layers(overlayMaps).addTo(map);
 
 });
