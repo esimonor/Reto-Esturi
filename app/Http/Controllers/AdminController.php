@@ -45,6 +45,17 @@ class AdminController extends Controller
         }
     }
 
+    public function updateEstablishments(Request $request){
+        $name=$request->input("name");
+        $type=$request->input("type");
+        $id=$request->input("id");
+
+        Owner::where('id',$id)
+            ->update(['name'=>$name,'type'=>$type]);
+        
+        return redirect('listEstablishments');
+    }
+
     public function eliminarusuario($id)  {
         //Elimina el usuario de la base datos   
         $users = User::all()->where("id","=",$id);    
