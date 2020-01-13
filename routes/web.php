@@ -1,4 +1,7 @@
 <?php
+use App\User;
+use App\Establishment;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -9,6 +12,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+ 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -30,10 +34,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 Route::get('/mapa', 'SiteController@showSites')->name('mapa');
 
 //Ruta perfil usuario estandar
-
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
+Route::get('/profile','UserController@perfil')->name('profile'); 
 
 //Ruta formulario modificar perfil
 Route::get('/modprofile', function () {
@@ -97,6 +98,14 @@ Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 //Edita el sitio con los datos del formulario
 Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 
+//ruta para que un usuario  pueda borrar su propia cuenta
+Route::post("/modprofile","UserController@update")->name("update");
+//ruta para que un usuario pueda modificar su perfil
+Route::get('/owndrop/{id}','UserController@usuarioborrasupropiacuenta')->name('owndrop');
+
+//ruta para que el administrador borre usuarios
+Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
+
 //Ruta para listar establecimientos 
 Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("listEstablishments");
 
@@ -109,10 +118,21 @@ Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
 
 
 
+//esta es la ruta de la pagina de cada sitio
+Route::get("/local/{id}","SiteController@localactual");
+Route::resource('sitio','SiteController');
+
+Route::get('ver',function(){;
+    $comprobar=Establishment::get()->where('user_id',5)->where('establishment_id',2);
+    return $comprobar;
+});
+
 
 
 //middlewares que solo dejan parar al usuario que tiene el nombre del propio middleware
 //->middleware('administrador');
 //->middleware('usuario');
 //->middleware('propietario');
-
+Route::get('aa',function(){
+    User::where('id',5)->restore();
+});

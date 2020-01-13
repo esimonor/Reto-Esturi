@@ -1,1 +1,0 @@
-vista a la que va el usuario propietario cuando inicia
