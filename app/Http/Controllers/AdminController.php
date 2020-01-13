@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\User;
 use App\Owner;
 use Illuminate\Http\Request;
-
 class AdminController extends Controller
 {
     public function indexUsers(){
@@ -35,12 +33,12 @@ class AdminController extends Controller
         }
     }
 
-    public function eliminarusuario($id)  {   
+    public function eliminarusuario($id)  {
         //Elimina el usuario de la base datos   
         $users = User::all()->where("id","=",$id);    
         foreach ($users as $user) {    
             User::where("id",$id)->delete();    
-            return redirect("welcome");
+            return redirect("/home");
         }   
     }
 }

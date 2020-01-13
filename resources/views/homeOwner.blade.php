@@ -4,6 +4,8 @@
 </head>
 
 <body>
+    <!-- Guarda la id del usuario en variable de sesion para usar en controladores hasta encontrar otra mejor forma -->
+    <?php $id=Auth::user()->id;session(['id' => $id]); ?>
     <div class="container col-12">
         @include('includes.navs.navUser')
 
@@ -20,20 +22,14 @@
                 <a href="{{route('addlocal')}}" class="btn btn-primary m-2 col-8">Añadir local</a>
                 @endif
                 
-                <button class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
+                <button class="btn btn-outline-danger m-2 col-4">Eliminar sitio</button>
                 <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
             </div>
-
-            <div class="col-4">
-                <div>
-                    <h4>Tu establecimiento</h4>
-                    <hr>
-                    <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-8">
-                    <p>Nombre:</p>
-                    <p>Dueñ@: {{Auth::user()->name}} {{Auth::user()->lastName}}</p>
-                    <p>Valoración:</p>
-                </div>
-            </div>
+            @if (isset($sites))
+                @foreach($sites as $site)
+                    @include('includes/site')
+                @endforeach
+            @endif
         </div>
 
         @include('includes.footer')
