@@ -33,6 +33,14 @@
                     </form>
                 </div>
             </li>
+            @if(Auth::user()->role=="owner")
+                <li class="nav-item">
+                    <a class="nav-link text-center" href="{{URL::asset('mySites')}}">Mis sitios</a>
+                </li>
+            @endif
+                <li class="nav-item">
+                    <a class="nav-link text-center" href="#articulo4">Mis categorías</a>
+                </li>
             @endguest
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -10,4 +10,10 @@ class SiteController extends Controller
         $sites = Owner::all();
         return view('home')->with('sites',$sites);
     }
+
+    public function mySites(){
+        $sites = Owner::all()->where('owner','=',session('id'));
+
+        return view('mySites')->with('sites',$sites);
+    }
 }
