@@ -92,18 +92,26 @@
 </div>
 </div>
 	<div class="row justify-content-center">
-		<div>
+   <div class="container">
+    <div class="progress m-3">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+        perfil completado al 30%
+      </div>
+    </div>
+    <div class=" d-flex">
      <!-- <form class="col-12" method="POST" action="/gustosdelusuarioestandar"> -->
       <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="formulario" value="uno">
       {{csrf_field()}}
-			<button class="btn btn-outline-success m-2 col-4">Enviar</button>
+      <button class="btn btn-outline-success m-2 col-4 align-items-center">siguiente</button>
     <!--</form>-->
-		</div>
+    </div>
+   </div>
+  
 	</div>
 </div>
 </form>
-
-        @include('includes.footer')
+     @include('includes.footer')
     </div>
     @include('includes.js')
 </body>

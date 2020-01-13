@@ -70,11 +70,13 @@ class ControladordeGustos extends Controller
      */
     public function update(Request $request, $id)
     {
-        $primerlogin=User::find($id);
-        $primerlogin->primerlogin=0;
-        $primerlogin->save();
+        if ($request->formulario=='uno') {
+            return redirect('ver');
+        }
+        if ($request->formulario=='dos') {
+            return redirect('ver2');    
+        }
 
-        return redirect('home');
     }
 
     /**

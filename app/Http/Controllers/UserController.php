@@ -24,7 +24,12 @@ class UserController extends Controller
         
 
 
-    
+    public function primerlogincompletado(Request $request){
+        $id=AUth::user()->id;
+        $usuario=User::find($id);
+        $usuario->primerlogin=0;
+        $usuario->update;
+    }
 
 
 

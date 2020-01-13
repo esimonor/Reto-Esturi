@@ -35,7 +35,7 @@
                               Si eliminas tu cuenta perderas todos tus datos, y no podras volver a utilizarla. 
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-primary" data-dismiss="modal">No borrar</button>-->
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">No borrar</button>
                               <!-- los if son porque segun el usuario que sea envia los datos de borrar a un controlador u otro-->
                               @if(Auth::user()->role=='owner')
                               <a class="btn btn-danger" href="{{route('deleteusers',[Auth::user()->id])}}" class="text-danger col-10">Borrar cuenta</a>

@@ -135,3 +135,16 @@ Route::get('ver',function(){;
 Route::get('aa',function(){
     User::where('id',5)->restore();
 });
+
+
+
+
+
+
+
+
+Route::get('ver',function(){
+    return view('gustosdelusuarioestandar.segundavistadeluser');
+});
+
+Route::get('ver2','UserController@primerlogincompletado');
