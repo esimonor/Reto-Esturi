@@ -64,6 +64,68 @@ $(document).ready(function () {
   marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");*/
 
 
+  var barIcon = L.icon({
+    iconUrl: 'https://i.imgur.com/l5nwuUQ.png',
+    //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
+
+    iconSize:     [38, 95], // size of the icon
+    //shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+var museoIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/a4fn42d.png',
+  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
+
+  iconSize:     [38, 95], // size of the icon
+  //shadowSize:   [50, 64], // size of the shadow
+  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+var fiestasIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/MdFCEti.png',
+  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
+
+  iconSize:     [38, 95], // size of the icon
+  //shadowSize:   [50, 64], // size of the shadow
+  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+var gimnasiosIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/WkGPGTz.png',
+  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
+
+  iconSize:     [38, 95], // size of the icon
+  //shadowSize:   [50, 64], // size of the shadow
+  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+var cinesIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/t7dqlSm.png',
+  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
+
+  iconSize:     [38, 95], // size of the icon
+  //shadowSize:   [50, 64], // size of the shadow
+  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+var monumentosIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/iSEGhec.png',
+  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
+
+  iconSize:     [38, 95], // size of the icon
+  //shadowSize:   [50, 64], // size of the shadow
+  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
     var bucle = document.getElementById("res_final").value;
     var x=0;
     var y=0;
@@ -76,7 +138,7 @@ $(document).ready(function () {
     x = lugar.slice(0,16);
     y = lugar.slice(18,99);
     if(tipo=="museos"){
-      var marker1 = L.marker([x,y]).addTo(map);
+      var marker1 = L.marker([x,y], {icon: museoIcon}).addTo(map);
     marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="centros"){
@@ -84,23 +146,23 @@ $(document).ready(function () {
     marker2.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="fiestas"){
-      var marker3 = L.marker([x,y]).addTo(map);
+      var marker3 = L.marker([x,y], {icon: fiestasIcon}).addTo(map);
     marker3.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="gimnasio"){
-      var marker4 = L.marker([x,y]).addTo(map);
+      var marker4 = L.marker([x,y], {icon: gimnasiosIcon}).addTo(map);
     marker4.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="cines"){
-      var marker5 = L.marker([x,y]).addTo(map);
+      var marker5 = L.marker([x,y], {icon: cinesIcon}).addTo(map);
     marker5.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="monumentos"){
-      var marker6 = L.marker([x,y]).addTo(map);
+      var marker6 = L.marker([x,y], {icon: monumentosIcon}).addTo(map);
     marker6.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="bares"){
-      var marker7 = L.marker([x,y]).addTo(map);
+      var marker7 = L.marker([x,y], {icon:barIcon}).addTo(map);
     marker7.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="restaurantes"){

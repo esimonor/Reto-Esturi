@@ -125,7 +125,6 @@ Route::get('ver',function(){;
 });
 
 
-
 //middlewares que solo dejan parar al usuario que tiene el nombre del propio middleware
 //->middleware('administrador');
 //->middleware('usuario');
