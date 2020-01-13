@@ -86,10 +86,10 @@ Route::resource('gustos','ControladordeGustos');
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
-//Ruta para eliminar usuarios como administrador
-Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
+//Edita los usuarios con los datos del formulario
+Route::post("/listUsers","AdminController@updateUsers")->name("updateUsers");
 
-//Ruta para eliminar usuarios
+//ruta para que el administrador borre usuarios
 Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
 
 //Envía los datos al formulario de editar sitio
@@ -102,9 +102,6 @@ Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 Route::post("/modprofile","UserController@update")->name("update");
 //ruta para que un usuario pueda modificar su perfil
 Route::get('/owndrop/{id}','UserController@usuarioborrasupropiacuenta')->name('owndrop');
-
-//ruta para que el administrador borre usuarios
-Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
 
 //Ruta para listar establecimientos 
 Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("listEstablishments");
