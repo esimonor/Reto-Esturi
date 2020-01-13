@@ -88,6 +88,9 @@ Route::resource('gustos','ControladordeGustos');
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
+//Edita los usuarios con los datos del formulario
+Route::post("/listUsers","AdminController@updateUsers")->name("updateUsers");
+
 //ruta para que el administrador borre usuarios
 Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
 

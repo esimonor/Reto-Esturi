@@ -19,6 +19,18 @@ class AdminController extends Controller
         }   
     }
 
+    public function updateUsers(Request $request){
+        $name=$request->input("name");
+        $lastname=$request->input("lastname");
+        $email=$request->input("email");
+        $id=$request->input("id");
+
+        User::where('id',$id)
+            ->update(['name'=>$name,'lastname'=>$lastname,'email'=>$email]);
+        
+        return redirect('listUsers');
+    }
+
     public function indexEstablishments(){
         $establishments = Owner::all();        
         return view('listEstablishments')->with('establishments',$establishments);

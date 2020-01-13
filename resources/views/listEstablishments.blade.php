@@ -1,13 +1,8 @@
-@include('includes.head')
-
-<title>@lang('Perfil de') {{Auth::user()->name}}</title>
-
-<link rel="stylesheet" href="{{ URL::asset('css/adminNavbar.css') }}">
+@include('includes.headAdmin')
 </head>
 
 <body>
     <div class="container col-12">
-        @include('includes.navs.navUser')
         @include('includes.navs.vnav')
         
         <!-- Foto de perfil, nombre y correo del usuario -->
@@ -29,7 +24,7 @@
                         <td class="border border-dark">{{$establishment->id}}</td>
                         <td class="border border-dark"><input type="text" value="{{$establishment->name}}" /></td>
                         <td class="border border-dark"><input type="text" value="{{$establishment->type}}" /></td>
-                        <td class="border border-dark"><input type="text" value="{{$establishment->owner}}" /></td>
+                        <td class="border border-dark">{{$establishment->owner}}</td>
                         <td class="border border-dark"><a href="{{route('deleteEstablishments',[$establishment->id])}}" class="text-danger col-10">Eliminar</a></td>
                         <td class="border border-dark"><a href="#" class="text-warning col-10">Modificar</a></td>
                     </tr>
@@ -40,7 +35,7 @@
             </div>
         </div>
 
-        @include('includes.footer')
+        {{--@include('includes.footer')--}}
     </div>
     @include('includes.js')
 </body>

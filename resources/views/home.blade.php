@@ -7,9 +7,7 @@
     @include('includes.navs.nav')
     <div class="container col-12">
     <div class="container col-6 float-left">
-    @php 
-    $i=1;
-    @endphp
+    
         @if (isset($sites))
             <?php
                 $i=1;

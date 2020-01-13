@@ -1,13 +1,8 @@
-@include('includes.head')
-
-<title>@lang('Perfil de') {{Auth::user()->name}}</title>
-
-<link rel="stylesheet" href="{{ URL::asset('css/adminNavbar.css') }}">
+@include('includes.headAdmin')
 </head>
 
 <body>
     <div class="container col-12">
-        @include('includes.navs.navUser')
         @include('includes.navs.vnav')
 
         <!-- Foto de perfil, nombre y correo del usuario -->
@@ -24,18 +19,22 @@
                         <tr>
                     <!--Lista los usuarios junto a su nombre, apellido, ID, y correo-->
                     @foreach ($users as $user)
-                        <tr class="bg-light">
-                            <td class="border border-dark">{{$user->id}}</td>
-                            <td class="border border-dark"><input type="text" value="{{$user->name}}"></td>
-                            <td class="border border-dark"><input type="text" value="{{$user->lastName}}"></td>
-                            <td class="border border-dark"><input type="text" value="{{$user->email}}"></td>
-                            @if ($user->id==Auth::user()->id)
-                                <td class="border border-dark"></td>
-                            @else
-                            <td class="border border-dark"><a href="{{route('deleteusers',[$user->id])}}" class="text-danger col-10">Eliminar</a></td>
-                            @endif
-                            <td class="border border-dark"><a href="#" class="text-warning col-10">Modificar</a></td>
-                        </tr>
+                        <form method="POST" action="{{route('updateUsers')}}">
+                        @csrf
+                            <tr class="bg-light">
+                                <td class="border border-dark">{{$user->id}}</td>
+                               <input name="id" type="hidden" value="{{$user->id}}" />
+                                <td class="border border-dark"><input name="name" type="text" value="{{$user->name}}"></td>
+                                <td class="border border-dark"><input name="lastname" type="text" value="{{$user->lastName}}"></td>
+                                <td class="border border-dark"><input name="email" type="text" value="{{$user->email}}"></td>
+                                @if ($user->id==Auth::user()->id)
+                                    <td class="border border-dark"></td>
+                                @else
+                                <td class="border border-dark"><a href="{{route('deleteusers',[$user->id])}}" class="text-danger col-10">Eliminar</a></td>
+                                @endif
+                                <td class="border border-dark"><button class="text-warning col-10">Modificar</button></td>
+                            </tr>
+                        </form>
                     @endforeach
                     </table>               
                 <a type="button" class="btn btn-primary col-6 m-1" href="{{ URL::asset('homeAdmin') }}">Volver</a>
@@ -43,7 +42,7 @@
             </div>
         </div>
 
-        @include('includes.footer')
+        {{--@include('includes.footer')--}}
     </div>
     @include('includes.js')
 </body>

@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var map = L.map('map').
-    setView([43.3227696, -1.9940565], 15);
+    setView([43.3227696, -1.9940565], 50);
   var layer = L.esri.basemapLayer('Physical').addTo(map);
   var layerLabels;
 
@@ -32,6 +32,13 @@ $(document).ready(function () {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
   }).addTo(map);
   var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+
+  //Al hacer click se guardan las coordenadas en la vista addlocal
+  map.on('click', function(e) {
+    var locate= e.latlng.lat + ", " + e.latlng.lng;
+    document.getElementById("coord").value = locate; 
+  });
+
   /*var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
   marker.bindPopup("<b>Aquarium</b><br>1 Plaza de Carlos Blasco Imaz<br> 20003 Donostia, Gipuzkoa");
 
@@ -57,9 +64,7 @@ $(document).ready(function () {
   marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");*/
 
 
-  var bucle = document.getElementById("res_final").value;
-
-  //for(var count=1;count<bucle;count++){}
+    var bucle = document.getElementById("res_final").value;
     var x=0;
     var y=0;
     var lugar;
@@ -102,10 +107,7 @@ $(document).ready(function () {
   var layer= L.control.layers(overlayMaps).addTo(map);*/
 
 
-  //Al hacer click se guardan las coordenadas en la vista addlocal
-  map.on('click', function(e) {
-    var locate= e.latlng.lat + ", " + e.latlng.lng;
-    document.getElementById("coord").value = locate; 
-});
+  
+
 
 });
