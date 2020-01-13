@@ -39,7 +39,7 @@
                 </li>
             @endif
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="#articulo4">Mis categorías</a>
+                    <a class="nav-link text-center" href="{{ URL::asset('gustos/create') }}">Mis categorías</a>
                 </li>
             @endguest
             <li class="nav-item dropdown">
