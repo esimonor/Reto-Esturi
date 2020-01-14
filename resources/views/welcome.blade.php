@@ -73,8 +73,8 @@
 			</div>
 			<div class="row d-flex justify-content-between mb-5" id="tarjetas">
 				<div class="col tarjeta1">
-					<img class="caras" src="{{ URL::asset('images/AG.png') }}">
-					<h3 class="titulo-tarjeta mt-4">Adrián G.</h3>
+					<img class="caras" src="{{ URL::asset('images/SR.png') }}">
+					<h3 class="titulo-tarjeta mt-4">Samuel R.</h3>
 					<p class="contenido-tarjeta">@lang('Jefe, diseñador y programador')</p>
 				</div>
 				<div class="col tarjeta2">
