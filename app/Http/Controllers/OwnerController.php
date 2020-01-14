@@ -40,7 +40,6 @@ class OwnerController extends Controller
         $sites=Owner::all()->where('id','=',$id);
         foreach ($sites as $site){
             return view('modsite')->with('sites',$site);
-            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/
         }
     }
     public function updatelocal(Request $request){
