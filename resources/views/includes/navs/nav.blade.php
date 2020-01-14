@@ -9,6 +9,16 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto flex-row-reverse">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @lang('Idiomas')
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item bg-dark text-light" href="{{route('locale', ['locale' => 'es'])}}">Es</a>
+                    <a class="dropdown-item bg-dark text-light" href="{{route('locale', ['locale' => 'eu'])}}">Eu</a>
+                    <a class="dropdown-item bg-dark text-light" href="{{route('locale', ['locale' => 'en'])}}">En</a>
+                </div>
+            </li>
             @guest
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="modal" data-target="#inicioSesionModal">@lang('Inicio sesion')</a>
@@ -43,16 +53,7 @@
 					    <a class="nav-link text-center" href="{{ URL::asset('gustos/create') }}">Mis categorías</a>
 				    </li>
             @endguest
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    @lang('Idiomas')
-                </a>
-                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item bg-dark text-light" href="{{route('locale', ['locale' => 'es'])}}">Es</a>
-                    <a class="dropdown-item bg-dark text-light" href="{{route('locale', ['locale' => 'eu'])}}">Eu</a>
-                    <a class="dropdown-item bg-dark text-light" href="{{route('locale', ['locale' => 'en'])}}">En</a>
-                </div>
-            </li>
+            
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @lang('Tipo de mapa')
