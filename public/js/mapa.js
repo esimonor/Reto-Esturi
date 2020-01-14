@@ -64,8 +64,8 @@ $(document).ready(function () {
   marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");*/
 
 
-  /*var barIcon = L.icon({
-    iconUrl: 'https://i.imgur.com/l5nwuUQ.png',
+  var barIcon = L.icon({
+    iconUrl: 'https://i.imgur.com/sIEwWRU.png',
     //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
     iconSize:     [38, 95], // size of the icon
@@ -75,7 +75,7 @@ $(document).ready(function () {
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var museoIcon = L.icon({
-  iconUrl: 'https://i.imgur.com/a4fn42d.png',
+  iconUrl: 'https://i.imgur.com/W7soerF.png',
   //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
   iconSize:     [38, 95], // size of the icon
@@ -86,7 +86,7 @@ var museoIcon = L.icon({
 });
 
 var fiestasIcon = L.icon({
-  iconUrl: 'https://i.imgur.com/MdFCEti.png',
+  iconUrl: 'https://i.imgur.com/b58IyNL.png',
   //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
   iconSize:     [38, 95], // size of the icon
@@ -96,7 +96,7 @@ var fiestasIcon = L.icon({
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var gimnasiosIcon = L.icon({
-  iconUrl: 'https://i.imgur.com/WkGPGTz.png',
+  iconUrl: 'https://i.imgur.com/6C2YWrL.png',
   //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
   iconSize:     [38, 95], // size of the icon
@@ -106,7 +106,7 @@ var gimnasiosIcon = L.icon({
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var cinesIcon = L.icon({
-  iconUrl: 'https://i.imgur.com/t7dqlSm.png',
+  iconUrl: 'https://i.imgur.com/qJe8fR6.png',
   //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
   iconSize:     [38, 95], // size of the icon
@@ -116,7 +116,7 @@ var cinesIcon = L.icon({
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var monumentosIcon = L.icon({
-  iconUrl: 'https://i.imgur.com/iSEGhec.png',
+  iconUrl: 'https://i.imgur.com/2PvsE9c.png',
   //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
   iconSize:     [38, 95], // size of the icon
@@ -124,7 +124,7 @@ var monumentosIcon = L.icon({
   iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});*/
+});
 
     var bucle = document.getElementById("res_final").value;
     var x=0;
@@ -138,31 +138,31 @@ var monumentosIcon = L.icon({
     x = lugar.slice(0,16);
     y = lugar.slice(18,99);
     if(tipo=="museos"){
-      var marker1 = L.marker([x,y]).addTo(map);
+      var marker1 = L.marker([x,y], {icon: museoIcon}).addTo(map);
     marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="centros"){
-      var marker2 = L.marker([x,y]).addTo(map);
+      var marker2 = L.marker([x,y], {icon: museoIcon}).addTo(map);
     marker2.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="fiestas"){
-      var marker3 = L.marker([x,y]).addTo(map);
+      var marker3 = L.marker([x,y], {icon: fiestasIcon}).addTo(map);
     marker3.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="gimnasios"){
-      var marker4 = L.marker([x,y]).addTo(map);
+      var marker4 = L.marker([x,y], {icon: gimnasiosIcon}).addTo(map);
     marker4.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="cines"){
-      var marker5 = L.marker([x,y]).addTo(map);
+      var marker5 = L.marker([x,y], {icon: cinesIcon}).addTo(map);
     marker5.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="monumentos"){
-      var marker6 = L.marker([x,y]).addTo(map);
+      var marker6 = L.marker([x,y], {icon: monumentosIcon}).addTo(map);
     marker6.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="bares"){
-      var marker7 = L.marker([x,y]).addTo(map);
+      var marker7 = L.marker([x,y], {icon: barIcon}).addTo(map);
     marker7.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="restaurantes"){
