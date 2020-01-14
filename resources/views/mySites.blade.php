@@ -17,7 +17,9 @@
                 @endforeach
             @endif
         </div>
-
+        <div class="container col-4">
+        <a href="{{route('addlocal')}}" class="btn btn-primary m-2 col-8">Añadir local</a>
+        </div>
         @include('includes.footer')
     </div>
     @include('includes.js')
