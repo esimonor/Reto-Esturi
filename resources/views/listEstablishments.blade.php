@@ -20,14 +20,18 @@
                         <tr>
                     <!--Lista los usuarios junto a su nombre, apellido, ID, y correo-->
                     @foreach ($establishments as $establishment)
+                    <form method="POST" action="{{route('updateEstablishments')}}">
+                        @csrf
                     <tr class="bg-light">
                         <td class="border border-dark">{{$establishment->id}}</td>
-                        <td class="border border-dark"><input type="text" value="{{$establishment->name}}" /></td>
-                        <td class="border border-dark"><input type="text" value="{{$establishment->type}}" /></td>
+                        <input type="hidden" value="{{$establishment->id}}" name="id" />
+                        <td class="border border-dark"><input name="name" type="text" value="{{$establishment->name}}" /></td>
+                        <td class="border border-dark"><input name="type" type="text" value="{{$establishment->type}}" /></td>
                         <td class="border border-dark">{{$establishment->owner}}</td>
                         <td class="border border-dark"><a href="{{route('deleteEstablishments',[$establishment->id])}}" class="text-danger col-10">Eliminar</a></td>
-                        <td class="border border-dark"><a href="#" class="text-warning col-10">Modificar</a></td>
+                        <td class="border border-dark"><button class="text-warning col-10">Modificar</a></td>
                     </tr>
+                    </form>
                     @endforeach
                     </table>               
                 <a type="button" class="btn btn-primary col-6 m-1" href="{{ URL::asset('homeAdmin') }}">Volver</a>

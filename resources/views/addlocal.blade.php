@@ -30,7 +30,7 @@
                         <option value="cines">Cine</option>
                         <option value="centros">Centro comercial</option>
                         <option value="fiestas">Discoteca</option>
-                        <option value="gimnasio">Gimnasio</option>
+                        <option value="gimnasios">Gimnasio</option>
                         <option value="monumentos">Monumento</option>
                     </select>*
                 <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />

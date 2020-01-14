@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var map = L.map('map').
-    setView([43.3227696, -1.9940565], 50);
+    setView([43.3227696, -1.9940565], 15);
   var layer = L.esri.basemapLayer('Physical').addTo(map);
   var layerLabels;
 
@@ -64,7 +64,7 @@ $(document).ready(function () {
   marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");*/
 
 
-  var barIcon = L.icon({
+  /*var barIcon = L.icon({
     iconUrl: 'https://i.imgur.com/l5nwuUQ.png',
     //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
@@ -124,7 +124,7 @@ var monumentosIcon = L.icon({
   iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
+});*/
 
     var bucle = document.getElementById("res_final").value;
     var x=0;
@@ -138,7 +138,7 @@ var monumentosIcon = L.icon({
     x = lugar.slice(0,16);
     y = lugar.slice(18,99);
     if(tipo=="museos"){
-      var marker1 = L.marker([x,y], {icon: museoIcon}).addTo(map);
+      var marker1 = L.marker([x,y]).addTo(map);
     marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="centros"){
@@ -146,23 +146,23 @@ var monumentosIcon = L.icon({
     marker2.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="fiestas"){
-      var marker3 = L.marker([x,y], {icon: fiestasIcon}).addTo(map);
+      var marker3 = L.marker([x,y]).addTo(map);
     marker3.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
-    if(tipo=="gimnasio"){
-      var marker4 = L.marker([x,y], {icon: gimnasiosIcon}).addTo(map);
+    if(tipo=="gimnasios"){
+      var marker4 = L.marker([x,y]).addTo(map);
     marker4.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="cines"){
-      var marker5 = L.marker([x,y], {icon: cinesIcon}).addTo(map);
+      var marker5 = L.marker([x,y]).addTo(map);
     marker5.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="monumentos"){
-      var marker6 = L.marker([x,y], {icon: monumentosIcon}).addTo(map);
+      var marker6 = L.marker([x,y]).addTo(map);
     marker6.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="bares"){
-      var marker7 = L.marker([x,y], {icon:barIcon}).addTo(map);
+      var marker7 = L.marker([x,y]).addTo(map);
     marker7.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="restaurantes"){

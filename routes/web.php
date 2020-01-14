@@ -98,6 +98,9 @@ Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 //Edita el sitio con los datos del formulario
 Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 
+//Edita el sitio como admin
+Route::post("/listEstablishments","AdminController@updateEstablishments")->name("updateEstablishments");
+
 //ruta para que un usuario  pueda borrar su propia cuenta
 Route::post("/modprofile","UserController@update")->name("update");
 //ruta para que un usuario pueda modificar su perfil
