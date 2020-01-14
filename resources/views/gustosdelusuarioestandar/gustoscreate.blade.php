@@ -40,7 +40,7 @@
       <h5 class="card-title">Centro Comerciales</h5>
     </div>
     <div class="card-footer">
-      <input type="hidden" name="idcentrocomerciale" value="2">
+      <input type="hidden" name="idcentrocomercial" value="2">
       <input type="checkbox" name="centrocomercial" value="centrocomercial">
     </div>
   </div>
@@ -64,7 +64,7 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idcine" value="4">
-      <input type="checkbox" name="cines" value="cines">
+      <input type="checkbox" name="cine" value="cines">
     </div>
   </div>
   <div class="card align-items-center">
@@ -74,7 +74,7 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idbar" value="6">
-      <input type="checkbox" name="bares" value="bares">
+      <input type="checkbox" name="bar" value="bares">
     </div>
   </div>
   <div class="card align-items-center">
