@@ -127,6 +127,7 @@ Route::get('ver',function(){;
     return $comprobar;
 });
 
+Route::post('/welcome','contactoController@contactar')->name('contactar');
 
 
 //middlewares que solo dejan parar al usuario que tiene el nombre del propio middleware

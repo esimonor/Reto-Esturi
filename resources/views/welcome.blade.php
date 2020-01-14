@@ -94,18 +94,19 @@
 	<article id="articulo4">
 		<div class="container">
 			<h2 class="titulos text-center"><u>@lang('Contacto')</u></h2>
-			<form class="">
+		<form class="" method="POST" action="{{route('contactar')}}">
+			@csrf
 				<div class="form-group">
 					<label class="textoArticulo">@lang('Nombre')</label>
-					<input type="text" class="form-control" id="contra" placeholder="@lang('Nombre')">
+					<input type="text" class="form-control" id="contra" name="name" placeholder="@lang('Nombre')">
 				</div>
 				<div class="form-group">
 					<label class="textoArticulo">@lang('Correo Electronico')</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="@lang('Correo Electronico')">
+					<input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="@lang('Correo Electronico')">
 				</div>
 				<div class="form-group">
 					<label class="textoArticulo">@lang('Mensaje')</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					<textarea class="form-control" id="exampleFormControlTextarea1" name="comentario" rows="3"></textarea>
 				</div>
 				<button type="submit" class="mb-5 btn btn-danger">@lang('Enviar')</button>
 			</form>
