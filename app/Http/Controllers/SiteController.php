@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 use App\Owner;
 use App\User;
