@@ -19,7 +19,8 @@
                 <a href="{{route('addlocal')}}" class="btn btn-outline-warning m-2 col-4">Añadir local</a>
                 @endif
                 
-               <button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
+                <a href="owndrop/{{Auth::user()->id}}" class="btn btn-outline-danger m-2 col-4">borrar cuenta</a>
+               <!--<button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>-->
                 <!--Ventana de confirmacion eliminar cuenta-->
 
                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

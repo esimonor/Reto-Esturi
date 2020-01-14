@@ -12,4 +12,7 @@ class Establishment extends Model
     public function users(){
         return $this->belongsToMany('App\User');
     }
+    public function rutaa(){
+    	return $this->ruta;
+    }
 }
