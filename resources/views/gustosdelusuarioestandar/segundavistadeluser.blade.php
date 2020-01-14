@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="container">
-        <button class="btn btn-outline-success m-2 col-4"><a href="ver2">siguiente</a></button>
+        <button class="btn btn-outline-success m-2 col-4"><a href="vertres">siguiente</a></button>
     </div>
     @include('includes.footer')
     

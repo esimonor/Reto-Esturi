@@ -34,11 +34,3 @@
 </body>
 
 </html>
-
-<!--
-
-$primerlogin=User::find($id);
-        $primerlogin->primerlogin=0;
-        $primerlogin->save();
-
-        return redirect('home');-->

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\categoria_user;
+
+use Illuminate\Support\Facades\Auth;
+
 use App\User;
 
 class ControladordeGustos extends Controller
@@ -36,7 +40,58 @@ class ControladordeGustos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id=Auth::user()->id;
+        if ($request->formulario=='uno') {
+            if($request->fiesta){
+                $gusto=new categoria_user;
+                $gusto->categoria_id=$request->idfiesta;
+                $gusto->user_id=$id;
+                $gusto->save();
+            }
+            if($request->monumento){
+                $gusto=new categoria_user;
+                $gusto->categoria_id=$request->idmonumento;
+                $gusto->user_id=$id;
+                $gusto->save();
+            }
+            if($request->centrocomercial){
+                $gusto=new categoria_user;
+                $gusto->categoria_id=$request->idcentrocomercial;
+                $gusto->user_id=$id;
+                $gusto->save();
+            }
+            if($request->gimnasio){
+                $gusto=new categoria_user;
+                $gusto->categoria_id=$request->idgimnasio;
+                $gusto->user_id=$id;
+                $gusto->save();
+            }
+            if($request->cine){
+                $gusto=new categoria_user;
+                $gusto->categoria_id=$request->idcine;
+                $gusto->user_id=$id;
+                $gusto->save();
+            }
+            if($request->bar){
+                $gusto=new categoria_user;
+                $gusto->categoria_id=$request->idbar;
+                $gusto->user_id=$id;
+                $gusto->save();
+            }
+            if($request->restaurante){
+                $gusto=new categoria_user;
+                $gusto->categoria_id=$request->idrestaurante;
+                $gusto->user_id=$id;
+                $gusto->save();
+            }
+            if($request->museo){
+                $gusto=new categoria_user;
+                $gusto->categoria_id=$request->idmuseo;
+                $gusto->user_id=$id;
+                $gusto->save();
+            }
+            return redirect('ver');
+        }
     }
 
     /**
@@ -70,12 +125,6 @@ class ControladordeGustos extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->formulario=='uno') {
-            return redirect('ver');
-        }
-        if ($request->formulario=='dos') {
-            return redirect('ver2');    
-        }
 
     }
 
