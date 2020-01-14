@@ -35,6 +35,8 @@
                 <form class="col-12" method="POST" action="{{route('update')}}" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" value="{{Auth::user()->id}}">
+                    <input type="hidden" name="formulario" value="subirfotoenprimerinicio">
+                    <input type="hidden" name="rutaactual" value="{{Auth::user()->ruta}}">
                     <input  type="file" name="file"><br>
                     <input type="hidden" name="name" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->name}}" />
                     <input type="hidden" name="lastname" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->lastName}}" />

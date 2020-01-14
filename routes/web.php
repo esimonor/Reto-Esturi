@@ -137,7 +137,7 @@ Route::get('aa',function(){
 });
 
 
-
+Route::resource('configuracion','UserController');
 
 
 
@@ -147,4 +147,8 @@ Route::get('ver',function(){
     return view('gustosdelusuarioestandar.segundavistadeluser');
 });
 
-Route::get('ver2','UserController@primerlogincompletado');
+Route::get('vertres',function(){
+    return view('gustosdelusuarioestandar.terceravistauser');
+});
+
+

@@ -22,10 +22,9 @@
                 </div>
             </div>
         </div>
-        <form class="col-12" method="POST" action="/gustos/{{Auth::user()->idvalor()}}">
-    <div class=" d-flex">
-     <form class="col-12" method="POST" action="/gustosdelusuarioestandar">
-      <input type="hidden" name="_method" value="PUT">
+     <form class="col-12" method="POST" action="{{route('update')}}">
+      <input type="hidden" name="id" value="{{Auth::user()->id}}">
+      <input type="hidden" name="formulario" value="primerinicio">
       {{csrf_field()}}
       <button class="btn btn-outline-success m-2 col-4 align-items-center">siguiente</button>
     </form>

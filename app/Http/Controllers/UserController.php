@@ -9,6 +9,71 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
     /*
     Hace update del usuario y redirige a modprofile
     */
@@ -24,13 +89,6 @@ class UserController extends Controller
         
 
 
-    public function primerlogincompletado(Request $request){
-        $id=AUth::user()->id;
-        $usuario=User::find($id);
-        $usuario->primerlogin=0;
-        $usuario->update;
-    }
-
 
 
 
@@ -41,20 +99,60 @@ class UserController extends Controller
 
     public function update(Request $request)
 {
-    $name='profile.png';
+
+    $name=$request->rutaactual;
+    if($request->formulario=='modprofile'){
     if($request->hasFile('file')){
         $file=$request->file('file');
         $name=time().$file->getClientOriginalName();
         $file->move(public_path().'/images/',$name);
-    }
-    $db=User::find($request->id);
-    $db->name=$request->name;
-    $db->lastName=$request->lastname;
-    $db->email=$request->email;
-    $db->ruta=$name;
-    $db->save();
 
-              return redirect('/');
+        $db=User::find($request->id);
+        $db->name=$request->name;
+        $db->lastName=$request->lastname;
+        $db->email=$request->email;
+        $db->ruta=$name;
+        $db->save();
+    }
+    if(!$request->hasfile('file')){
+        $db=User::find($request->id);
+        $db->name=$request->name;
+        $db->lastName=$request->lastname;
+        $db->email=$request->email;
+        $db->ruta=$name;
+        $db->save();
+    }
+        return redirect('profile');
+}
+    if($request->formulario=='subirfotoenprimerinicio'){
+        if($request->hasFile('file')){
+            $file=$request->file('file');
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/',$name);
+
+            $db=User::find($request->id);
+            $db->name=$request->name;
+            $db->lastName=$request->lastname;
+            $db->email=$request->email;
+            $db->ruta=$name;
+            $db->save();
+        }
+        if(!$request->hasFile('file')){
+            $db=User::find($request->id);
+            $db->name=$request->name;
+            $db->lastName=$request->lastname;
+            $db->email=$request->email;
+            $db->ruta=$name;
+            $db->save();
+        }
+            return redirect('vertres');
+    }
+    if($request->formulario=='primerinicio'){
+        $usuario=User::find($request->id);
+        $usuario->primerlogin=0;
+        $usuario->update();
+        return redirect('mapa');
+    }
 }
 
     public function usuarioborrasupropiacuenta($id)  {   
