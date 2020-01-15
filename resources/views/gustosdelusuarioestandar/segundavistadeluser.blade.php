@@ -47,7 +47,8 @@
         </div>
     </div>
     <div class="container">
-        <button class="btn btn-outline-success m-2 col-4"><a href="vertres">siguiente</a></button>
+        <!--<button class="btn btn-outline-success m-2 col-4"><a href="vertres">siguiente</a></button>-->
+        <input type ='button' class="btn btn-outline-success m-2 col-4"  value = 'subir mas tarde' onclick="location.href = 'vertres'"/>
     </div>
     @include('includes.footer')
     

@@ -118,7 +118,7 @@ Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
 
 
 //esta es la ruta de la pagina de cada sitio
-Route::get("/local/{id}","SiteController@localactual");
+Route::get("/local/{id}","SiteController@localactual"); 
 Route::resource('sitio','SiteController');
 
 Route::get('ver',function(){;
@@ -150,5 +150,7 @@ Route::get('ver',function(){
 Route::get('vertres',function(){
     return view('gustosdelusuarioestandar.terceravistauser');
 });
+
+
 
 
