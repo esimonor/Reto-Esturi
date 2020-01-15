@@ -11,10 +11,11 @@
             <div class="col-6 row">
                 <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-10">
                 
-            <form class="col-12" method="POST" action="{{route("updatelocal")}}">
+            <form class="col-12" method="POST" action="{{route('updatelocal')}}" enctype="multipart/form-data">
                 @csrf
-                <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
-                    <label>Imagen</label> <input type="file" name="pic" accept="image/*"><br>
+                <input type="text" name="id" value="{{Auth::user()->id}}" disabled="true" hidden>
+                <input type="hidden" name="formulario" value="modificarsitio">
+                    <label>Imagen</label> <input type="file" name="file" accept="image/*"><br>
             <label>Nombre:</label><input type="text" name="name" value="{{$sites->name}}"/>
                     <br>
                     <label>Descripcion:</label><input type="text" name="desc" />

@@ -31,7 +31,8 @@ class vistaalaquesedirigeelusuarioaliniciarsecionsegunsurol
                 //desprues de que el usuario envie el formulario de estandariniciosecionprimeraves el valor del campo primer login cambiara a false asi que no entrara mas a este formulario cuando vuelva a iniciar sesion solo entrara si el quiere
                 return redirect("/gustos/create");
             }else{
-                return $next($request);
+                return redirect('mapa');
+                //return $next($request);
             }
         }
         if ($a->owner()) {
