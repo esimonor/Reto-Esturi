@@ -114,6 +114,16 @@ var monumentosIcon = L.icon({
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
+var centroIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/Ut3gIp6.png',
+  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
+
+  iconSize:     [38, 95], // size of the icon
+  //shadowSize:   [50, 64], // size of the shadow
+  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
     var bucle = document.getElementById("res_final").value;
     var x=0;
@@ -131,7 +141,7 @@ var monumentosIcon = L.icon({
     marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="centros"){
-      var marker2 = L.marker([x,y], {icon: museoIcon}).addTo(map);
+      var marker2 = L.marker([x,y], {icon: centroIcon}).addTo(map);
     marker2.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="fiestas"){
