@@ -116,11 +116,17 @@ var monumentosIcon = L.icon({
 });
 var centroIcon = L.icon({
   iconUrl: 'https://i.imgur.com/Ut3gIp6.png',
-  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
-  iconSize:     [38, 95], // size of the icon
-  //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  iconSize:     [69, 75], // size of the icon
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+var restauranteIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/yFiSM1C.png',
+
+  iconSize:     [69, 75], // size of the icon
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
@@ -165,7 +171,7 @@ var centroIcon = L.icon({
     marker7.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="restaurantes"){
-      var marker8 = L.marker([x,y]).addTo(map);
+      var marker8 = L.marker([x,y], {icon: restauranteIcon}).addTo(map);
     marker8.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     
