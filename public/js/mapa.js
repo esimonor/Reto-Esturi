@@ -16,7 +16,7 @@ $(document).ready(function () {
 }
 */
 
-map.on('locationfound', onLocationFound);
+//map.on('locationfound', onLocationFound);
 
   function setBasemap(basemap) {
     if (layer) {
