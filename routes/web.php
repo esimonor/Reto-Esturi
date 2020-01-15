@@ -1,7 +1,6 @@
 <?php
 use App\User;
 use App\Establishment;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,21 +15,16 @@ use App\Establishment;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-
 Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');
-
 Route::get('/categorias', function () {
     return view('categorias');
 })->name('categorias');
-
 // ----------------------------------------
-
 Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified')->middleware('vistadeloginsegunelrol');
 // ----------------------------------------
-
 Route::get('/mapa', 'SiteController@showSites')->name('mapa');
 
 //Ruta perfil usuario estandar
@@ -57,7 +51,6 @@ Route::get('/homeOwner', 'OwnerController@show')->name('homeOwner');
 
 Route::get('/mySites', 'SiteController@mySites')->name('mySites');
 
-
 Route::get('/eliminarperfil', function () {
     return view('eliminarperfil');
 })->name('eliminarperfil');
@@ -82,7 +75,6 @@ Route::get('ownvis',function(){
 	return view('homeOwner');
 });
 
-
 //controlador para modificar los gustos
 Route::resource('gustos','ControladordeGustos');
 
@@ -101,10 +93,9 @@ Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 //Edita el sitio con los datos del formulario
 Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 
-Route::post("/listUsers","AdminController@updateEstablishments")->name("updateEstablishments");
-
 //ruta para que un usuario  pueda borrar su propia cuenta
 Route::post("/modprofile","UserController@update")->name("update");
+
 //ruta para que un usuario pueda modificar su perfil
 Route::get('/owndrop/{id}','UserController@usuarioborrasupropiacuenta')->name('owndrop');
 
@@ -117,19 +108,13 @@ Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")-
 //Elimina el sitio
 Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
 
-
-
-
 //esta es la ruta de la pagina de cada sitio
 Route::get("/local/{id}","SiteController@localactual");
 Route::resource('sitio','SiteController');
-
 Route::get('ver',function(){;
     $comprobar=Establishment::get()->where('user_id',5)->where('establishment_id',2);
     return $comprobar;
 });
-
-
 //middlewares que solo dejan parar al usuario que tiene el nombre del propio middleware
 //->middleware('administrador');
 //->middleware('usuario');

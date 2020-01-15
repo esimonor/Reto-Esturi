@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var map = L.map('map').
-    setView([43.3227696, -1.9940565], 50);
+    setView([43.3227696, -1.9940565], 15);
   var layer = L.esri.basemapLayer('Physical').addTo(map);
   var layerLabels;
 
@@ -66,62 +66,51 @@ $(document).ready(function () {
 
   var barIcon = L.icon({
     iconUrl: 'https://i.imgur.com/l5nwuUQ.png',
-    //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
-    iconSize:     [38, 95], // size of the icon
-    //shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    iconSize:     [69, 75], // size of the icon
+    iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
     shadowAnchor: [4, 62],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var museoIcon = L.icon({
   iconUrl: 'https://i.imgur.com/a4fn42d.png',
-  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
-  iconSize:     [38, 95], // size of the icon
-  //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  iconSize:     [69, 75], // size of the icon
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
 var fiestasIcon = L.icon({
   iconUrl: 'https://i.imgur.com/MdFCEti.png',
-  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
-  iconSize:     [38, 95], // size of the icon
+  iconSize:     [69, 75], // size of the icon
   //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var gimnasiosIcon = L.icon({
   iconUrl: 'https://i.imgur.com/WkGPGTz.png',
-  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
-  iconSize:     [38, 95], // size of the icon
-  //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  iconSize:     [69, 75], // size of the icon
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var cinesIcon = L.icon({
   iconUrl: 'https://i.imgur.com/t7dqlSm.png',
-  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
-  iconSize:     [38, 95], // size of the icon
-  //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  iconSize:     [69, 75], // size of the icon
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var monumentosIcon = L.icon({
   iconUrl: 'https://i.imgur.com/iSEGhec.png',
-  //shadowUrl: 'https://i.imgur.com/jIh31P2.png',
 
-  iconSize:     [38, 95], // size of the icon
-  //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  iconSize:     [69, 75], // size of the icon
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
@@ -149,7 +138,7 @@ var monumentosIcon = L.icon({
       var marker3 = L.marker([x,y], {icon: fiestasIcon}).addTo(map);
     marker3.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
-    if(tipo=="gimnasio"){
+    if(tipo=="gimnasios"){
       var marker4 = L.marker([x,y], {icon: gimnasiosIcon}).addTo(map);
     marker4.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
@@ -194,6 +183,7 @@ var monumentosIcon = L.icon({
     "bares": bares,
     "restaurantes": restaurantes
   };
+
   var layer= L.control.layers(overlayMaps).addTo(map);
 
 });
