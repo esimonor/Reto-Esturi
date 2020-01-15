@@ -49,8 +49,10 @@ $(document).ready(function () {
 
   //Al hacer click se guardan las coordenadas en la vista addlocal
   map.on('click', function(e) {
-    var locate= e.latlng.lat + ", " + e.latlng.lng;
-    document.getElementById("coord").value = locate; 
+    var locate= e.latlng.lat;
+    var longitude=  e.latlng.lng;
+    document.getElementById("lat").value = latitude; 
+    document.getElementById("lng").value = longitude; 
   });
 
   /*var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
