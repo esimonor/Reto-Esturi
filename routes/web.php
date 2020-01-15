@@ -63,9 +63,14 @@ Route::get('/eliminarperfil', function () {
 })->name('eliminarperfil');
 
 //Ruta al perfil admin
-Route::get('/homeAdmin', function () {
+/*Route::get('/homeAdmin', function () {
     return view('homeAdmin');
-})->name('homeAdmin');
+})->name('homeAdmin');*/
+
+Route::get("/homeAdmin", "AdminController@indexContacto")->name("homeAdmin");
+
+Route::get("/homeAdmin/{id}", "AdminController@destroyContacto")->name("deleteContacto");
+
 
 //Cambio de idiomas
 Route::get('locale/{locale}', function($locale){
