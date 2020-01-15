@@ -15,9 +15,11 @@
                         ?>
                     @include('includes/tarjetas')
                     <?php
-                    $coord=$site->localization;
+                    $latitud=$site->latitud;
+                    $longitud=$site->longitud;
                     $desc=$site->type;
-                    echo '<input id="',$i,'" type="hidden" value="', $coord ,'" />';
+                    echo '<input id="lat',$i,'" type="hidden" value="', $latitud ,'" />';
+                    echo '<input id="long',$i,'" type="hidden" value="', $longitud ,'" />';
                     echo '<input id="name',$i,'" type="hidden" value="',$site->name ,'" />';
                     echo '<input id="desc',$i,'" type="hidden" value="', $desc ,'" />';
     
