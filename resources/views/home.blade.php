@@ -1,6 +1,6 @@
 @include('includes.head')
 @include('includes.mapa')
-<title>@lang('Inicio')</title>
+<title>@lang('Mapa')</title>
 </head>
 
 <body>

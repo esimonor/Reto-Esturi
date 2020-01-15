@@ -24,14 +24,14 @@
                     <br>
                     <label>Tipo:</label>
                     <select name="type">
-                        <option value="bar">Bar</option>
-                        <option value="restaurante">Restaurante</option>
-                        <option value="cafe">Cafetería</option>
-                        <option value="museo">Museo</option>
-                        <option value="biblioteca">Biblioteca</option>
-                        <option value="discoteca">Discoteca</option>
-                        <option value="gym">Gimnasio</option>
-                        <option value="LI">Lugar de interes</option>
+                        <option value="bares">Bar</option>
+                        <option value="restaurantes">Restaurante</option>
+                        <option value="museos">Museo</option>
+                        <option value="cines">Cine</option>
+                        <option value="centros">Centro comercial</option>
+                        <option value="fiestas">Discoteca</option>
+                        <option value="gimnasios">Gimnasio</option>
+                        <option value="monumentos">Monumento</option>
                     </select>*
                 <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
