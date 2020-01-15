@@ -1,7 +1,9 @@
 $(document).ready(function () {
   var map = L.map('map').
     setView([43.3227696, -1.9940565], 15);
+    layers: [baseLayers, overlayMaps];
   var layer = L.esri.basemapLayer('Physical').addTo(map);
+  
   var layerLabels;
 
   function setBasemap(basemap) {
@@ -32,81 +34,75 @@ $(document).ready(function () {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
   }).addTo(map);
   searchControl = L.esri.Geocoding.geosearch().addTo(map);
-  var layer = L.control.layers(baseLayers, overlayMaps, {
-              collapsed: false
-            }).addTo(map);
+   L.control.layers(baseLayers, overlayMaps, {
+    collapsed: false
+  }).addTo(map);
 
   //Al hacer click se guardan las coordenadas en la vista addlocal
   map.on('click', function(e) {
-    var locate= e.latlng.lat + ", " + e.latlng.lng;
-    document.getElementById("coord").value = locate; 
+    var latitude= e.latlng.lat;
+    var longitude= e.latlng.lng;
+    document.getElementById("lat").value = latitude;
+    document.getElementById("lng").value = longitude; 
   });
 
   //Seccion de iconos
   var barIcon = L.icon({
     iconUrl: 'https://i.imgur.com/sIEwWRU.png',
 
-    iconSize:     [69, 75], // size of the icon
-    iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    iconSize:     [69, 75], // Tamaño del icono
+    iconAnchor:   [42, 64], // Punto correspondiente en el mapa del icono
+    popupAnchor:  [-3, -76] // Punto donde deberia salir el popup
 });
 var museoIcon = L.icon({
   iconUrl: 'https://i.imgur.com/W7soerF.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -76]
 });
 
 var fiestasIcon = L.icon({
   iconUrl: 'https://i.imgur.com/b58IyNL.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -76]
 });
 var gimnasiosIcon = L.icon({
   iconUrl: 'https://i.imgur.com/6C2YWrL.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -76]
 });
 var cinesIcon = L.icon({
   iconUrl: 'https://i.imgur.com/qJe8fR6.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -76] 
 });
 var monumentosIcon = L.icon({
   iconUrl: 'https://i.imgur.com/2PvsE9c.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -76]
 });
 var centroIcon = L.icon({
   iconUrl: 'https://i.imgur.com/Ut3gIp6.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -76] 
 });
 var restauranteIcon = L.icon({
   iconUrl: 'https://i.imgur.com/yFiSM1C.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -76]
 });
 
     //Seccion de añadir las coordenadas de la BD en el mapa
@@ -119,8 +115,8 @@ var restauranteIcon = L.icon({
     lugar = document.getElementById(bucle).value;
     tipo = document.getElementById("desc"+bucle).value;
     var nombre = document.getElementById("name"+bucle).value;
-    x = lugar.slice(0,16);
-    y = lugar.slice(18,99);
+    x = lugar.slice(0,17);
+    y = lugar.slice(19,99);
     //Los if detectan que categoria es, y añade el icono correspondiente
     if(tipo=="museos"){
       var marker1 = L.marker([x,y], {icon: museoIcon}).addTo(map);
@@ -179,9 +175,11 @@ var restauranteIcon = L.icon({
     "bares": bares,
     "restaurantes": restaurantes
   };
-  //No se exactamente que hace, pero si lo quito deja de funcionar
+
   var baseLayers = {
     'OSM': osm
   }; 
+
+
 
 });

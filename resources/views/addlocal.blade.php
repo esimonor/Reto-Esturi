@@ -30,16 +30,13 @@
                         <option value="cines">Cine</option>
                         <option value="centros">Centro comercial</option>
                         <option value="fiestas">Discoteca</option>
-<<<<<<< HEAD
-                        <option value="gimnasio">Gimnasio</option>
-=======
                         <option value="gimnasios">Gimnasio</option>
->>>>>>> 646d54a80686673769e23fda7d238cdd8c747ce3
                         <option value="monumentos">Monumento</option>
                     </select>*
                 <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
-                    <label>Localizacion:</label><input style="width:45%;" type="text" id="coord" name="coordenadas" readonly/>
+                    <label>Latitud:</label><input type="text" name="latitud" id="lat" readonly/><br>
+                    <label>Longitud:</label><input type="text" name="longitud" id="lng" readonly/>
                         <!-- Mapa -->
                         <div id="map" style="weight:300px;height:300px"></div>
                     <br>
