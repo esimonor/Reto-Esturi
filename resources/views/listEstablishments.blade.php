@@ -20,18 +20,32 @@
                         <tr>
                     <!--Lista los usuarios junto a su nombre, apellido, ID, y correo-->
                     @foreach ($establishments as $establishment)
+<<<<<<< HEAD
                         <form method="POST" action="{{route('updateEstablishments')}}">
                         @csrf
                     <tr class="bg-light">
                         <td class="border border-dark">{{$establishment->id}}</td>
                         <input type="hidden" name="id" value="{{$establishment->id}}" />
+=======
+                    <form method="POST" action="{{route('updateEstablishments')}}">
+                        @csrf
+                    <tr class="bg-light">
+                        <td class="border border-dark">{{$establishment->id}}</td>
+                        <input type="hidden" value="{{$establishment->id}}" name="id" />
+>>>>>>> 646d54a80686673769e23fda7d238cdd8c747ce3
                         <td class="border border-dark"><input name="name" type="text" value="{{$establishment->name}}" /></td>
                         <td class="border border-dark"><input name="type" type="text" value="{{$establishment->type}}" /></td>
                         <td class="border border-dark">{{$establishment->owner}}</td>
                         <td class="border border-dark"><a href="{{route('deleteEstablishments',[$establishment->id])}}" class="text-danger col-10">Eliminar</a></td>
+<<<<<<< HEAD
                         <td class="border border-dark"><button class="text-warning col-10">Modificar</button></td>
                     </tr>
                         </form>
+=======
+                        <td class="border border-dark"><button class="text-warning col-10">Modificar</a></td>
+                    </tr>
+                    </form>
+>>>>>>> 646d54a80686673769e23fda7d238cdd8c747ce3
                     @endforeach
                     </table>               
                 <a type="button" class="btn btn-primary col-6 m-1" href="{{ URL::asset('homeAdmin') }}">Volver</a>

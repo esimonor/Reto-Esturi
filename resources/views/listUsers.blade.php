@@ -19,7 +19,7 @@
                         <tr>
                     <!--Lista los usuarios junto a su nombre, apellido, ID, y correo-->
                     @foreach ($users as $user)
-                        <form method="POST" action="{{route('updateUsers')}}">
+                         <form method="POST" action="{{route('updateUsers')}}">
                         @csrf
                             <tr class="bg-light">
                                 <td class="border border-dark">{{$user->id}}</td>
