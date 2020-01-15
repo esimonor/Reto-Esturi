@@ -31,7 +31,10 @@ $(document).ready(function () {
   L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
   }).addTo(map);
-  var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+  searchControl = L.esri.Geocoding.geosearch().addTo(map);
+  var layer = L.control.layers(baseLayers, overlayMaps, {
+              collapsed: false
+            }).addTo(map);
 
   //Al hacer click se guardan las coordenadas en la vista addlocal
   map.on('click', function(e) {
@@ -39,31 +42,7 @@ $(document).ready(function () {
     document.getElementById("coord").value = locate; 
   });
 
-  /*var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
-  marker.bindPopup("<b>Aquarium</b><br>1 Plaza de Carlos Blasco Imaz<br> 20003 Donostia, Gipuzkoa");
-
-  var marker2 = L.marker([43.305941, -1.973445]).addTo(map);
-  marker2.bindPopup("<b>Arcco</b><br>Plaza de Irún <br>6, 20011 Donostia-San Sebastian, SS");
-
-  var marker3 = L.marker([43.315552, -1.988778]).addTo(map);
-  marker3.bindPopup("<b>Bataplan</b><br>Kontxa Pasealekua<br> 12, 20007 Donostia, Gipuzkoa");
-
-  var marker4 = L.marker([43.323342, -1.977731]).addTo(map);
-  marker4.bindPopup("<b>Altafit</b><br>Peña y Goñi Kalea<br>12, 14, 20002 Donostia-San Sebastian, SS");
-
-  var marker5 = L.marker([43.322437, -1.974759]).addTo(map);
-  marker5.bindPopup("<b>Cine Trueba</b><br>Secundino Esnaola Kalea<br> 2, 4, 20001 Donostia, SS");
-
-  var marker6 = L.marker([43.321834, -2.005437]).addTo(map);
-  marker6.bindPopup("<b>Peine del Viento</b><br>Eduardo Chillida Pasealekua<br> 20008 Donostia, Gipuzkoa");
-
-  var marker7 = L.marker([43.324096, -1.983742]).addTo(map);
-  marker7.bindPopup("<b>Bar Néstor</b><br>Arrandegi Kalea<br>11, 20003 Donostia, Gipuzkoa");
-
-  var marker8 = L.marker([43.321589, -1.949238]).addTo(map);
-  marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");*/
-
-
+  //Seccion de iconos
   var barIcon = L.icon({
     iconUrl: 'https://i.imgur.com/sIEwWRU.png',
 
@@ -85,7 +64,6 @@ var fiestasIcon = L.icon({
   iconUrl: 'https://i.imgur.com/b58IyNL.png',
 
   iconSize:     [69, 75], // size of the icon
-  //shadowSize:   [50, 64], // size of the shadow
   iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
@@ -115,17 +93,19 @@ var monumentosIcon = L.icon({
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-    var bucle = document.getElementById("res_final").value;
-    var x=0;
-    var y=0;
-    var lugar;
-    var tipo;
+    //Seccion de añadir las coordenadas de la BD en el mapa
+    var bucle = document.getElementById("res_final").value;//Cuantas vueltas va a tener que dar para poner todos los establecimientos
+    var x=0;//Primera mitad de las coordenadas
+    var y=0;//Segunda mitad de las coordenadas
+    var lugar;//Coordenadas completas
+    var tipo;//Tipo de establecimiento
   while(bucle>0){
     lugar = document.getElementById(bucle).value;
     tipo = document.getElementById("desc"+bucle).value;
     var nombre = document.getElementById("name"+bucle).value;
     x = lugar.slice(0,16);
     y = lugar.slice(18,99);
+    //Los if detectan que categoria es, y añade el icono correspondiente
     if(tipo=="museos"){
       var marker1 = L.marker([x,y], {icon: museoIcon}).addTo(map);
     marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
@@ -162,7 +142,7 @@ var monumentosIcon = L.icon({
     bucle--;
   }
 
-  
+  //LayerGroup para que se puedan seleccionar y quiar en el mapa
   var museos = L.layerGroup([marker1]);
   var centros = L.layerGroup([marker2]);
   var fiestas = L.layerGroup([marker3]);
@@ -183,6 +163,9 @@ var monumentosIcon = L.icon({
     "bares": bares,
     "restaurantes": restaurantes
   };
-  var layer= L.control.layers(overlayMaps).addTo(map);
+  //No se exactamente que hace, pero si lo quito deja de funcionar
+  var baseLayers = {
+    'OSM': osm
+  }; 
 
 });
