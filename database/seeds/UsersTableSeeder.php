@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
             'lastName' => 'Rojas',
             'email' => 'crojaspe18dw@ikzubirimanteo.com',
             'password' => bcrypt('andatza'),
+            'email_verified_at'=>'2020-01-08 07:45:35',
             'role' => 'admin'
         ]);
         DB::table('users')->insert([
@@ -23,6 +24,7 @@ class UsersTableSeeder extends Seeder
             'lastName' => 'Simon',
             'email' => 'esimonor18dw@ikzubirimanteo.com',
             'password' => bcrypt('andatza'),
+            'email_verified_at'=>'2020-01-08 07:45:35',
             'role' => 'admin'
         ]);
         DB::table('users')->insert([
@@ -30,6 +32,7 @@ class UsersTableSeeder extends Seeder
             'lastName' => 'Ortiz de Zarate',
             'email' => 'aortizdezaratega18dw@ikzubirimanteo.com',
             'password' => bcrypt('andatza'),
+            'email_verified_at'=>'2020-01-08 07:45:35',
             'role' => 'admin'
         ]);
         DB::table('users')->insert([
@@ -37,6 +40,7 @@ class UsersTableSeeder extends Seeder
             'lastName' => 'Rodriguez',
             'email' => 'srodriguezam17dw@ikzubirimanteo.com',
             'password' => bcrypt('andatza'),
+            'email_verified_at'=>'2020-01-08 07:45:35',
             'role' => 'admin'
         ]);
         DB::table('users')->insert([
