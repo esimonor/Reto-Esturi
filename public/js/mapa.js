@@ -92,6 +92,22 @@ var monumentosIcon = L.icon({
   shadowAnchor: [4, 62],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
+var centroIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/Ut3gIp6.png',
+
+  iconSize:     [69, 75], // size of the icon
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+var restauranteIcon = L.icon({
+  iconUrl: 'https://i.imgur.com/yFiSM1C.png',
+
+  iconSize:     [69, 75], // size of the icon
+  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
     //Seccion de añadir las coordenadas de la BD en el mapa
     var bucle = document.getElementById("res_final").value;//Cuantas vueltas va a tener que dar para poner todos los establecimientos
@@ -111,7 +127,7 @@ var monumentosIcon = L.icon({
     marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="centros"){
-      var marker2 = L.marker([x,y], {icon: museoIcon}).addTo(map);
+      var marker2 = L.marker([x,y], {icon: centroIcon}).addTo(map);
     marker2.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="fiestas"){
@@ -135,7 +151,7 @@ var monumentosIcon = L.icon({
     marker7.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="restaurantes"){
-      var marker8 = L.marker([x,y]).addTo(map);
+      var marker8 = L.marker([x,y], {icon: restauranteIcon}).addTo(map);
     marker8.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     

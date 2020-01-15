@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Owner;
+use App\Contacto;
 use Illuminate\Http\Request;
 class AdminController extends Controller
 {
@@ -63,5 +64,19 @@ class AdminController extends Controller
             User::where("id",$id)->delete();    
             return redirect("/home");
         }   
+    }
+
+    public function indexContacto(){
+        $contactos = Contacto::all();        
+        return view('homeAdmin')->with('contactos',$contactos);
+    }
+
+    public function destroyContacto($id)  {   
+        //Elimina el establecimiento de la base datos   
+        $contactos = Contacto::all()->where("id","=",$id);    
+        foreach ($contactos as $contacto) {    
+            Contacto::where("id",$id)->delete();    
+            return redirect("/homeAdmin");  
+        }
     }
 }
