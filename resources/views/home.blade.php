@@ -6,7 +6,7 @@
 <body>
     @include('includes.navs.nav')
     <div class="container col-12">
-        <div class="container  col-xl-6 col-lg-6 col-md-12 col-sm-12 float-left">
+        <div class="container row col-xl-6 col-lg-6 col-md-12 col-sm-12 float-left">
     
             @if (isset($sites))
                 <?php
