@@ -74,7 +74,7 @@
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required minlength="8" autocomplete="new-password">
                         </div>
                     </div>
-
+<input type="hidden" name="rol" value="user">
                     <!--<div class="form-group row">
                         <label for="role" class="col-md-4 col-form-label text-md-right">@lang('Rol')</label>
 
