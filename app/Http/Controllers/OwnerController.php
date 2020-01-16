@@ -18,9 +18,10 @@ class OwnerController extends Controller
     }
 
     public function show(){
-        $sites = Owner::all()->where('owner','=',Auth::user()->id/*session('id')*/);
+        $id=Auth::user()->id;
+        $sites = Owner::all()->where('owner','=',$id/*session('id')*/);
 
-        return view('homeOwner')->with('sites',$sites);
+        return view('homeOwner',compact('sites'))/*->with('sites',$sites)*/;
     }
 
     public function addlocal(Request $request)

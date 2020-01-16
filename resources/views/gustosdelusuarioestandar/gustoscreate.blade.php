@@ -21,7 +21,11 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idfiesta" value="1">
+      @if($fiest==0)
       <input type="checkbox" name="fiesta" value="fiesta">
+      @else
+      <input type="checkbox" name="fiesta" value="fiesta" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -31,7 +35,11 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idmonumento" value="5">
+      @if($monumentos==0)
       <input type="checkbox" name="monumento" value="monumento">
+      @else
+      <input type="checkbox" name="monumento" value="monumento" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -41,7 +49,11 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idcentrocomercial" value="2">
+      @if($cc==0)
       <input type="checkbox" name="centrocomercial" value="centrocomercial">
+      @else
+      <input type="checkbox" name="centrocomercial" value="centrocomercial" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -51,7 +63,11 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idgimnasio" value="3">
+      @if($gym==0)
       <input type="checkbox" name="gimnasio" value="gimnasio">
+      @else
+      <input type="checkbox" name="gimnasio" value="gimnasio" checked>
+      @endif
     </div>
   </div>
 </div>
@@ -64,7 +80,11 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idcine" value="4">
+      @if($cine==0)
       <input type="checkbox" name="cine" value="cines">
+      @else
+      <input type="checkbox" name="cine" value="cines" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -74,7 +94,11 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idbar" value="6">
+      @if($bares==0)
       <input type="checkbox" name="bar" value="bares">
+      @else
+      <input type="checkbox" name="bar" value="bares" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -84,7 +108,11 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idrestaurante" value="7">
+      @if($restaurantes==0)
       <input type="checkbox" name="restaurante" value="restaurantes">
+      @else
+      <input type="checkbox" name="restaurante" value="restaurantes" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -94,7 +122,11 @@
     </div>
     <div class="card-footer">
       <input type="hidden" name="idmuseo" value="8">
+      @if($museos==0)
       <input type="checkbox" name="museo" value="museo">
+      @else
+      <input type="checkbox" name="museo" value="museo" checked>
+      @endif
     </div>
   </div>
 </div>
