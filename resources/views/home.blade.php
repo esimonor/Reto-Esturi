@@ -58,11 +58,8 @@
         </section>
         
     </div>
-<<<<<<< HEAD
     
     </div>
-=======
->>>>>>> masterandres
     <div class="container col-12 float-left">
     <br>
     <br>
