@@ -18,7 +18,13 @@
             @endif
         </div>
         <div class="container col-4">
-        <a href="{{route('addlocal')}}" class="btn btn-primary m-2 col-8">Añadir local</a>
+            @if (Auth::user()->role=='owner')
+                <a href="{{route('addlocal')}}" class="btn btn-primary m-2 col-8">Añadir local</a>
+            @endif
+            @if (Auth::user()->role=='user')
+                <a href="{{route('solicitud.edit', $solicitud->id)}}" class="btn btn-primary m-2 col-8" data-toggle="modal" data-target="#SolicitarModal">Solicitar</a>
+            @endif
+        
         </div>
         @include('includes.footer')
     </div>

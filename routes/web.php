@@ -83,6 +83,8 @@ Route::get('ownvis',function(){
 //controlador para modificar los gustos
 Route::resource('gustos','ControladordeGustos');
 
+Route::resource('/solicitud','SolicitudController');
+
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
