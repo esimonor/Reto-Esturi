@@ -1,5 +1,4 @@
 @include('includes.head')
-
 <title>@lang('Perfil de') {{Auth::user()->name()}}</title>
 </head>
 
@@ -20,8 +19,10 @@
                 <a href="{{route('addlocal')}}" class="btn btn-outline-warning m-2 col-4">Añadir local</a>
                 @endif
                 
-                <button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>
+                <a href="owndrop/{{Auth::user()->id}}" class="btn btn-outline-danger m-2 col-4">borrar cuenta</a>
+               <!--<button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>-->
                 <!--Ventana de confirmacion eliminar cuenta-->
+
                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
@@ -37,7 +38,7 @@
                             <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-dismiss="modal">No borrar</button>-->
                               <!-- los if son porque segun el usuario que sea envia los datos de borrar a un controlador u otro-->
-                              @if(Auth::user()->role=='owner')
+                             @if(Auth::user()->role=='owner')
                               <a class="btn btn-danger" href="{{route('deleteusers',[Auth::user()->id])}}" class="text-danger col-10">Borrar cuenta</a>
                               @endif
                               @if(Auth::user()->role=='user')
@@ -50,6 +51,8 @@
                           </div>
                         </div>
                       </div>
+
+                       
 
                 <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
             </div>

@@ -87,6 +87,11 @@
 					<h3 class="titulo-tarjeta mt-4">Eneko S.</h3>
 					<p class="contenido-tarjeta">@lang('Administrador')</p>
 				</div>
+				<div class="col tarjeta3">
+					<img class="caras" src="{{ URL::asset('images/Erbutrar.png') }}">
+					<h3 class="titulo-tarjeta mt-4">Andres R.</h3>
+					<p class="contenido-tarjeta">@lang('Administrador')</p>
+				</div>
 			</div>
 		</div>
 	</article>

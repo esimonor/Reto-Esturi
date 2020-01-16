@@ -4,7 +4,7 @@ $(document).ready(function () {
   var layer = L.esri.basemapLayer('Physical').addTo(map);
   var layerLabels;
   //Localización basada en la posición actual; funciona bien en movil
-  /*map.locate({setView: true, maxZoom: 16});
+  map.locate({setView: true, maxZoom: 16});
 
   function onLocationFound(e) {
     var radius = e.accuracy;
@@ -15,13 +15,8 @@ $(document).ready(function () {
     L.circle(e.latlng, radius).addTo(map);
 }
 
-<<<<<<< HEAD
 map.on('locationfound', onLocationFound);
-*/
-=======
-//map.on('locationfound', onLocationFound);
 
->>>>>>> mapa
   function setBasemap(basemap) {
     if (layer) {
       map.removeLayer(layer);

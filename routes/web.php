@@ -117,7 +117,7 @@ Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")-
 Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
 
 //esta es la ruta de la pagina de cada sitio
-Route::get("/local/{id}","SiteController@localactual");
+Route::get("/local/{id}","SiteController@localactual"); 
 Route::resource('sitio','SiteController');
 Route::get('ver',function(){;
     $comprobar=Establishment::get()->where('user_id',5)->where('establishment_id',2);
@@ -132,4 +132,26 @@ Route::post('/welcome','contactoController@contactar')->name('contactar');
 //->middleware('propietario');
 Route::get('aa',function(){
     User::where('id',5)->restore();
+
 });
+
+
+
+Route::resource('configuracion','UserController');
+
+
+
+
+
+Route::get('ver',function(){
+    return view('gustosdelusuarioestandar.segundavistadeluser');
+});
+
+Route::get('vertres',function(){
+    return view('gustosdelusuarioestandar.terceravistauser');
+});
+
+
+
+
+
