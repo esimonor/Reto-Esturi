@@ -71,7 +71,17 @@
                     <a class="dropdown-item bg-dark text-light" href="{{route('locale', ['locale' => 'eu'])}}">Eu</a>
                     <a class="dropdown-item bg-dark text-light" href="{{route('locale', ['locale' => 'en'])}}">En</a>
                 </div>
+            <!--</li>
+            <li class="nav-item text-center">
+                <a class="nav-link " id="verMapaGrande" onclick="verMapaGrande()">
+                    Ver mapa completo
+                </a>
             </li>
+            <li class="nav-item text-center">
+                <a class="nav-link " id="verMapaPeque" onclick="verMapaPeque()">
+                    Ver mapa completo
+                </a>
+            </li>-->
             
         </div>
         </ul>

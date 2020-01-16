@@ -11,10 +11,10 @@
             <div class="col-6 row">
                 <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-10">
                 
-            <form class="col-12" method="POST" action="{{route('addLocal')}}">
+            <form class="col-12" method="POST" action="{{route('addLocal')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
-                    <label>Imagen</label> <input type="file" name="pic" accept="image/*"><br>
+                    <label>Imagen</label> <input type="file" name="file" accept="image/*"><br>
                     <label>Nombre:</label><input type="text" name="name" />*
                     <br>
                     <label>Descripcion:</label><input type="text" name="desc" />
@@ -30,16 +30,13 @@
                         <option value="cines">Cine</option>
                         <option value="centros">Centro comercial</option>
                         <option value="fiestas">Discoteca</option>
-<<<<<<< HEAD
-                        <option value="gimnasio">Gimnasio</option>
-=======
                         <option value="gimnasios">Gimnasio</option>
->>>>>>> 646d54a80686673769e23fda7d238cdd8c747ce3
                         <option value="monumentos">Monumento</option>
                     </select>*
                 <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
-                    <label>Localizacion:</label><input style="width:45%;" type="text" id="coord" name="coordenadas" readonly/>
+                    <label>Latitud:</label><input style="width:45%;" type="text" id="lat" name="latitud" readonly/><br>
+                    <label>Longitud:</label><input style="width:45%;" type="text" id="lng" name="longitud" readonly/>
                         <!-- Mapa -->
                         <div id="map" style="weight:300px;height:300px"></div>
                     <br>

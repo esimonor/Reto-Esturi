@@ -4,6 +4,7 @@ namespace App;
 
 use App\Establishment;
 use Illuminate\Database\Eloquent\Model;
+use App\Categoria;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -80,7 +81,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function categorias(){
-        return $this->belongsToMany(Categoria::class);
+        return $this->belongsToMany('App\Categoria');
     }
     public function name(){
         $name=$this->name;

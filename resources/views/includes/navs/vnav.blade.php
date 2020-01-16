@@ -26,11 +26,16 @@
             </li>
             <li class="nav-item">
             <a href="{{ URL::asset('listEstablishments') }}" class="nav-link text-dark font-italic bg-light">
-                        <i class="fa fa-university -large mr-3 text-primary fa-fw"></i>
+                        <i class="fa fa-university mr-3 text-primary fa-fw"></i>
                         Listar establecimientos
                     </a>
             </li>
-           
+            <li class="nav-item">
+                <a href="{{ URL::asset('listRequests') }}" class="nav-link text-dark font-italic bg-light">
+                    <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                            Solicitudes de owner
+                        </a>
+                </li>
         </ul>
 
         <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Otras funciones</p>

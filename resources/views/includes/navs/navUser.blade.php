@@ -22,11 +22,11 @@
             </li>
             @else
             
-            @if(Auth::user()->role=="owner")
+           
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="{{URL::asset('mySites')}}">Mis sitios</a>
+                    <a class="nav-link text-center" href="{{route('solicitud.index')}}">Mis sitios</a>
                 </li>
-            @endif
+          
                 <li class="nav-item">
                     <a class="nav-link text-center" href="{{ URL::asset('gustos/create') }}">Mis categorías</a>
                 </li>

@@ -1,4 +1,4 @@
-<div class="col-4">
+<div class="tarjeta">
     <div>
         <h4>Tu establecimiento</h4>
         <hr>

@@ -55,11 +55,6 @@ Route::get('/eliminarperfil', function () {
     return view('eliminarperfil');
 })->name('eliminarperfil');
 
-//Ruta al perfil admin
-/*Route::get('/homeAdmin', function () {
-    return view('homeAdmin');
-})->name('homeAdmin');*/
-
 Route::get("/homeAdmin", "AdminController@indexContacto")->name("homeAdmin");
 
 Route::get("/homeAdmin/{id}", "AdminController@destroyContacto")->name("deleteContacto");
@@ -83,8 +78,23 @@ Route::get('ownvis',function(){
 //controlador para modificar los gustos
 Route::resource('gustos','ControladordeGustos');
 
+//Listar solicitudes
+Route::get("/listRequests", "AdminController@indexRequest")->name("listRequests");
+
+//Aceptar solicitudes
+Route::post("/listRequests", "AdminController@acceptRequests")->name("acceptRequests");
+
+//Rechazar solicitudes
+Route::get("/listRequest/{id}", "AdminController@rejectRequests")->name("rejectRequests");
+
+//Enviar solicitudes
+Route::get("/mySites/{id}", "AdminController@sendRequest")->name("mySitesRequest");
+
+Route::resource('/solicitud','SolicitudController');
+
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
+
 
 //Edita los usuarios con los datos del formulario
 Route::post("/listUsers","AdminController@updateUsers")->name("updateUsers");
@@ -117,7 +127,7 @@ Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")-
 Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
 
 //esta es la ruta de la pagina de cada sitio
-Route::get("/local/{id}","SiteController@localactual");
+Route::get("/local/{id}","SiteController@localactual"); 
 Route::resource('sitio','SiteController');
 Route::get('ver',function(){;
     $comprobar=Establishment::get()->where('user_id',5)->where('establishment_id',2);
@@ -132,4 +142,26 @@ Route::post('/welcome','contactoController@contactar')->name('contactar');
 //->middleware('propietario');
 Route::get('aa',function(){
     User::where('id',5)->restore();
+
 });
+
+
+
+Route::resource('configuracion','UserController');
+
+
+
+
+
+Route::get('ver',function(){
+    return view('gustosdelusuarioestandar.segundavistadeluser');
+});
+
+Route::get('vertres',function(){
+    return view('gustosdelusuarioestandar.terceravistauser');
+});
+
+
+
+
+

@@ -127,8 +127,9 @@ class SiteController extends Controller
             /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/    
     }
     public function mySites(){
-        $sites = Owner::all()->where('owner','=',session('id'));
+        $sites = Owner::all()->where('owner','=',session('id'))->first();
+        //$user = User::all()->where('id', '=', session('id'));
 
-        return view('mySites')->with('sites',$sites);
+        return view('mySites')->with('sites',$sites);//->with('user', $user);
     }
 }

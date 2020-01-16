@@ -11,7 +11,7 @@
 <body>
     <div class="container col-12">
         @include('includes.navs.navUser')
-<form class="col-12" method="POST" action="/gustos/{{Auth::user()->idvalor()}}">
+<form class="col-12" method="POST" action="/gustos">
 <div class="col-12">
  <div class="card-deck">
   <div class="card align-items-center">
@@ -20,7 +20,12 @@
       <h5 class="card-title">Fiestas</h5>
     </div>
     <div class="card-footer">
-      <input type="checkbox" name="fiesta">
+      <input type="hidden" name="idfiesta" value="1">
+      @if($fiest==0)
+      <input type="checkbox" name="fiesta" value="fiesta">
+      @else
+      <input type="checkbox" name="fiesta" value="fiesta" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -29,7 +34,12 @@
       <h5 class="card-title">Monumentos</h5>
     </div>
     <div class="card-footer">
-      <input type="checkbox" name="fiesta">
+      <input type="hidden" name="idmonumento" value="5">
+      @if($monumentos==0)
+      <input type="checkbox" name="monumento" value="monumento">
+      @else
+      <input type="checkbox" name="monumento" value="monumento" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -38,7 +48,12 @@
       <h5 class="card-title">Centro Comerciales</h5>
     </div>
     <div class="card-footer">
-      <input type="checkbox" name="fiesta">
+      <input type="hidden" name="idcentrocomercial" value="2">
+      @if($cc==0)
+      <input type="checkbox" name="centrocomercial" value="centrocomercial">
+      @else
+      <input type="checkbox" name="centrocomercial" value="centrocomercial" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -47,7 +62,12 @@
       <h5 class="card-title">Gimnasios</h5>
     </div>
     <div class="card-footer">
-      <input type="checkbox" name="fiesta">
+      <input type="hidden" name="idgimnasio" value="3">
+      @if($gym==0)
+      <input type="checkbox" name="gimnasio" value="gimnasio">
+      @else
+      <input type="checkbox" name="gimnasio" value="gimnasio" checked>
+      @endif
     </div>
   </div>
 </div>
@@ -59,7 +79,12 @@
       <h5 class="card-title">Cines</h5>
     </div>
     <div class="card-footer">
-      <input type="checkbox" name="fiesta">
+      <input type="hidden" name="idcine" value="4">
+      @if($cine==0)
+      <input type="checkbox" name="cine" value="cines">
+      @else
+      <input type="checkbox" name="cine" value="cines" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -68,7 +93,12 @@
       <h5 class="card-title">Bares</h5>
     </div>
     <div class="card-footer">
-      <input type="checkbox" name="fiesta">
+      <input type="hidden" name="idbar" value="6">
+      @if($bares==0)
+      <input type="checkbox" name="bar" value="bares">
+      @else
+      <input type="checkbox" name="bar" value="bares" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -77,7 +107,12 @@
       <h5 class="card-title">Restaurantes</h5>
     </div>
     <div class="card-footer">
-      <input type="checkbox" name="fiesta">
+      <input type="hidden" name="idrestaurante" value="7">
+      @if($restaurantes==0)
+      <input type="checkbox" name="restaurante" value="restaurantes">
+      @else
+      <input type="checkbox" name="restaurante" value="restaurantes" checked>
+      @endif
     </div>
   </div>
   <div class="card align-items-center">
@@ -86,24 +121,35 @@
       <h5 class="card-title">Museos</h5>
     </div>
     <div class="card-footer">
-      <input type="checkbox" name="fiesta">
+      <input type="hidden" name="idmuseo" value="8">
+      @if($museos==0)
+      <input type="checkbox" name="museo" value="museo">
+      @else
+      <input type="checkbox" name="museo" value="museo" checked>
+      @endif
     </div>
   </div>
 </div>
 </div>
 	<div class="row justify-content-center">
-		<div>
-     <!-- <form class="col-12" method="POST" action="/gustosdelusuarioestandar"> -->
-      <input type="hidden" name="_method" value="PUT">
+   <div class="container">
+    <div class="progress m-3">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+        perfil completado al 30%
+      </div>
+    </div>
+    <div class=" d-flex">
+      <input type="hidden" name="formulario" value="uno">
       {{csrf_field()}}
-			<button class="btn btn-outline-success m-2 col-4">Enviar</button>
+      <button class="btn btn-outline-success m-2 col-4 align-items-center">siguiente</button>
     <!--</form>-->
-		</div>
+    </div>
+   </div>
+  
 	</div>
 </div>
 </form>
-
-        @include('includes.footer')
+     @include('includes.footer')
     </div>
     @include('includes.js')
 </body>
