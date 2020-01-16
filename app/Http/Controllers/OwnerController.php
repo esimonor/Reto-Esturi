@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Owner;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class OwnerController extends Controller
@@ -17,9 +18,10 @@ class OwnerController extends Controller
     }
 
     public function show(){
-        $sites = Owner::all()->where('owner','=',session('id'));
+        $id=Auth::user()->id;
+        $sites = Owner::all()->where('owner','=',$id/*session('id')*/);
 
-        return view('homeOwner')->with('sites',$sites);
+        return view('homeOwner',compact('sites'))/*->with('sites',$sites)*/;
     }
 
     public function addlocal(Request $request)
@@ -43,7 +45,40 @@ class OwnerController extends Controller
         }
     }
     public function updatelocal(Request $request){
-        $name=$request->input("name");
+        //{"id":1,"name":"d1","type":"Discoteca","localization":"-","rutaactual":"museum.png","apertura":null,"cierre":null,"owner":6,"created_at":null,"updated_at":"2020-01-15
+        $name=$request->rutaactual;
+        if($request->formulario=='modificarsitio'){
+        if($request->hasFile('file')){
+            $file=$request->file('file');
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/',$name);
+
+            $db=Owner::find($request->id);
+            $db->name=$request->name;
+            $db->type=$request->type;
+            $db->localization=$request->coordenadas;
+            $db->rutaactual=$name;
+            $db->apertura=$request->apertura;
+            $db->cierre=$request->cierre;
+            $db->owner=$request->idp;
+            $db->description=$request->desc;
+            $db->update();
+        }
+        if(!$request->hasfile('file')){
+            $db=Owner::find($request->id);
+            $db->name=$request->name;
+            $db->type=$request->desc;
+            $db->localization=$request->coordenadas;
+            $db->rutaactual=$name;
+            $db->apertura=$request->apertura;
+            $db->cierre=$request->cierre;
+            $db->owner=$request->id;
+            $db->description=$request->desc;
+            $db->update();
+        }
+            return redirect('profile');
+    }
+        /*$name=$request->input("name");
         $type=$request->input("type");
         $localization=$request->input("coordenadas");
         $id=$request->input("id");
@@ -51,7 +86,7 @@ class OwnerController extends Controller
         Owner::where('id',$id)
             ->update(['name'=>$name,'type'=>$type,'localization'=>$localization]);
         
-        return redirect('homeOwner');
+        return redirect('homeOwner');*/
     }
 
     public function destroy($id){
