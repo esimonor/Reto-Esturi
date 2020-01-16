@@ -12,6 +12,7 @@
 	<article class="text-center d-flex justify-content-center align-items-center mt-5" id="cajaSlogan">
 		<div>
 			<div>
+				<p>prueba</p>
 				<h4 id="slogan">@lang('Encuentra lugares interesantes cerca de ti').</h4>
 			</div>
 			<div class="mt-5">
