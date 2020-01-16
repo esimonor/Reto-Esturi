@@ -26,6 +26,16 @@ class AdminController extends Controller
         return redirect('listRequests');
     }
 
+    public function rejectRequests($id){
+        $role="admin";
+
+        User::where('id',$id)
+            ->update(['role'=>$role]);
+        
+        return redirect('listRequests');
+    }
+
+
     public function destroyUsers($id)  {   
         //Elimina el usuario de la base datos   
         $users = User::all()->where("id","=",$id);    

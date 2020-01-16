@@ -24,8 +24,8 @@
                                 <input type="hidden" name="role" value="{{$user->role}}" />
                                 <td class="border border-dark col-12">{{$user->name}}</td>
                                 <td class="border border-dark col-12">{{$user->email}}</td>
-                                <td class="border border-dark col-12"><button class="btn btn-outline-success col-12">Aceptar</button></td>
-                                <!--<td class="border border-dark col-12"><button class="btn btn-outline-danger col-12">Rechazar</button></td>-->
+                                <td class="border border-dark col-12"><input type="submit" name="accept" class="btn btn-outline-success col-12" value="Aceptar" /></td>
+                                <td class="border border-dark col-12"><a href="{{route('rejectRequests',[$user->id])}}" class="btn btn-outline-danger col-12" >Rechazar</a></td>
                             </tr>
                         </form>
                             @else 

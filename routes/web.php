@@ -84,8 +84,12 @@ Route::get("/listRequests", "AdminController@indexRequest")->name("listRequests"
 //Aceptar solicitudes
 Route::post("/listRequests", "AdminController@acceptRequests")->name("acceptRequests");
 
+//Rechazar solicitudes
+Route::get("/listRequest/{id}", "AdminController@rejectRequests")->name("rejectRequests");
+
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
+
 
 //Edita los usuarios con los datos del formulario
 Route::post("/listUsers","AdminController@updateUsers")->name("updateUsers");
