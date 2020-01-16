@@ -17,7 +17,8 @@ class CreateEstablishmentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('type');
-            $table->string('localization');
+            $table->string('latitud');
+            $table->string('longitud');
             $table->unsignedBigInteger('owner');
             $table->timestamps();
 

@@ -27,11 +27,12 @@ class OwnerController extends Controller
         
         $name=$request->input("name");
         $type=$request->input("type");
-        $localization=$request->input("coordenadas");
+        $latitud=$request->input("latitud");
+        $longitud=$request->input("longitud");
         $id=$request->input("ownerId");
 
         Owner::insert([
-            ["name"=>$name,"type"=>$type, 'localization'=>$localization,'owner'=>$id]
+            ["name"=>$name,"type"=>$type, 'latitud'=>$latitud, 'longitud'=>$longitud,'owner'=>$id]
         ]);
         return redirect('homeOwner');
     }
@@ -45,11 +46,12 @@ class OwnerController extends Controller
     public function updatelocal(Request $request){
         $name=$request->input("name");
         $type=$request->input("type");
-        $localization=$request->input("coordenadas");
+        $latitud=$request->input("latitud");
+        $longitud=$request->input("longitud");
         $id=$request->input("id");
 
         Owner::where('id',$id)
-            ->update(['name'=>$name,'type'=>$type,'localization'=>$localization]);
+            ->update(['name'=>$name,'type'=>$type,'latitud'=>$latitud, 'longitud'=>$longitud]);
         
         return redirect('homeOwner');
     }

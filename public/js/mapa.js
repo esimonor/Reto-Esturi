@@ -15,8 +15,13 @@ $(document).ready(function () {
     L.circle(e.latlng, radius).addTo(map);
 }
 
+<<<<<<< HEAD
 map.on('locationfound', onLocationFound);
 */
+=======
+//map.on('locationfound', onLocationFound);
+
+>>>>>>> mapa
   function setBasemap(basemap) {
     if (layer) {
       map.removeLayer(layer);
@@ -48,113 +53,90 @@ map.on('locationfound', onLocationFound);
 
   //Al hacer click se guardan las coordenadas en la vista addlocal
   map.on('click', function(e) {
-    var locate= e.latlng.lat + ", " + e.latlng.lng;
-    document.getElementById("coord").value = locate; 
+    var latitude= e.latlng.lat;
+    var longitude=  e.latlng.lng;
+    document.getElementById("lat").value = latitude; 
+    document.getElementById("lng").value = longitude; 
   });
 
-  /*var marker = L.marker([43.3228796, -1.9921275]).addTo(map);
-  marker.bindPopup("<b>Aquarium</b><br>1 Plaza de Carlos Blasco Imaz<br> 20003 Donostia, Gipuzkoa");
-
-  var marker2 = L.marker([43.305941, -1.973445]).addTo(map);
-  marker2.bindPopup("<b>Arcco</b><br>Plaza de Irún <br>6, 20011 Donostia-San Sebastian, SS");
-
-  var marker3 = L.marker([43.315552, -1.988778]).addTo(map);
-  marker3.bindPopup("<b>Bataplan</b><br>Kontxa Pasealekua<br> 12, 20007 Donostia, Gipuzkoa");
-
-  var marker4 = L.marker([43.323342, -1.977731]).addTo(map);
-  marker4.bindPopup("<b>Altafit</b><br>Peña y Goñi Kalea<br>12, 14, 20002 Donostia-San Sebastian, SS");
-
-  var marker5 = L.marker([43.322437, -1.974759]).addTo(map);
-  marker5.bindPopup("<b>Cine Trueba</b><br>Secundino Esnaola Kalea<br> 2, 4, 20001 Donostia, SS");
-
-  var marker6 = L.marker([43.321834, -2.005437]).addTo(map);
-  marker6.bindPopup("<b>Peine del Viento</b><br>Eduardo Chillida Pasealekua<br> 20008 Donostia, Gipuzkoa");
-
-  var marker7 = L.marker([43.324096, -1.983742]).addTo(map);
-  marker7.bindPopup("<b>Bar Néstor</b><br>Arrandegi Kalea<br>11, 20003 Donostia, Gipuzkoa");
-
-  var marker8 = L.marker([43.321589, -1.949238]).addTo(map);
+  /*var marker8 = L.marker([43.321589, -1.949238]).addTo(map);
   marker8.bindPopup("<b>Arzak</b><br>Avenida del, Alcalde J. Elosegi Hiribidea<br>273, 20015 Donostia, Gipuzkoa");*/
 
-
+//Seccion Iconos
   var barIcon = L.icon({
     iconUrl: 'https://i.imgur.com/sIEwWRU.png',
 
-    iconSize:     [69, 75], // size of the icon
-    iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    iconSize:     [69, 75], // Tamaño del icono
+    iconAnchor:   [42, 64], // Punto del icono correspondiente al mapa
+    popupAnchor:  [-3, -46] // Punto donde saldra el popup
 });
 var museoIcon = L.icon({
   iconUrl: 'https://i.imgur.com/W7soerF.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -46]
 });
 
 var fiestasIcon = L.icon({
   iconUrl: 'https://i.imgur.com/b58IyNL.png',
 
-  iconSize:     [69, 75], // size of the icon
-  //shadowSize:   [50, 64], // size of the shadow
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -46]
 });
 var gimnasiosIcon = L.icon({
   iconUrl: 'https://i.imgur.com/6C2YWrL.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64], 
+  popupAnchor:  [-3, -46] 
 });
 var cinesIcon = L.icon({
   iconUrl: 'https://i.imgur.com/qJe8fR6.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -46]
 });
 var monumentosIcon = L.icon({
   iconUrl: 'https://i.imgur.com/2PvsE9c.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64], 
+  popupAnchor:  [-3, -46]
 });
 var centroIcon = L.icon({
   iconUrl: 'https://i.imgur.com/Ut3gIp6.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -46]
 });
 var restauranteIcon = L.icon({
   iconUrl: 'https://i.imgur.com/yFiSM1C.png',
 
-  iconSize:     [69, 75], // size of the icon
-  iconAnchor:   [42, 64], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [69, 75],
+  iconAnchor:   [42, 64],
+  popupAnchor:  [-3, -46]
 });
 
-    var bucle = document.getElementById("res_final").value;
+    //Coje el valor de cuantos establecimientos tiene para el bucle
+    var bucle = document.getElementById("res_final").value; 
+    //Iniciamos las variables x e y que almacenaran las cooredenadas
     var x=0;
     var y=0;
-    var lugar;
+    //Variable tipo solo muestra el tipo de establecimiento
     var tipo;
   while(bucle>0){
-    lugar = document.getElementById(bucle).value;
+    //Tipo coje el tipo de establecimiento
     tipo = document.getElementById("desc"+bucle).value;
+    //Almacenamos el nombre del establecimiento
     var nombre = document.getElementById("name"+bucle).value;
-    x = lugar.slice(0,16);
-    y = lugar.slice(18,99);
+    //Cojemos las coordenadas
+    x = document.getElementById("lat"+bucle).value;
+    y = document.getElementById("long"+bucle).value;
+    //Los if detectan que tipo son y le ponen su correspondiente icono
     if(tipo=="museos"){
       var marker1 = L.marker([x,y], {icon: museoIcon}).addTo(map);
     marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
@@ -191,7 +173,7 @@ var restauranteIcon = L.icon({
     bucle--;
   }
 
-  
+  //Grupo de capas para que el usuairo las pueda filtrar
   var museos = L.layerGroup([marker1]);
   var centros = L.layerGroup([marker2]);
   var fiestas = L.layerGroup([marker3]);
