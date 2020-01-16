@@ -27,6 +27,49 @@ class ControladordeGustos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function modcategorias(){
+        $id=Auth::user()->id;
+        $gusto=User::where('id',$id)->get();
+        foreach ($gusto as $key) {
+            $gustos=$key->categorias;
+        }
+            $cc=0;
+            $fiest=0;
+            $gym=0;
+            $cine=0;
+            $monumentos=0;
+            $bares=0;
+            $restaurantes=0;
+            $museos=0;
+        foreach ($gustos as $k => $v) {
+
+            if($v->nombre=='centro comerciales'){
+                $cc=1;
+            }
+            if($v->nombre=='fiestas'){
+                $fiest=1;
+            }
+            if($v->nombre=='gimnasios'){
+                $gym=1;
+            }
+            if($v->nombre=='cines'){
+                $cine=1;
+            }
+            if($v->nombre=='monumentos'){
+                $monumentos=1;
+            }
+            if($v->nombre=='bares'){
+                $bares=1;
+            }
+            if($v->nombre=='restaurantes'){
+                $restaurantes=1;
+            }
+            if($v->nombre=='museos'){
+                $museos=1;
+            }
+        }
+        return view('modificarcategorias',compact('cc','fiest','gym','cine','monumentos','bares','restaurantes','museos'));
+    }
     public function create()
     {
         $id=Auth::user()->id;
@@ -180,7 +223,11 @@ class ControladordeGustos extends Controller
                     $gusto=categoria_user::find($cmuseo->id);
                     $gusto->delete();
                 }
+                if ($request->modificador==1) {
+                    return redirect('mapa');
+                }else{
             return redirect('ver');
+        }
         }        
     }
 
