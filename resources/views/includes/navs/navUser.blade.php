@@ -28,7 +28,7 @@
                 </li>
           
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="{{ URL::asset('gustos/create') }}">Mis categorías</a>
+                    <a class="nav-link text-center" href="modcategorias">Mis categorías</a>
                 </li>
                 <li class="nav-item dropdown text-center">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

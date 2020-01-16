@@ -162,6 +162,6 @@ Route::get('vertres',function(){
 });
 
 
-
+Route::get('modcategorias','ControladordeGustos@modcategorias');
 
 
