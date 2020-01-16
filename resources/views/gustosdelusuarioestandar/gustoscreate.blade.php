@@ -13,8 +13,8 @@
         @include('includes.navs.navUser')
 <form class="col-12" method="POST" action="/gustos">
 <div class="col-12">
- <div class="card-deck">
-  <div class="card align-items-center">
+ <div class="card-deck d-flex justify-content-center">
+  <div class="card align-items-center col-2 ">
     <img class="card-img-top" src="{{ URL::asset('images/fiesta.jpg') }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Fiestas</h5>
@@ -28,7 +28,7 @@
       @endif
     </div>
   </div>
-  <div class="card align-items-center">
+  <div class="card align-items-center col-2">
     <img class="card-img-top" src="{{ URL::asset('images/monumento.jpg') }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Monumentos</h5>
@@ -42,7 +42,7 @@
       @endif
     </div>
   </div>
-  <div class="card align-items-center">
+  <div class="card align-items-center col-2">
     <img class="card-img-top" src="{{ URL::asset('images/centro.jpg') }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Centro Comerciales</h5>
@@ -56,7 +56,7 @@
       @endif
     </div>
   </div>
-  <div class="card align-items-center">
+  <div class="card align-items-center col-2">
     <img class="card-img-top" src="{{ URL::asset('images/gimnasio.jpg') }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Gimnasios</h5>
@@ -72,8 +72,8 @@
   </div>
 </div>
 <br>
-<div class="card-deck">
-  <div class="card align-items-center">
+<div class="card-deck d-flex justify-content-center">
+  <div class="card align-items-center col-2">
     <img class="card-img-top" src="{{ URL::asset('images/cines.jpg') }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Cines</h5>
@@ -87,7 +87,7 @@
       @endif
     </div>
   </div>
-  <div class="card align-items-center">
+  <div class="card align-items-center col-2">
     <img class="card-img-top" src="{{ URL::asset('images/bares.jpg') }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Bares</h5>
@@ -101,7 +101,7 @@
       @endif
     </div>
   </div>
-  <div class="card align-items-center">
+  <div class="card align-items-center col-2">
     <img class="card-img-top" src="{{ URL::asset('images/restaurantes.jpg') }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Restaurantes</h5>
@@ -115,7 +115,7 @@
       @endif
     </div>
   </div>
-  <div class="card align-items-center">
+  <div class="card align-items-center col-2">
     <img class="card-img-top" src="{{ URL::asset('images/museos.jpg') }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Museos</h5>
