@@ -18,35 +18,27 @@
 
         <div class="row">
             <div class="col-12 row m-2 d-flex justify-content-center">
-                    <table style="text-align:center;" class="col-12 row m-2 d-flex justify-content-center">
+                    <table style="text-align:center;" class="m-2 d-flex justify-content-center">
                         <tr class="border bg-light">
-                            <th class="border border-dark col-1">Nombre</th>
-                            <th class="border border-dark col-1">Correo</th>
-                            <th class="border border-dark col-1">Mensaje</th>
-                            <th class="border border-dark col-1">Eliminar comentario</th>
+                            <th class="border border-dark col-12">Nombre</th>
+                            <th class="border border-dark col-12">Correo</th>
+                            <th class="border border-dark col-12">Mensaje</th>
+                            <th class="border border-dark col-12">Eliminar comentario</th>
 
                         <tr>
                     <!--Lista los usuarios junto a su nombre, apellido, ID, y correo-->
                     @foreach ($contactos as $contacto)
-                         <form method="POST" action="{{route('updateUsers')}}">
-                        @csrf
                             <tr class="bg-light">
-                                <td class="border border-dark">{{$contacto->name}}</td>
-                                <td class="border border-dark">{{$contacto->email}}</td>
-                                <td class="border border-dark">{{$contacto->comentario}}</td>
-                                <td class="border border-dark"><a href="{{route('deleteContacto',[$contacto->id])}}" class="text-danger col-10">Eliminar</a></td>
-
+                                <td class="border border-dark col-12">{{$contacto->name}}</td>
+                                <td class="border border-dark col-12">{{$contacto->email}}</td>
+                                <td class="border border-dark col-12">{{$contacto->comentario}}</td>
+                                <td class="border border-dark col-12"><a href="{{route('deleteContacto',[$contacto->id])}}" class="text-danger col-10">Eliminar</a></td>
                             </tr>
-                        </form>
                     @endforeach
-                    </table>               
+                    </table>
                 </div>
             </div>
 
-
-
-
-    {{--@include('includes.footer')--}}
     </div>
     @include('includes.js')
 </body>

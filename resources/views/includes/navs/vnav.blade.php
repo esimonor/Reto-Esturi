@@ -1,7 +1,7 @@
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
         <div class="py-4 px-3 mb-4 bg-light">
-            <div class="media d-flex align-items-center"><a href="{{ route('homeAdmin') }}"><img src="{{ URL::asset('images/logosmall.png') }}" alt="logo" width="65" class="mr-3 rounded img-thumbnail shadow-sm"></a>
+            <div class="media d-flex align-items-center"><a href="{{ route('welcome') }}"><img src="{{ URL::asset('images/logosmall.png') }}" alt="logo" width="65" class="mr-3 rounded img-thumbnail shadow-sm"></a>
             <div class="media-body">
                 <h4 class="m-0">{{Auth::user()->name}} {{Auth::user()->lastName}}</h4>
                 <p class="font-weight-light text-muted mb-0">{{Auth::user()->role}}</p>
@@ -50,6 +50,9 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="nav-link text-dark font-italic bg-light">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                             <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
                             Log out
                         </a>

@@ -35,7 +35,8 @@
                     </select>*
                 <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
-                    <label>Localizacion:</label><input style="width:45%;" type="text" id="coord" name="coordenadas" readonly/>
+                    <label>Latitud:</label><input style="width:45%;" type="text" id="lat" name="latitud" readonly/><br>
+                    <label>Longitud:</label><input style="width:45%;" type="text" id="lng" name="longitud" readonly/>
                         <!-- Mapa -->
                         <div id="map" style="weight:300px;height:300px"></div>
                     <br>

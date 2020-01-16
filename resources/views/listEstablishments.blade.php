@@ -29,9 +29,9 @@
                         <td class="border border-dark"><input name="type" type="text" value="{{$establishment->type}}" /></td>
                         <td class="border border-dark">{{$establishment->owner}}</td>
                         <td class="border border-dark"><a href="{{route('deleteEstablishments',[$establishment->id])}}" class="text-danger col-10">Eliminar</a></td>
-                        <td class="border border-dark"><button class="text-warning col-10">Modificar</a></td>
+                        <td class="border border-dark"><button class="text-warning col-10">Modificar</button></td>
                     </tr>
-                    </form>
+                        </form>
                     @endforeach
                     </table>               
                 <a type="button" class="btn btn-primary col-6 m-1" href="{{ URL::asset('homeAdmin') }}">Volver</a>
