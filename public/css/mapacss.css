@@ -4,6 +4,11 @@
     
 }
 
+.addScroll{
+    overflow-y: scroll;
+    height: 850px;
+}
+
 /* The heart of the matter */
 .testimonial-group > .row {
     overflow-x: auto;

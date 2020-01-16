@@ -6,7 +6,7 @@
 <body>
     @include('includes.navs.nav')
     <div class="container col-12">
-        <div class="container row col-xl-6 col-lg-6 col-md-12 col-sm-12 float-left">
+        <div id='cards' class="container row addScroll col-xl-4 col-lg-4 col-md-12 col-sm-12 float-left">
     
             @if (isset($sites))
                 <?php
@@ -27,7 +27,8 @@
                 ?>
             @endif
         </div>
-        <div class="container col-xl-6 col-lg-6 col-md-12 col-sm-12 float-left">
+        
+        <div id='mapa' class="container col-xl-8 col-lg-8 col-md-12 col-sm-12 float-left">
                 <section>
             <!-- Mapa -->
             <div id="map"></div>
