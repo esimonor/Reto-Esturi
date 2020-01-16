@@ -3,8 +3,8 @@ $(document).ready(function () {
     setView([43.3227696, -1.9940565], 15);
   var layer = L.esri.basemapLayer('Physical').addTo(map);
   var layerLabels;
-  /* Localización basada en la posición actual; funciona bien en movil
-  map.locate({setView: true, maxZoom: 16});
+  //Localización basada en la posición actual; funciona bien en movil
+  /*map.locate({setView: true, maxZoom: 16});
 
   function onLocationFound(e) {
     var radius = e.accuracy;
@@ -14,10 +14,9 @@ $(document).ready(function () {
 
     L.circle(e.latlng, radius).addTo(map);
 }
-*/
 
 map.on('locationfound', onLocationFound);
-
+*/
   function setBasemap(basemap) {
     if (layer) {
       map.removeLayer(layer);
