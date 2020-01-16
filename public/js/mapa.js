@@ -3,7 +3,8 @@ $(document).ready(function () {
     setView([43.3227696, -1.9940565], 15);
   var layer = L.esri.basemapLayer('Physical').addTo(map);
   var layerLabels;
-  /* Localización basada en la posición actual; funciona bien en movil
+
+  //Localización basada en la posición actual; funciona bien en movil
   map.locate({setView: true, maxZoom: 16});
 
   function onLocationFound(e) {
@@ -14,9 +15,9 @@ $(document).ready(function () {
 
     L.circle(e.latlng, radius).addTo(map);
 }
-*/
 
-//map.on('locationfound', onLocationFound);
+
+map.on('locationfound', onLocationFound);
 
   function setBasemap(basemap) {
     if (layer) {
@@ -46,6 +47,7 @@ $(document).ready(function () {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
   }).addTo(map);
   var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+  //L.control.layers(overlayMaps, {collapsed: false}).addTo(map);
 
   //Al hacer click se guardan las coordenadas en la vista addlocal
   map.on('click', function(e) {
@@ -124,6 +126,14 @@ var restauranteIcon = L.icon({
     var y=0;
     //Variable tipo solo muestra el tipo de establecimiento
     var tipo;
+    var marker1;
+    var marker2;
+    var marker3;
+    var marker4;
+    var marker5;
+    var marker6;
+    var marker7;
+    var marker8;
   while(bucle>0){
     //Tipo coje el tipo de establecimiento
     tipo = document.getElementById("desc"+bucle).value;
@@ -134,35 +144,35 @@ var restauranteIcon = L.icon({
     y = document.getElementById("long"+bucle).value;
     //Los if detectan que tipo son y le ponen su correspondiente icono
     if(tipo=="museos"){
-      var marker1 = L.marker([x,y], {icon: museoIcon}).addTo(map);
+      marker1 = L.marker([x,y], {icon: museoIcon}).addTo(map);
     marker1.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="centros"){
-      var marker2 = L.marker([x,y], {icon: centroIcon}).addTo(map);
+      marker2 = L.marker([x,y], {icon: centroIcon}).addTo(map);
     marker2.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="fiestas"){
-      var marker3 = L.marker([x,y], {icon: fiestasIcon}).addTo(map);
+      marker3 = L.marker([x,y], {icon: fiestasIcon}).addTo(map);
     marker3.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="gimnasios"){
-      var marker4 = L.marker([x,y], {icon: gimnasiosIcon}).addTo(map);
+      marker4 = L.marker([x,y], {icon: gimnasiosIcon}).addTo(map);
     marker4.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="cines"){
-      var marker5 = L.marker([x,y], {icon: cinesIcon}).addTo(map);
+      marker5 = L.marker([x,y], {icon: cinesIcon}).addTo(map);
     marker5.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="monumentos"){
-      var marker6 = L.marker([x,y], {icon: monumentosIcon}).addTo(map);
+      marker6 = L.marker([x,y], {icon: monumentosIcon}).addTo(map);
     marker6.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="bares"){
-      var marker7 = L.marker([x,y], {icon: barIcon}).addTo(map);
+      marker7 = L.marker([x,y], {icon: barIcon}).addTo(map);
     marker7.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     if(tipo=="restaurantes"){
-      var marker8 = L.marker([x,y], {icon: restauranteIcon}).addTo(map);
+      marker8 = L.marker([x,y], {icon: restauranteIcon}).addTo(map);
     marker8.bindPopup("<b>"+nombre+"</b><br>"+tipo);
     }
     
@@ -190,6 +200,7 @@ var restauranteIcon = L.icon({
     "bares": bares,
     "restaurantes": restaurantes
   };
-  var layer= L.control.layers(overlayMaps).addTo(map);
+  
+  //L.control.layers(overlayMaps).addTo(map);
 
 });

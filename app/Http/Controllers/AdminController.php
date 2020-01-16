@@ -11,6 +11,21 @@ class AdminController extends Controller
         return view('listUsers')->with('users',$users);
     }
 
+    public function indexRequest(){
+        $users = User::all();        
+        return view('listRequests')->with('users',$users);
+    }
+
+    public function acceptRequests(Request $request){
+        $role="owner";
+        $id=$request->input("id");
+
+        User::where('id',$id)
+            ->update(['role'=>$role]);
+        
+        return redirect('listRequests');
+    }
+
     public function destroyUsers($id)  {   
         //Elimina el usuario de la base datos   
         $users = User::all()->where("id","=",$id);    
