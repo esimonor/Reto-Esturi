@@ -15,13 +15,14 @@
                             <th class="border border-dark col-12">Denegar peticion</th>
                         <tr>
                     @foreach ($users as $user)
-                            @if($user->role == "user")
+                            @if($user->solicitud == 1)
                             <form action="{{route('acceptRequests')}}" method="POST">
                                 @csrf
                             <tr class="bg-light">
                                 <td class="border border-dark col-12">{{$user->id}}</td>
                                 <input type="hidden" name="id" value="{{$user->id}}" />
                                 <input type="hidden" name="role" value="{{$user->role}}" />
+                                <input type="hidden" name="solicitud" value="{{$user->solicitud}}" />
                                 <td class="border border-dark col-12">{{$user->name}}</td>
                                 <td class="border border-dark col-12">{{$user->email}}</td>
                                 <td class="border border-dark col-12"><input type="submit" name="accept" class="btn btn-outline-success col-12" value="Aceptar" /></td>
