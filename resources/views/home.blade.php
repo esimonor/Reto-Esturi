@@ -5,8 +5,7 @@
 </style>
 
 <body>
-    @include('includes.navs.nav')
-
+    @include('includes.navs.navUser')
     <div class="container col-12">
         <div id='cards' class="container row addScroll col-xl-4 col-lg-4 col-md-12 col-sm-12 float-left">
     

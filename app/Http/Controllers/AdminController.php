@@ -11,6 +11,40 @@ class AdminController extends Controller
         return view('listUsers')->with('users',$users);
     }
 
+    public function indexRequest(){
+        $users = User::all();        
+        return view('listRequests')->with('users',$users);
+    }
+
+    public function acceptRequests(Request $request){
+        $role="owner";
+        $solicitud=0;
+        $id=$request->input("id");
+
+        User::where('id',$id)
+            ->update(['role'=>$role, 'solicitud'=>$solicitud]);
+        
+        return redirect('listRequests');
+    }
+
+    public function rejectRequests($id){
+        $solicitud=0;
+
+        User::where('id',$id)
+            ->update(['solicitud'=>$solicitud]);
+        
+        return redirect('listRequests');
+    }
+
+    public function sendRequest($id){
+        $solicitud=1;
+
+        User::where('id',$id)
+            ->update(['solicitud'=>$solicitud]);
+
+            return redirect('mySites');
+    }
+
     public function destroyUsers($id)  {   
         //Elimina el usuario de la base datos   
         $users = User::all()->where("id","=",$id);    

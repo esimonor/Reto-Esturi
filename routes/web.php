@@ -55,11 +55,6 @@ Route::get('/eliminarperfil', function () {
     return view('eliminarperfil');
 })->name('eliminarperfil');
 
-//Ruta al perfil admin
-/*Route::get('/homeAdmin', function () {
-    return view('homeAdmin');
-})->name('homeAdmin');*/
-
 Route::get("/homeAdmin", "AdminController@indexContacto")->name("homeAdmin");
 
 Route::get("/homeAdmin/{id}", "AdminController@destroyContacto")->name("deleteContacto");
@@ -83,8 +78,23 @@ Route::get('ownvis',function(){
 //controlador para modificar los gustos
 Route::resource('gustos','ControladordeGustos');
 
+//Listar solicitudes
+Route::get("/listRequests", "AdminController@indexRequest")->name("listRequests");
+
+//Aceptar solicitudes
+Route::post("/listRequests", "AdminController@acceptRequests")->name("acceptRequests");
+
+//Rechazar solicitudes
+Route::get("/listRequest/{id}", "AdminController@rejectRequests")->name("rejectRequests");
+
+//Enviar solicitudes
+Route::get("/mySites/{id}", "AdminController@sendRequest")->name("mySitesRequest");
+
+Route::resource('/solicitud','SolicitudController');
+
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
+
 
 //Edita los usuarios con los datos del formulario
 Route::post("/listUsers","AdminController@updateUsers")->name("updateUsers");
