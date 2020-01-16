@@ -18,9 +18,10 @@
                         <p>Localización: {{ $site->localization }}</p>
                         <p>Id del propietario: {{ $site->owner }}</p>
                     </div>
+                    <a class="btn btn-info" value="{{$site->id}}" href="local/{{$site->id}}">ver mas</a>
                 </div>
             @endforeach
-        @endif
+        @endif 
     </div>
     </div>
     <div class="container col-12 float-left alturadelcontenedor">

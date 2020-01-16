@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Owner;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class OwnerController extends Controller
@@ -17,7 +18,7 @@ class OwnerController extends Controller
     }
 
     public function show(){
-        $sites = Owner::all()->where('owner','=',session('id'));
+        $sites = Owner::all()->where('owner','=',Auth::user()->id/*session('id')*/);
 
         return view('homeOwner')->with('sites',$sites);
     }
@@ -46,33 +47,37 @@ class OwnerController extends Controller
     public function updatelocal(Request $request){
         //{"id":1,"name":"d1","type":"Discoteca","localization":"-","rutaactual":"museum.png","apertura":null,"cierre":null,"owner":6,"created_at":null,"updated_at":"2020-01-15
         $name=$request->rutaactual;
-    if($request->formulario=='modificarsitio'){
-    if($request->hasFile('file')){
-        $file=$request->file('file');
-        $name=time().$file->getClientOriginalName();
-        $file->move(public_path().'/images/',$name);
+        if($request->formulario=='modificarsitio'){
+        if($request->hasFile('file')){
+            $file=$request->file('file');
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/',$name);
 
-        $db=Owner::find($request->id);
-        $db->name=$request->name;
-        $db->type=$request->desc;
-        $db->localization=$request->coordenadas;
-        $db->rutaactual=$name;
-        $db->apertura=$request->apertura;
-        $db->cierre=$request->cierre;
-        $db->update();
+            $db=Owner::find($request->id);
+            $db->name=$request->name;
+            $db->type=$request->type;
+            $db->localization=$request->coordenadas;
+            $db->rutaactual=$name;
+            $db->apertura=$request->apertura;
+            $db->cierre=$request->cierre;
+            $db->owner=$request->idp;
+            $db->description=$request->desc;
+            $db->update();
+        }
+        if(!$request->hasfile('file')){
+            $db=Owner::find($request->id);
+            $db->name=$request->name;
+            $db->type=$request->desc;
+            $db->localization=$request->coordenadas;
+            $db->rutaactual=$name;
+            $db->apertura=$request->apertura;
+            $db->cierre=$request->cierre;
+            $db->owner=$request->id;
+            $db->description=$request->desc;
+            $db->update();
+        }
+            return redirect('profile');
     }
-    if(!$request->hasfile('file')){
-        $db=Owner::find($request->id);
-        $db->name=$request->name;
-        $db->type=$request->desc;
-        $db->localization=$request->coordenadas;
-        $db->rutaactual=$name;
-        $db->apertura=$request->apertura;
-        $db->cierre=$request->cierre;
-        $db->update();
-    }
-        return redirect('profile');
-}
         /*$name=$request->input("name");
         $type=$request->input("type");
         $localization=$request->input("coordenadas");

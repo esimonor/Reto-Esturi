@@ -21,6 +21,7 @@ class CreateEstablishmentsTable extends Migration
             $table->string('rutaactual')->default('museum.png');
             $table->time('apertura')->nullable();
             $table->time('cierre')->nullable();
+            $table->string('description')->nullable();
             $table->unsignedBigInteger('owner');
             $table->timestamps();
 

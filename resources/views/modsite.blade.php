@@ -9,19 +9,19 @@
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row d-flex justify-content-center">
             <div class="col-6 row">
-                <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-10">
+                <img src="images/{{$sites->rutaactual}}" class="m-2 border rounded col-10">
                 
             <form class="col-12" method="POST" action="{{route('updatelocal')}}" enctype="multipart/form-data">
                 @csrf
-                <input type="text" name="id" value="{{Auth::user()->id}}" disabled="true" hidden>
+                <input type="hidden" name="idp" value="{{Auth::user()->id}}">
                 <input type="hidden" name="formulario" value="modificarsitio">
                     <label>Imagen</label> <input type="file" name="file" accept="image/*"><br>
             <label>Nombre:</label><input type="text" name="name" value="{{$sites->name}}"/>
                     <br>
-                    <label>Descripcion:</label><input type="text" name="desc" />
+                    <label>Descripcion:</label><input type="text" name="desc" value="{{$sites->description}}" />
                     <br>
-                    <label>Apertura:</label><input type="time" name="apertura" />
-                    <label>Cierre:</label><input type="time" name="cierre" />
+                    <label>Apertura:</label><input type="time" name="apertura" value="{{$sites->apertura}}"/>
+                    <label>Cierre:</label><input type="time" name="cierre" value="{{$sites->cierre}}"/>
                     <br>
                     <label>Tipo:</label>
                     <select name="type">

@@ -142,3 +142,4 @@ class SiteController extends Controller
         return view('mySites')->with('sites',$sites);
     }
 }
+ 

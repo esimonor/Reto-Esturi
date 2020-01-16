@@ -11,7 +11,11 @@
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row d-flex justify-content-center">
             <div class="col-6 row">
-                <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-10">
+                @foreach($site as $ruta)
+                {{$ruta->rutaactual}}
+                <!--<img src="images/{{$ruta->rutaactual}}" class="m-2 border rounded col-10">-->
+                <img src="images/{{$ruta->rutaactual}}" class="m-2 border rounded col-10">
+                @endforeach
                 
             <form class="col-3" method="POST" action="/sitio">
                 @csrf
