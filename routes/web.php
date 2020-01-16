@@ -55,14 +55,22 @@ Route::post("/addlocal", "OwnerController@addlocal")->name("addLocal");
 //Ruta para el prefil de owner
 Route::get('/homeOwner', 'OwnerController@show')->name('homeOwner');
 
+Route::get('/mySites', 'SiteController@mySites')->name('mySites');
+
+
 Route::get('/eliminarperfil', function () {
     return view('eliminarperfil');
 })->name('eliminarperfil');
 
 //Ruta al perfil admin
-Route::get('/homeAdmin', function () {
+/*Route::get('/homeAdmin', function () {
     return view('homeAdmin');
-})->name('homeAdmin');
+})->name('homeAdmin');*/
+
+Route::get("/homeAdmin", "AdminController@indexContacto")->name("homeAdmin");
+
+Route::get("/homeAdmin/{id}", "AdminController@destroyContacto")->name("deleteContacto");
+
 
 //Cambio de idiomas
 Route::get('locale/{locale}', function($locale){
@@ -86,10 +94,10 @@ Route::resource('gustos','ControladordeGustos');
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 
-//Ruta para eliminar usuarios como administrador
-Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
+//Edita los usuarios con los datos del formulario
+Route::post("/listUsers","AdminController@updateUsers")->name("updateUsers");
 
-//Ruta para eliminar usuarios
+//ruta para que el administrador borre usuarios
 Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
 
 //Envía los datos al formulario de editar sitio
@@ -98,13 +106,13 @@ Route::get("/editSite/{id}","OwnerController@editlocal")->name('editlocal');
 //Edita el sitio con los datos del formulario
 Route::post("/homeOwner","OwnerController@updatelocal")->name("updatelocal");
 
+//Edita el sitio como admin
+Route::post("/listEstablishments","AdminController@updateEstablishments")->name("updateEstablishments");
+
 //ruta para que un usuario  pueda borrar su propia cuenta
 Route::post("/modprofile","UserController@update")->name("update");
 //ruta para que un usuario pueda modificar su perfil
 Route::get('/owndrop/{id}','UserController@usuarioborrasupropiacuenta')->name('owndrop');
-
-//ruta para que el administrador borre usuarios
-Route::get("/listUsers/{id}", "AdminController@destroyUsers")->name("deleteusers");
 
 //Ruta para listar establecimientos 
 Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("listEstablishments");
@@ -127,7 +135,7 @@ Route::get('ver',function(){;
     return $comprobar;
 });
 
-
+Route::post('/welcome','contactoController@contactar')->name('contactar');
 
 //middlewares que solo dejan parar al usuario que tiene el nombre del propio middleware
 //->middleware('administrador');

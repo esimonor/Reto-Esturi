@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Owner;
+use App\Contacto;
 use Illuminate\Http\Request;
 class AdminController extends Controller
 {
@@ -19,6 +20,18 @@ class AdminController extends Controller
         }   
     }
 
+    public function updateUsers(Request $request){
+        $name=$request->input("name");
+        $lastname=$request->input("lastname");
+        $email=$request->input("email");
+        $id=$request->input("id");
+
+        User::where('id',$id)
+            ->update(['name'=>$name,'lastname'=>$lastname,'email'=>$email]);
+        
+        return redirect('listUsers');
+    }
+
     public function indexEstablishments(){
         $establishments = Owner::all();        
         return view('listEstablishments')->with('establishments',$establishments);
@@ -33,6 +46,17 @@ class AdminController extends Controller
         }
     }
 
+    public function updateEstablishments(Request $request){
+        $name=$request->input("name");
+        $type=$request->input("type");
+        $id=$request->input("id");
+
+        Owner::where('id',$id)
+            ->update(['name'=>$name,'type'=>$type]);
+        
+        return redirect('listEstablishments');
+    }
+
     public function eliminarusuario($id)  {
         //Elimina el usuario de la base datos   
         $users = User::all()->where("id","=",$id);    
@@ -40,5 +64,19 @@ class AdminController extends Controller
             User::where("id",$id)->delete();    
             return redirect("/home");
         }   
+    }
+
+    public function indexContacto(){
+        $contactos = Contacto::all();        
+        return view('homeAdmin')->with('contactos',$contactos);
+    }
+
+    public function destroyContacto($id)  {   
+        //Elimina el establecimiento de la base datos   
+        $contactos = Contacto::all()->where("id","=",$id);    
+        foreach ($contactos as $contacto) {    
+            Contacto::where("id",$id)->delete();    
+            return redirect("/homeAdmin");  
+        }
     }
 }

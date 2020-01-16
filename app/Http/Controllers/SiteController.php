@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 use App\Owner;
 use App\User;
@@ -125,5 +125,10 @@ class SiteController extends Controller
 
             return view('lugaractual',compact('site','idd'))/*->with('site',$site)*/;
             /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/    
+    }
+    public function mySites(){
+        $sites = Owner::all()->where('owner','=',session('id'));
+
+        return view('mySites')->with('sites',$sites);
     }
 }
