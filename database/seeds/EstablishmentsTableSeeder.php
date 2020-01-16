@@ -30,7 +30,7 @@ class EstablishmentsTableSeeder extends Seeder
             'owner' => '1'
         ]);
         DB::table('establishments')->insert([
-            'name' => 'Altafir',
+            'name' => 'Altafit',
             'type' => 'gimnasios',
             'localization' => '43.3233420000000, -1.977731',
             'owner' => '1'
