@@ -75,7 +75,7 @@
 				<div class="col tarjeta1">
 					<img class="caras" src="{{ URL::asset('images/SR.png') }}">
 					<h3 class="titulo-tarjeta mt-4">Samuel R.</h3>
-					<p class="contenido-tarjeta">@lang('Jefe, diseñador y programador')</p>
+					<p class="contenido-tarjeta">@lang('Administrador')</p>
 				</div>
 				<div class="col tarjeta2">
 					<img class="caras" src="{{ URL::asset('images/AO.png') }}">
@@ -85,7 +85,7 @@
 				<div class="col tarjeta3">
 					<img class="caras" src="{{ URL::asset('images/EO.png') }}">
 					<h3 class="titulo-tarjeta mt-4">Eneko S.</h3>
-					<p class="contenido-tarjeta">@lang('Diseño Grafico')</p>
+					<p class="contenido-tarjeta">@lang('Administrador')</p>
 				</div>
 			</div>
 		</div>

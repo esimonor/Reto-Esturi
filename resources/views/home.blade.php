@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    @include('includes.navs.nav')
+    @include('includes.navs.navUser')
     <div class="container col-12">
         <div class="container  col-xl-6 col-lg-6 col-md-12 col-sm-12 float-left">
     

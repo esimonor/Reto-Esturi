@@ -87,6 +87,11 @@ Route::post("/listRequests", "AdminController@acceptRequests")->name("acceptRequ
 //Rechazar solicitudes
 Route::get("/listRequest/{id}", "AdminController@rejectRequests")->name("rejectRequests");
 
+//Enviar solicitudes
+Route::get("/mySites/{id}", "AdminController@sendRequest")->name("mySitesRequest");
+
+Route::resource('/solicitud','SolicitudController');
+
 //Ruta para listar usuarios
 Route::get("/listUsers", "AdminController@indexUsers")->name("listusers");
 

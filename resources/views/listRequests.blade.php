@@ -6,7 +6,7 @@
         @include('includes.navs.vnav')
         <div class="row">
             <div class="col-12 row m-2 d-flex justify-content-center">
-                    <table style="text-align:center;" class="m-2 d-flex justify-content-center">
+                    <table style="text-align:center;" class="col-12 m-2 d-flex justify-content-center">
                         <tr class="border bg-light">
                             <th class="border border-dark col-12">ID</th>
                             <th class="border border-dark col-12">Usuario</th>
@@ -33,7 +33,7 @@
                             @endif
                     @endforeach
                     </table>               
-                <a type="button" class="btn btn-primary col-6 m-1" href="{{ URL::asset('homeAdmin') }}">Volver</a>
+                <a type="button" class="btn btn-primary col-4 m-1" href="{{ URL::asset('homeAdmin') }}">Volver</a>
                 </div>
             </div>
         </div>

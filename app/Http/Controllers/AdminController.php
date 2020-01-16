@@ -36,6 +36,14 @@ class AdminController extends Controller
         return redirect('listRequests');
     }
 
+    public function sendRequest($id){
+        $solicitud=1;
+
+        User::where('id',$id)
+            ->update(['solicitud'=>$solicitud]);
+
+            return redirect('mySites');
+    }
 
     public function destroyUsers($id)  {   
         //Elimina el usuario de la base datos   
