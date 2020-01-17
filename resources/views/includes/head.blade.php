@@ -11,6 +11,8 @@
     <script src="{{ URL::asset('js/jquery-3.4.1.min.js') }}"></script>
     <!--Validacion-->
     <script src="{{ URL::asset('js/validacion.js') }}"></script>
+    <!--Tarjetas-->
+    <script src="{{ URL::asset('js/tarjetas.js') }}"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/bootstrap.min.css') }}">
     <!-- Botones -->

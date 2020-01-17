@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Owner;
+use App\User;
 use App\Establishment;
 use App\establishment_user;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class SiteController extends Controller
 /*{
@@ -58,7 +59,9 @@ class SiteController extends Controller
         $b=DB::table('establishment_user')->where(['user_id'=>$usuarioid,'establishment_id'=>$request->id,'lfavorito'=>1])->first();
         $a=$request->id;
         if ($request->form=='fav') {
-            if (empty($b)) {
+
+            if (empty($b)){
+
                 $fav=new establishment_user;
                 $fav->establishment_id=$request->id;
                 $fav->user_id=$usuarioid;
@@ -128,20 +131,46 @@ class SiteController extends Controller
     {
         //
     }
+/*
     public function showSites(){
+
+    /*daba problemas nose porque y haciendolo asi no da, lo dejo comentado por si acaso*/
+/*    public function showSites(){
+
         $sites = Owner::all();
         return view('home')->with('sites',$sites);
     }
     public function localactual($id){
         $site=Establishment::where('id','=',$id)->get();
+
         $idd=$id;
 
-            return view('lugaractual',compact('site','idd'))/*->with('site',$site)*/;
-            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/    
-    }
+            return view('lugaractual',compact('site','idd'))/*->with('site',$site);*/
+            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);  
+    }*/
     public function mySites(){
         $sites = Owner::all()->where('owner','=',session('id'));
 
-        return view('mySites')->with('sites',$sites);
+
+        $idd=$id; 
+
+            return view('lugaractual',compact('site','idd'));/*->with('site',$site);*/
+            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);   */ 
     }
+    public function showSites(){
+        $sites = Owner::all();
+        return view('home',compact('sites'))/*->with('sites',$sites)*/;
+    }
+    public function localactual($id){
+        $site=Establishment::where('id','=',$id)->get();
+        $idd=$id;
+            return view('lugaractual',compact('site','idd'))/*->with('site',$site)*/;
+            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/
+    }
+    /*public function mySites(){
+        $sites = Owner::all()->where('owner','=',session('id'));
+
+        return view('mySites')->with('sites',$sites);
+    }*/
 }
+ 
