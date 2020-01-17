@@ -74,21 +74,19 @@
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required minlength="8" autocomplete="new-password">
                         </div>
                     </div>
-<input type="hidden" name="rol" value="user">
-                    <!--<div class="form-group row">
-                        <label for="role" class="col-md-4 col-form-label text-md-right">@lang('Rol')</label>
+                    <input type="hidden" name="rol" value="user">
+                    <div class="form-group row">
+                        <label style="display:none" for="role" class="col-md-4 col-form-label text-md-right">@lang('Rol')</label>
 
                         <div class="col-md-6">
-                            <select name="rol" id="rol">
-                                <option value="user">@lang('Estandar')</option>
-                                <option value="owner">@lang('Dueño')</option>
-                            </select>
+                                <input id="rol" value="user" type="hidden" class="form-control" name="rol" readonly>
+                            
                             @error('rol')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                        </div>-->
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <div class="form-group row mb-0">

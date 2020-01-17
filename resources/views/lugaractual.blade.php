@@ -11,13 +11,14 @@
             <div class="col-6 row">
 
                 <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-6">
+                
 
                 @foreach($site as $ruta)
                 <!--<img src="images/{{$ruta->rutaactual}}" class="m-2 border rounded col-10">-->
                 <!--<img id="esesta" src="images/{{$ruta->rutaactual}}" class="m-2 border rounded col-10">-->
                 @endforeach
 
-                
+            <br>
             <form method="POST" action="/sitio">
                 @csrf
                 <input type="hidden" name="favorito" value="1">
@@ -29,17 +30,17 @@
             </form>
             </div>
         </div>
-        <div class="col-6 " >
+        <div class="col-4 m-2 d-flex justify-content-center " style="text-align: center" >
             <div class="border">
-                <h4>comentarios de los clientes</h4>
-                <div class="dropdown-divider"></div>
-                <div class="container">
-                <form class="col-6" method="POST" action="/sitio">
+                <h4>Comentarios</h4>
+                <hr>
+                <div class="container justify-content-center">
+                <form class="col-10 m-4" method="POST" action="/sitio">
                 @csrf
                 <input type="text" name="comentario">
                 <input type="hidden" name="form" value="com"> 
                 <input type="hidden" name="id" value="{{$idd}}">               
-                <button class="btn btn-outline-success m-1 col-9">publicar comentario</button>
+                <button class="btn btn-outline-success m-1 col-9">Publicar comentario</button>
             </form>
               </div>
             </div>

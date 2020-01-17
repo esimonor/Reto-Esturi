@@ -1,7 +1,9 @@
 $(document).ready(function () {
   var map = L.map('map').
     setView([43.3227696, -1.9940565], 15);
+    
   var layer = L.esri.basemapLayer('Physical').addTo(map);
+  
   var layerLabels;
   //Localización basada en la posición actual; funciona bien en movil
   map.locate({setView: true, maxZoom: 16});
