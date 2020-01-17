@@ -9,42 +9,42 @@
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row d-flex justify-content-center">
             <div class="col-6 row">
-                <img src="images/{{$sites->rutaactual}}" class="m-2 border rounded col-10">
+                <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-10">
                 
             <form class="col-12" method="POST" action="{{route('updatelocal')}}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="idp" value="{{Auth::user()->id}}">
+                <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
                 <input type="hidden" name="formulario" value="modificarsitio">
-                    <label>Imagen</label> <input type="file" name="file" accept="image/*"><br>
-            <label>Nombre:</label><input type="text" name="name" value="{{$sites->name}}"/>
+                    <input type="hidden" name="idp" value="{{$valor->id}}">
+                <input type="hidden" name="rutaactual" value="museum.png">
+                    <label>Imagen</label> <input type="file" name="file"><br>
+                    <label>Nombre:</label><input type="text" name="name" value="{{$valor->name}}" />*
                     <br>
-                    <label>Descripcion:</label><input type="text" name="desc" value="{{$sites->description}}" />
+                    <label>Descripcion:</label><input type="text" name="desc" value="{{$valor->description}}" />
                     <br>
-                    <label>Apertura:</label><input type="time" name="apertura" value="{{$sites->apertura}}"/>
-                    <label>Cierre:</label><input type="time" name="cierre" value="{{$sites->cierre}}"/>
+                    <label>Apertura:</label><input type="time" name="apertura" value="{{$valor->apertura}}"/>
+                    <label>Cierre:</label><input type="time" name="cierre" value="{{$valor->cierre}}"/>
                     <br>
                     <label>Tipo:</label>
                     <select name="type">
-                    <option value="{{$sites->type}}">{{$sites->type}}</option>
-                        <option value="bar">Bar</option>
-                        <option value="restaurante">Restaurante</option>
-                        <option value="cafe">Cafetería</option>
-                        <option value="museo">Museo</option>
-                        <option value="biblioteca">Biblioteca</option>
-                        <option value="discoteca">Discoteca</option>
-                        <option value="gym">Gimnasio</option>
-                        <option value="LI">Lugar de interes</option>
-                    </select>
-                <input type="hidden" name="id" value="{{$sites->id}}" />
+                        <option value="bares">Bar</option>
+                        <option value="restaurantes">Restaurante</option>
+                        <option value="museos">Museo</option>
+                        <option value="cines">Cine</option>
+                        <option value="centros">Centro comercial</option>
+                        <option value="fiestas">Discoteca</option>
+                        <option value="gimnasios">Gimnasio</option>
+                        <option value="monumentos">Monumento</option>
+                    </select>*
+                <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
-                <label>Localizacion:</label><input type="text" id="coord" name="coordenadas" value="{{$sites->localization}}"/>
-                <!-- Mapa -->
-                <div id='map' style="weight: 300px; height: 300px"></div>
+                    <label>Latitud:</label><input style="width:45%;" type="text" id="lat" name="latitud" value="{{$valor->longitud}}" readonly/><br>
+                    <label>Longitud:</label><input style="width:45%;" type="text" id="lng" name="longitud" value="{{$valor->latitud}}" readonly/>
+                        <!-- Mapa -->
+                        <div id="map" style="weight:300px;height:300px"></div>
                     <br>
                     <a href="{{URL::asset('homeOwner') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
                     <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
-                    <a class="btn btn-danger" value="{{$sites->id}}" href="{{route('deletelocal',[$sites->id])}}">Eliminar establecimiento</a>
-
                 </form>
             </div>
         </div>

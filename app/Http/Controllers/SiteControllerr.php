@@ -149,11 +149,11 @@ class SiteController extends Controller
             /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);  
     }*/
     public function mySites(){
-        $sites = Owner::all()->where('owner','=',session('id'));
+        $id=Auth::user()->id;
+        $site = Owner::all()->where('owner',$id);
 
 
-        $idd=$id; 
-
+        //$idd=$id; 
             return view('lugaractual',compact('site','idd'));/*->with('site',$site);*/
             /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);   */ 
     }

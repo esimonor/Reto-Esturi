@@ -24,7 +24,7 @@
             
            
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="{{route('solicitud.index')}}">Mis sitios</a>
+                    <a class="nav-link text-center" href="{{route('solicitud.index')}}">Añadir sitio</a>
                 </li>
           
                 <li class="nav-item">

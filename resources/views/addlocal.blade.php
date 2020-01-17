@@ -14,7 +14,7 @@
             <form class="col-12" method="POST" action="{{route('addLocal')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
-                    <label>Imagen</label> <input type="file" name="file" accept="image/*"><br>
+                    <label>Imagen</label> <input type="file" name="file" ><br>
                     <label>Nombre:</label><input type="text" name="name" />*
                     <br>
                     <label>Descripcion:</label><input type="text" name="desc" />

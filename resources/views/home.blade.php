@@ -7,7 +7,7 @@
 <body>
     @include('includes.navs.navUser')
     <div class="container col-12">
-        <div id='cards' class="container row addScroll col-xl-4 col-lg-4 col-md-12 col-sm-12 float-left">
+       <div id='cards' class="container row addScroll col-xl-2 col-lg-2 col-md-12 col-sm-12 float-left">
     
             @if (isset($sites))
                 <?php
@@ -23,7 +23,6 @@
                     echo '<input id="long',$i,'" type="hidden" value="', $longitud ,'" />';
                     echo '<input id="name',$i,'" type="hidden" value="',$site->name ,'" />';
                     echo '<input id="desc',$i,'" type="hidden" value="', $desc ,'" />';
-    
                     $i++;
                     }
                     echo '<input id="res_final" type="hidden" value="', $i-1 ,'" />';
@@ -31,8 +30,8 @@
             @endif
         </div>
         
-        <div id='mapa' class="container col-xl-8 col-lg-8 col-md-12 col-sm-12 float-left">
-<!--    <div class="container">
+ <!--       <div id='mapa' class="container col-xl-8 col-lg-8 col-md-12 col-sm-12 float-left">
+    <div class="container">
     <div class="container col-12 float-left">
         @if (isset($sites))
             @foreach($sites as $site)
@@ -52,13 +51,10 @@
     </div>
     <div class="container col-12 float-left alturadelcontenedor">
 -->
-                <section>
+        <section>
             <!-- Mapa -->
             <div id="map"></div>
         </section>
-        
-    </div>
-    
     </div>
     <div class="container col-12 float-left">
     <br>

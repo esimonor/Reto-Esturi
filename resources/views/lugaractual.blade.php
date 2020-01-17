@@ -22,7 +22,6 @@
                 @csrf
                 <input type="hidden" name="favorito" value="1">
                 <input type="hidden" name="form" value="fav">
-                <input type="hidden" name="id" value="{{$idd}}">
                 <input type="hidden" name="idusuario" value="{{Auth::user()->id}}">
 
                 
