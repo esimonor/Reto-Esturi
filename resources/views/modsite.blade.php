@@ -9,24 +9,24 @@
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row d-flex justify-content-center">
             <div class="col-6 row">
-                <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-10">
-                
+                <img src="../images/{{$valor->rutaactual}}" class="m-2 border rounded col-10">
             <form class="col-12" method="POST" action="{{route('updatelocal')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
                 <input type="hidden" name="formulario" value="modificarsitio">
                     <input type="hidden" name="idp" value="{{$valor->id}}">
-                <input type="hidden" name="rutaactual" value="museum.png">
+                <input type="hidden" name="rutaactual" value="{{$valor->rutaactual}}">
                     <label>Imagen</label> <input type="file" name="file"><br>
                     <label>Nombre:</label><input type="text" name="name" value="{{$valor->name}}" />*
                     <br>
                     <label>Descripcion:</label><input type="text" name="desc" value="{{$valor->description}}" />
                     <br>
-                    <label>Apertura:</label><input type="time" name="apertura" value="{{$valor->apertura}}"/>
+                    <label>Aperturaa:</label><input type="time" name="apertura" value="{{$valor->apertura}}"/>
                     <label>Cierre:</label><input type="time" name="cierre" value="{{$valor->cierre}}"/>
                     <br>
                     <label>Tipo:</label>
                     <select name="type">
+                        <option value="{{$valor->type}}">{{$valor->type}}</option>
                         <option value="bares">Bar</option>
                         <option value="restaurantes">Restaurante</option>
                         <option value="museos">Museo</option>

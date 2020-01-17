@@ -120,11 +120,14 @@ class SiteController extends Controller
         return view('home')->with('sites',$sites);
     }
     public function localactual($id){
-        $site=Establishment::where('id','=',$id)->get();
+        $valor;
+        $sites=Establishment::where('id','=',$id)->get();
         $idd=$id;
-
-            return view('lugaractual',compact('site','idd'))/*->with('site',$site)*/;
-            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/    
+        foreach ($sites as $site) {
+           $valor=$site;
+            return view('lugaractual',compact('valor','idd'))/*->with('site',$site)*/;
+            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/ 
+            }   
     }
     public function mySites(){
         $sites = Owner::all()->where('owner','=',session('id'))->first();
