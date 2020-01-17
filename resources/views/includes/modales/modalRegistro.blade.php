@@ -76,10 +76,10 @@
                     </div>
                     <input type="hidden" name="rol" value="user">
                     <div class="form-group row">
-                        <label for="role" class="col-md-4 col-form-label text-md-right">@lang('Rol')</label>
+                        <label style="display:none" for="role" class="col-md-4 col-form-label text-md-right">@lang('Rol')</label>
 
                         <div class="col-md-6">
-                                <input id="rol" value="user" type="text" class="form-control" name="rol" readonly>
+                                <input id="rol" value="user" type="hidden" class="form-control" name="rol" readonly>
                             
                             @error('rol')
                             <span class="invalid-feedback" role="alert">
