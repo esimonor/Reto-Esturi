@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var map = L.map('map').
     setView([43.3227696, -1.9940565], 15);
-    layers: [baseLayers, overlayMaps];
+    
   var layer = L.esri.basemapLayer('Physical').addTo(map);
   
   var layerLabels;
