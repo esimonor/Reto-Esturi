@@ -3,23 +3,20 @@
 </head>
 
 <body>
+    @include('includes.navs.navUser')
     <div class="container col-12">
-        @include('includes.navs.navUser')
+        
 
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row">
             <div class="col-6 row">
-                <img src="/images/{{Auth::user()->ruta }}" class="m-2 border rounded col-10">
-                <p class="h5 col-5">Nombre:  {{Auth::user()->name}}</p>
-                <p class="h5 col-5">Apellido: {{Auth::user()->lastName}}</p>
-                <p class="h5 col-10">Correo:  {{Auth::user()->email}}</p>
-                <p class="h5 col-10">Tu rol:  {{Auth::user()->role}}</p>
-                @if (Auth::user()->role=="owner")
-                <a href="#" class="btn btn-outline-success m-2 col-4">Ver local</a>
-                <a href="{{route('addlocal')}}" class="btn btn-outline-warning m-2 col-4">Añadir local</a>
-                @endif
-                
-                <a href="owndrop/{{Auth::user()->id}}" class="btn btn-outline-danger m-2 col-4">borrar cuenta</a>
+                <img src="/images/{{Auth::user()->ruta }}" class="m-3 border rounded col-7">
+                <p class="col-5">Nombre:  {{Auth::user()->name}}</p>
+                <p class="col-5">Apellido: {{Auth::user()->lastName}}</p>
+                <p class="col-10">Correo:  {{Auth::user()->email}}</p>
+                <p class="col-10">Tu rol:  {{Auth::user()->role}}</p>
+                <a href="{{route('mySites')}}" class="btn btn-success m-2 col-4">Mis locales</a>                
+                <a href="owndrop/{{Auth::user()->id}}" class="btn btn-danger m-2 col-4">borrar cuenta</a>
                <!--<button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>-->
                 <!--Ventana de confirmacion eliminar cuenta-->
 
@@ -54,11 +51,11 @@
 
                        
 
-                <a href="{{ URL::asset('modprofile') }}" class="btn btn-outline-warning m-2 col-4">Modificar cuenta</a>
+                <a href="{{ URL::asset('modprofile') }}" class="btn btn-warning m-2 col-4">Modificar cuenta</a>
             </div>
             <!-- Listado de lugares favoritos -->
-            <div class="col-3">
-                <div class="border bg-light">
+            <div class=" col-3">
+                <div class="border bg-transparent">
                     <h4>Lugares favoritos</h4>
                     <div class="dropdown-divider"></div>
                     <div class="container">
@@ -79,8 +76,8 @@
             </div>
             <!-- Comentarios -->
             <div class="col-3">
-                <div class="border bg-light">
-                  <h4>comentarios</h4>
+                <div class="border bg-transparent">
+                  <h4>Comentarios</h4>
                     <div class="dropdown-divider"></div>
                     <div class="container">
                   @forelse($user->establishment as $valor)
@@ -100,9 +97,9 @@
             </div>
         </div>
 
-        @include('includes.footer')
+        
     </div>
-
+    @include('includes.footer')
 </body>
 
 </html>
