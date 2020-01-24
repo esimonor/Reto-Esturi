@@ -8,7 +8,7 @@
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row d-flex justify-content-center">
             <div class="col-6 row">
-                @foreach($site as $ruta)
+               @foreach($site as $ruta)
                 <img src="../images/{{$ruta->rutaactual}}" class="m-2 border rounded col-10">
                 @endforeach
             <br>

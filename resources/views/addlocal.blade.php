@@ -1,22 +1,19 @@
 @include('includes.head')
 @include('includes.mapa')
 <title>@lang('Añadir local')</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/form.css') }}">
 </head>
 <body>
-    <div class="container col-12">
         @include('includes.navs.navUser')
-
-        <!-- Foto de perfil, nombre y correo del usuario -->
-        <div class="row d-flex justify-content-center">
-            <div class="col-6 row">
-                <img src="{{ URL::asset('images/museum.png') }}" class="m-2 border rounded col-10">
-                
-            <form class="col-12" method="POST" action="{{route('addLocal')}}" enctype="multipart/form-data">
+    <div class="container col-12">
+        <img src="{{ URL::asset('images/museum.png') }}" class="establishment float-left m-2 border rounded col-4">
+        <div class="contenedor row d-flex justify-content-center">                    
+            <form class="col-12 " method="POST" action="{{route('addLocal')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
                     <label>Imagen</label> <input type="file" name="file" ><br>
-                    <label>Nombre:</label><input type="text" name="name" />*
-                    <br>
+                    <label>Nombre:</label><input type="text" name="name" />*<br>
                     <label>Descripcion:</label><input type="text" name="desc" />
                     <br>
                     <label>Apertura:</label><input type="time" name="apertura" />
@@ -35,13 +32,12 @@
                     </select>*
                 <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
-                    <label>Latitud:</label><input style="width:45%;" type="text" id="lat" name="latitud" readonly/><br>
-                    <label>Longitud:</label><input style="width:45%;" type="text" id="lng" name="longitud" readonly/>
-                        <!-- Mapa -->
-                        <div id="map" style="weight:300px;height:300px"></div>
+                    <input style="width:25%;" type="hidden" id="lat" name="latitud"/>
+                    <input style="width:25%;" type="hidden" id="lng" name="longitud"/>
+                    <div id="map"></div> 
                     <br>
-                    <a href="{{URL::asset('homeOwner') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
-                    <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
+                    <a href="{{URL::asset('homeOwner') }}" class="btn btn-secondary m-2 col-4">Volver</a>
+                    <button class="btn btn-success m-2 col-4">Guardar cambios</button>
                 </form>
             </div>
         </div>

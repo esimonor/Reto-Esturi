@@ -3,10 +3,8 @@
 </head>
 
 <body> 
+     @include('includes.navs.navUser')
     <div class="container col-12">
-        @include('includes.navs.navUser')
-
-        <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row d-flex justify-content-center">
             <div class="col-6 row">
                 <img src="/images/{{Auth::user()->ruta }}" class="m-2 border rounded col-10">
@@ -16,26 +14,25 @@
                     <input type="hidden" name="formulario" value="modprofile">
                     <input type="hidden" name="rutaactual" value="{{Auth::user()->ruta}}">
                     <label>Imagen</label> <input  type="file" name="file"><br>
-                    <label>Nombre:</label><input type="text" name="name" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->name}}" />
-                    <label>Apellido:</label><input type="text" name="lastname" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->lastName}}" />
-                    <br>
+                    <label>Nombre:</label><input type="text" name="name" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->name}}" /><br>
+                    <label>Apellido:</label><input type="text" name="lastname" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->lastName}}" /><br>
+                    
                     <label>Correo:</label><input type="text" name="email" pattern="[^()/><\][\\\x22,;|]+" value="{{Auth::user()->email}}" />
                     <br>
                     
                     @if (Auth::user()->role=='owner')
-                    <a href="{{URL::asset('homeOwner') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
+                    <a href="{{URL::asset('homeOwner') }}" class="btn btn-secondary m-2 col-4">Volver</a>
                     
                     @else
-                    <a href="{{URL::asset('profile') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
+                    <a href="{{URL::asset('profile') }}" class="btn btn-secondary m-2 col-4">Volver</a>
                     @endif
 
-                    <button type="submit" class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
+                    <button type="submit" class="btn btn-success m-2 col-4">Guardar cambios</button>
                 </form>
             </div>
         </div>
-
-        @include('includes.footer')
     </div>
+    @include('includes.footer')
     @include('includes.js')
 </body>
 

@@ -1,15 +1,16 @@
 @include('includes.head')
 @include('includes.mapa')
-<title>@lang('Añadir local')</title>
+<title>@lang('Modificar local')</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/form.css') }}">
 </head>
 <body>
-    <div class="container col-12">
         @include('includes.navs.navUser')
 
-        <!-- Foto de perfil, nombre y correo del usuario -->
-        <div class="row d-flex justify-content-center">
-            <div class="col-6 row">
-                <img src="../images/{{$valor->rutaactual}}" class="m-2 border rounded col-10">
+        <div class="container col-12">
+            <img src="../images/{{$valor->rutaactual}}" class="establishment float-left m-2 border rounded col-4">
+            <div class="contenedor row d-flex justify-content-center">
+                
             <form class="col-12" method="POST" action="{{route('updatelocal')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
@@ -38,19 +39,20 @@
                     </select>*
                 <input type="hidden" name="ownerId" value="{{Auth::user()->id}}" />
                     <br>
-                    <label>Latitud:</label><input style="width:45%;" type="text" id="lat" name="latitud" value="{{$valor->longitud}}" readonly/><br>
-                    <label>Longitud:</label><input style="width:45%;" type="text" id="lng" name="longitud" value="{{$valor->latitud}}" readonly/>
+                   <input style="width:45%;" type="hidden" id="lat" name="latitud" value="{{$valor->longitud}}"/><br>
+                    <input style="width:45%;" type="hidden" id="lng" name="longitud" value="{{$valor->latitud}}" />
                         <!-- Mapa -->
-                        <div id="map" style="weight:300px;height:300px"></div>
+                        <div id="map"></div>
                     <br>
-                    <a href="{{URL::asset('homeOwner') }}" class="btn btn-outline-secondary m-2 col-4">Volver</a>
-                    <button class="btn btn-outline-success m-2 col-4">Guardar cambios</button>
+                    <a href="{{URL::asset('homeOwner') }}" class="btn btn-secondary m-2 col-4">Volver</a>
+                    <button class="btn btn-success m-2 col-4">Guardar cambios</button>
                 </form>
             </div>
         </div>
 
-    @include('includes.footer')
+    
     </div>
+    @include('includes.footer')
     @include('includes.js')
 </body>
 
