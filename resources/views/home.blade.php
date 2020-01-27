@@ -14,7 +14,7 @@
                     $i=1;
                     foreach ($sites as $site){
                         ?>
-                        <div class="container col-6 justify-content-start">
+                        <div class="row col-5 m-1">
                     @include('includes/tarjetas')
                         </div>
                     <?php

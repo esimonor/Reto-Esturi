@@ -12,13 +12,16 @@
                 <img src="../images/{{$ruta->rutaactual}}" class="m-2 border rounded col-10">
                 @endforeach
             <br>
-            <form method="POST" action="/sitio">
-                @csrf
-                <input type="hidden" name="favorito" value="1">
-                <input type="hidden" name="form" value="fav">
-                <input type="hidden" name="idusuario" value="{{Auth::user()->id}}">              
-                <button class="btn btn-outline-success m-2 col-12">fav</button>
-            </form>
+            @guest
+            @else
+                <form method="POST" action="/sitio">
+                    @csrf
+                    <input type="hidden" name="favorito" value="1">
+                    <input type="hidden" name="form" value="fav">
+                    <input type="hidden" name="idusuario" value="{{Auth::user()->id}}">              
+                    <button class="btn btn-outline-success m-2 col-12">fav</button>
+                </form>
+            @endguest
             </div>
         </div>
         <div class="col-4 m-2 d-flex justify-content-center " style="text-align: center" >
