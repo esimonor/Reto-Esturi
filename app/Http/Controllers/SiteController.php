@@ -39,7 +39,7 @@ class SiteController extends Controller
      */
     public function store(Request $request)
     {
-        $null;
+       /* $null;
         $usuarioid=Auth::user()->id;
         $comprobar=DB::table('establishment_user')->where(['user_id'=>$usuarioid,'establishment_id'=>$request->id])->first();
         $b=DB::table('establishment_user')->where(['user_id'=>$usuarioid,'establishment_id'=>$request->id,'lfavorito'=>1])->first();
@@ -68,7 +68,7 @@ class SiteController extends Controller
             $comentario->save();
             //aqui hay que hacer una vista que le diga al usuario gracias por dar tu opinion, por ahora pongo un comentario
             return 'gracias por cometar tu opinion se tendra encuanta';
-        }
+        }*/
     }
 
     /**
@@ -120,14 +120,16 @@ class SiteController extends Controller
         return view('home')->with('sites',$sites);
     }
     public function localactual($id){
-        $valor;
+        $users=User::all();   
+        /*$valor;
         $sites=Establishment::where('id','=',$id)->get();
-        $idd=$id;
+        $idd=$id; 
         foreach ($sites as $site) {
            $valor=$site;
-            return view('lugaractual',compact('valor','idd'))/*->with('site',$site)*/;
+            return view('lugaractual',compact('valor','idd','users'))/*->with('site',$site)*/;
             /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/ 
             }   
+            return $users;
     }
     public function mySites(){
         $sites = Owner::all()->where('owner','=',session('id'))->first();

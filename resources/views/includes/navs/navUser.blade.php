@@ -1,4 +1,4 @@
-<nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav id="navbar" class="container-fluid navbar navbar-expand-md navbar-dark bg-dark">
     <a class="navbar-brand" href="{{route('welcome')}}">
         <img src="{{ URL::asset('images/logosmall.png') }}" width="60" height="60" class="d-inline-block align-center" alt="">
         Esturi

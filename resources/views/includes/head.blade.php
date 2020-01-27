@@ -2,6 +2,9 @@
 <html lang="es">
 
 <head>
+    <!--link para poder usar los iconos de awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <!-- Logo en la pestaña -->
     <link rel="shortcut icon" href="{{ URL::asset('images/logosmall.png') }}" />
     <!-- Required meta tags -->
@@ -18,8 +21,7 @@
     <!-- Botones -->
     <link rel="stylesheet" href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/cssBotones.css') }}" />
-    <!-- Perfil -->
-    <link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
+   
     <!-- Footer -->
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}" />
     <!-- Incluimos los modales -->

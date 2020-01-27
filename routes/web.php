@@ -165,3 +165,4 @@ Route::get('vertres',function(){
 Route::get('modcategorias','ControladordeGustos@modcategorias');
 
 
+Route::get('borrarc/{id}','SiteController@borrarsitio');

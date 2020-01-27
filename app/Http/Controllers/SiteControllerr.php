@@ -63,7 +63,7 @@ class SiteController extends Controller
             if (empty($b)){
 
                 $fav=new establishment_user;
-                $fav->establishment_id=$request->id;
+                $fav->establishment_id=$a; 
                 $fav->user_id=$usuarioid;
                 $fav->lfavorito=1;
                 $fav->save();
@@ -162,9 +162,12 @@ class SiteController extends Controller
         return view('home',compact('sites'))/*->with('sites',$sites)*/;
     }
     public function localactual($id){
+        $users=User::all();
         $site=Establishment::where('id','=',$id)->get();
         $idd=$id;
-            return view('lugaractual',compact('site','idd'))/*->with('site',$site)*/;
+        
+        $coment=establishment_user::where('establishment_id',$id)->get();
+            return view('lugaractual',compact('site','idd','coment','users'))/*->with('site',$site)*/;
             /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/
     }
     /*public function mySites(){
@@ -172,5 +175,10 @@ class SiteController extends Controller
 
         return view('mySites')->with('sites',$sites);
     }*/
+    public function borrarsitio($id){
+        $borrar=establishment_user::find($id);
+        $borrar->delete();
+        return redirect('profile');
+    }
 }
  
