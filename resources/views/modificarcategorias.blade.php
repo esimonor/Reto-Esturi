@@ -1,19 +1,16 @@
 @include('includes.head')
 
 <title>@lang('Categorias')</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/profile.css') }}">
 </head>
-<style type="text/css">
-	.card-img-top{
-		height: 100%;
-		width: 100%;
-	}
-</style>
 <body>
+    @include('includes.navs.navUser')
     <div class="container col-12">
-        @include('includes.navs.navUser')
-<form class="col-12" method="POST" action="/gustos">
+       
+<form class="col-12 m-2 d-flex justify-content-center " method="POST" action="/gustos">
 	<input type="hidden" name="modificador" value="1">
-<div class="col-12">
+<div class="col-8 flex-center">
  <div class="card-deck">
   <div class="card align-items-center">
     <img class="card-img-top" src="{{ URL::asset('images/fiesta.jpg') }}" alt="Card image cap">
@@ -137,16 +134,19 @@
     <div class=" d-flex">
       <input type="hidden" name="formulario" value="uno">
       {{csrf_field()}}
-      <button class="btn btn-outline-success m-2 col-4 align-items-center">siguiente</button>
+      <br>
+      
     <!--</form>-->
     </div>
    </div>
   
 	</div>
 </div>
+<button class="mover-der btn btn-success col-8">Finalizar</button>
 </form>
-     @include('includes.footer')
+     
     </div>
+    @include('includes.footer')
     @include('includes.js')
 </body>
 

@@ -1,5 +1,7 @@
 @include('includes.head')
 <title>@lang('Modificar perfil')</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/form.css') }}">
 </head>
 
 <body> 

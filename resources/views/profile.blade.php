@@ -1,5 +1,7 @@
 @include('includes.head')
 <title>@lang('Perfil de') {{Auth::user()->name()}}</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/profile.css') }}">
 </head>
 
 <body>
@@ -9,7 +11,7 @@
 
         <!-- Foto de perfil, nombre y correo del usuario -->
         <div class="row">
-            <div class="col-6 row">
+            <div class="col-5 row">
                 <img src="/images/{{Auth::user()->ruta }}" class="m-3 border rounded col-7">
                 <p class="col-5">Nombre:  {{Auth::user()->name}}</p>
                 <p class="col-5">Apellido: {{Auth::user()->lastName}}</p>
@@ -17,8 +19,6 @@
                 <p class="col-10">Tu rol:  {{Auth::user()->role}}</p>
                 <a href="{{route('mySites')}}" class="btn btn-success m-2 col-4">Mis locales</a>                
                 <a href="owndrop/{{Auth::user()->id}}" class="btn btn-danger m-2 col-4">borrar cuenta</a>
-               <!--<button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>-->
-                <!--Ventana de confirmacion eliminar cuenta-->
 
                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -54,7 +54,7 @@
                 <a href="{{ URL::asset('modprofile') }}" class="btn btn-warning m-2 col-4">Modificar cuenta</a>
             </div>
             <!-- Listado de lugares favoritos -->
-            <div class=" col-3">
+            <div class="m-3 col-3">
                 <div class="border bg-transparent">
                     <h4>Lugares favoritos</h4>
                     <div class="dropdown-divider"></div>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <!-- Comentarios -->
-            <div class="col-3">
+            <div class="m-3 col-3">
                 <div class="border bg-transparent">
                   <h4>Comentarios</h4>
                     <div class="dropdown-divider"></div>

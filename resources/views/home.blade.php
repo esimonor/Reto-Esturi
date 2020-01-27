@@ -2,7 +2,6 @@
 @include('includes.mapa')
 <title>@lang('Mapa')</title>
 </head>
-</style>
 
 <body>
     @include('includes.navs.navUser')

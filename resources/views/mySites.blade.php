@@ -1,13 +1,15 @@
 @include('includes.head')
 
 <title>@lang('Perfil de') {{Auth::user()->name}}</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/profile.css') }}">
 </head>
 
 <body>
     <!-- Guarda la id del usuario en variable de sesion para usar en controladores hasta encontrar otra mejor forma -->
     <?php $id=Auth::user()->id;session(['id' => $id]); ?>
     @include('includes.navs.navUser')
-    <div class="container col-12">
+    <div class="container col-10">
         
 
         <!-- Foto de perfil, nombre y correo del usuario -->

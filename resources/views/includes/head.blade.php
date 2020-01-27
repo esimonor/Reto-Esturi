@@ -18,8 +18,6 @@
     <!-- Botones -->
     <link rel="stylesheet" href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/cssBotones.css') }}" />
-    <!-- Perfil -->
-    <link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
     <!-- Footer -->
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}" />
     <!-- Incluimos los modales -->
