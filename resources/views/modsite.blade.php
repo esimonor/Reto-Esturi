@@ -44,8 +44,10 @@
                         <!-- Mapa -->
                         <div id="map"></div>
                     <br>
+                    
                     <a href="{{URL::asset('homeOwner') }}" class="btn btn-secondary m-2 col-4">Volver</a>
-                    <button class="btn btn-success m-2 col-4">Guardar cambios</button>
+                    <button class="btn btn-success m-2 col-4">Guardar cambios</button><br>
+                    <a class="btn btn-danger" value="{{$valor->id}}" href="{{route('deletelocal',[$valor->id])}}">Eliminar establecimiento</a>
                 </form>
             </div>
         </div>

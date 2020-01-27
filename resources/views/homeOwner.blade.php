@@ -26,8 +26,7 @@
                 <p class="titulos col-10">Correo:  {{Auth::user()->email}}</p>
                 <p class="titulos col-10">Tu rol:  {{Auth::user()->role}}</p>
                 <a href="{{route('addlocal')}}" class="btn btn-primary m-2 col-8">Añadir local</a>             
-                <button class="btn btn-danger m-2 col-4">Eliminar sitio</button>
-                <a href="{{ URL::asset('modprofile') }}" class="btn btn-warning m-2 col-4">Modificar cuenta</a>
+                <a href="{{ URL::asset('modprofile') }}" class="btn btn-warning m-2 col-8">Modificar cuenta</a>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 row">

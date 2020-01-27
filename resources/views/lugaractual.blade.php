@@ -6,7 +6,8 @@
     @foreach ($site as $ruta)
         <body style="background-image:url('../images/{{$ruta->rutaactual}}');">
     @endforeach
-
+            <div style="background-image:url('../images/{{$ruta->rutaactual}}'); filter: blur(8px);">
+            </div>
         @include('includes.navs.navUser')
     <div class="container col-12">
         

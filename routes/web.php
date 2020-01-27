@@ -124,7 +124,7 @@ Route::get("/listEstablishments", "AdminController@indexEstablishments")->name("
 Route::get("/listEstablishments/{id}", "AdminController@destroyEstablishments")->name("deleteEstablishments");
 
 //Elimina el sitio
-Route::get("/editsite/{id}","OwnerController@destroy")->name('deletelocal');
+Route::get("/deletelocal/{id}","OwnerController@destroy")->name('deletelocal');
 
 //esta es la ruta de la pagina de cada sitio
 Route::get("/local/{id}","SiteControllerr@localactual"); 
