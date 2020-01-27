@@ -22,7 +22,7 @@
                     <br>
                     <label>Descripcion:</label><input type="text" name="desc" value="{{$valor->description}}" />
                     <br>
-                    <label>Aperturaa:</label><input type="time" name="apertura" value="{{$valor->apertura}}"/>
+                    <label>Apertura:</label><input type="time" name="apertura" value="{{$valor->apertura}}"/>
                     <label>Cierre:</label><input type="time" name="cierre" value="{{$valor->cierre}}"/>
                     <br>
                     <label>Tipo:</label>

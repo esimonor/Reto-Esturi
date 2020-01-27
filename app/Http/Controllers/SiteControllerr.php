@@ -10,20 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
-/*{
-    public function showSites(){
-        $sites = Owner::all();
-        return view('home')->with('sites',$sites);
-    }
-    public function localactual($id){
-        $site=Establishment::where('id','=',$id)->get();
 
-            return view('lugaractual',compact('site'));  
-    }
-    public function introducioncomentario(Request $request){
-
-    }
-}*/
 {
     /**
      * Display a listing of the resource.
@@ -131,23 +118,6 @@ class SiteController extends Controller
     {
         //
     }
-/*
-    public function showSites(){
-
-    /*daba problemas nose porque y haciendolo asi no da, lo dejo comentado por si acaso*/
-/*    public function showSites(){
-
-        $sites = Owner::all();
-        return view('home')->with('sites',$sites);
-    }
-    public function localactual($id){
-        $site=Establishment::where('id','=',$id)->get();
-
-        $idd=$id;
-
-            return view('lugaractual',compact('site','idd'))/*->with('site',$site);*/
-            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);  
-    }*/
     public function mySites(){
         $id=Auth::user()->id;
         $site = Owner::all()->where('owner',$id);
@@ -162,15 +132,11 @@ class SiteController extends Controller
         return view('home',compact('sites'))/*->with('sites',$sites)*/;
     }
     public function localactual($id){
-        $site=Establishment::where('id','=',$id)->get();
+        $users=User::all();
+        $site=Establishment::where('id',$id)->get();
         $idd=$id;
-            return view('lugaractual',compact('site','idd'))/*->with('site',$site)*/;
-            /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/
+        $coment=establishment_user::where('establishment_id',$id)->get();
+        return view('lugaractual',compact('site','idd','coment','users'));
     }
-    /*public function mySites(){
-        $sites = Owner::all()->where('owner','=',session('id'));
-
-        return view('mySites')->with('sites',$sites);
-    }*/
 }
  
