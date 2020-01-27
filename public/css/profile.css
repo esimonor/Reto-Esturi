@@ -3,6 +3,8 @@ body{
     background: rgb(0,36,1);
     background: radial-gradient(circle, rgb(3, 187, 9) 0%, rgba(22,121,9,1) 35%, rgba(9,255,0,1) 100%);
     font-family: 'Raleway', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 p,h4, label{
     color: whitesmoke;
@@ -70,4 +72,7 @@ p,h4, label{
     margin-left: 17%;
     margin-top: 2%;
     margin-bottom: 2%;
+}
+.margenes{
+    margin-left:20% ;
 }

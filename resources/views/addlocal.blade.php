@@ -6,13 +6,13 @@
 </head>
 <body>
         @include('includes.navs.navUser')
-    <div class="container col-12">
+    <div class="container col-10">
         <img src="{{ URL::asset('images/museum.png') }}" class="establishment float-left m-2 border rounded col-4">
         <div class="contenedor row d-flex justify-content-center">                    
             <form class="col-12 " method="POST" action="{{route('addLocal')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" value="{{Auth::user()->name}}" disabled="true" hidden>
-                    <label>Imagen</label> <input type="file" name="file" ><br>
+                    <label>Imagen</label> <input type="file" name="file" required><br>
                     <label>Nombre:</label><input type="text" name="name" />*<br>
                     <label>Descripcion:</label><input type="text" name="desc" />
                     <br>

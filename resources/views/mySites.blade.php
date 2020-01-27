@@ -9,10 +9,8 @@
     <!-- Guarda la id del usuario en variable de sesion para usar en controladores hasta encontrar otra mejor forma -->
     <?php $id=Auth::user()->id;session(['id' => $id]); ?>
     @include('includes.navs.navUser')
-    <div class="container col-10">
-        
-
-        <!-- Foto de perfil, nombre y correo del usuario -->
+    <div class="container col-12">
+            
         <div class="row">
             @if (isset($sites))
                 @foreach($sites as $site)
