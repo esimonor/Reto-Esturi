@@ -50,11 +50,18 @@ map.on('locationfound', onLocationFound);
   //L.control.layers(overlayMaps, {collapsed: false}).addTo(map);
 
   //Al hacer click se guardan las coordenadas en la vista addlocal
+  var theMarker = {};
   map.on('click', function(e) {
     var latitude= e.latlng.lat;
     var longitude=  e.latlng.lng;
     document.getElementById("lat").value = latitude; 
-    document.getElementById("lng").value = longitude; 
+    document.getElementById("lng").value = longitude;
+    if (theMarker != undefined) {
+      map.removeLayer(theMarker);
+    };
+  //Add a marker to show where you clicked.
+  theMarker = L.marker([latitude,longitude]).addTo(map);
+  theMarker.bindPopup("<b>Latitud: </b>"+latitude+"<br/><b>Longitud:</b>"+longitude);
   });
 
   /*var marker8 = L.marker([43.321589, -1.949238]).addTo(map);

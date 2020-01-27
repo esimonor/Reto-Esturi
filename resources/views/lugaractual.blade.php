@@ -11,6 +11,7 @@
 <body>
     <div class="container-fuid">
         @include('includes.navs.navUser')
+
     </div>
     <div class="container-fluid bg-secondary m-0">
         <div class="container">
@@ -115,7 +116,22 @@
                     <button class="btn btn-outline-success m-2 col-12">fav</button>
                 </form>
                 </div>
-            </div>
+=======-->
+        <!-- Foto de perfil, nombre y correo del usuario -->
+        <div class="row d-flex justify-content-center">
+            <div class="col-6 row">
+               @foreach($site as $ruta)
+                <img src="../images/{{$ruta->rutaactual}}" class="m-2 border rounded col-10">
+                @endforeach
+            <br>
+            <form method="POST" action="/sitio">
+                @csrf
+                <input type="hidden" name="favorito" value="1">
+                <input type="hidden" name="form" value="fav">
+                <input type="hidden" name="idusuario" value="{{Auth::user()->id}}">              
+                <button class="btn btn-outline-success m-2 col-12">fav</button>
+            </form>
+        <!--    </div>
         </div>
         <div class="col-4 m-2 d-flex justify-content-center " style="text-align: center" >
             <div class="border">

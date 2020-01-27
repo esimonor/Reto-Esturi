@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+body{
+    background: rgb(0,36,1);
+    background: radial-gradient(circle, rgb(3, 187, 9) 0%, rgba(22,121,9,1) 35%, rgba(9,255,0,1) 100%);
+    font-family: 'Raleway', sans-serif;
+}
+p,h4, label{
+    color: whitesmoke;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px black;
+    font-size: 1.25em;
+}
+.titulos{
+    font-size: 1.4em;
+    text-shadow: 1px 1px 1px black, 1px 1px 1px black;
+}
+
+.btn{
+    border: 1px solid black;
+    transition: 1s;
+}
+.btn-warning{
+    background-color:#ffc107;
+    color: whitesmoke;
+}
+.btn-warning:hover{
+    border: 1px solid black;
+    background-color:#fbff07;
+    color:black;
+}
+.btn-info:hover{
+    border: 1px solid black;
+    background-color: #22d7f3;
+    color:black;
+}
+.btn-success{
+    background-color:#009939;
+}
+.btn-success:hover{
+    border: 1px solid black;
+    background-color:#00FA5D;
+    color:black;
+}
+.btn-danger{
+    background-color:#990000;
+}
+.btn-danger:hover{
+    border: 1px solid black;
+    background-color:rgb(250, 0, 0);
+    color:black;
+}
+.btn-secondary{
+    background-color:#6c757d;
+    color: whitesmoke;
+}
+.btn-secondary:hover{
+    border: 1px solid black;
+    background-color:#858b91;
+    color:black;
+}
+
+.tarjetas{
+    border:1px solid black;
+    text-align: center;
+    padding: 2%;
+    margin: 5%;
+}

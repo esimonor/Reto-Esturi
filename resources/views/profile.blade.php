@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="container-fuid">
         @include('includes.navs.navUser')
     </div>
@@ -35,6 +36,23 @@
                       <a href="owndrop/{{Auth::user()->id}}" class="btn bg-danger text-light m-2 col-5">borrar cuenta</a>
                       <a href="{{ URL::asset('modprofile') }}" class="btn bg-warning text-light m-2 col-5">Modificar cuenta</a>
         </div>
+
+  <!--  @include('includes.navs.navUser')
+    <div class="container col-12">-->
+        
+
+        <!-- Foto de perfil, nombre y correo del usuario -->
+       <!-- <div class="row">
+            <div class="col-6 row">
+                <img src="/images/{{Auth::user()->ruta }}" class="m-3 border rounded col-7">
+                <p class="col-5">Nombre:  {{Auth::user()->name}}</p>
+                <p class="col-5">Apellido: {{Auth::user()->lastName}}</p>
+                <p class="col-10">Correo:  {{Auth::user()->email}}</p>
+                <p class="col-10">Tu rol:  {{Auth::user()->role}}</p>
+                <a href="{{route('mySites')}}" class="btn btn-success m-2 col-4">Mis locales</a>                
+                <a href="owndrop/{{Auth::user()->id}}" class="btn btn-danger m-2 col-4">borrar cuenta</a>*/-->
+               <!--<button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger m-2 col-4">Eliminar cuenta</button>-->
+                <!--Ventana de confirmacion eliminar cuenta-->
 
                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -64,6 +82,7 @@
                           </div>
                         </div>
                       </div>
+<<<<<<< HEAD
             </div>
             <div class="container-fluid bg-info m-0">
               <div class="container d-flex justify-content-center">
@@ -168,15 +187,61 @@
                           <p>No se han encontrado comentarios</p>
                         @endforelse
                       </div>
+=======
+
+                       
+
+                <a href="{{ URL::asset('modprofile') }}" class="btn btn-warning m-2 col-4">Modificar cuenta</a>
+            </div>
+            <!-- Listado de lugares favoritos -->
+            <div class=" col-3">
+                <div class="border bg-transparent">
+                    <h4>Lugares favoritos</h4>
+                    <div class="dropdown-divider"></div>
+                    <div class="container">
+                  @forelse($user->establishment as $valor)
+                    @if(empty($valor->pivot->lfavorito))
+                    @else
+                      <div class="d-flex justify-content-between">
+                        <p>{{$valor->name}}</p>
+                        <a type="button" href="local/{{$valor->id}}">ver</a>                       
+                      </div>
+                      <hr>
+                    @endif
+                  @empty
+                    <p>No se han encontrado lugares favoritos</p>
+                  @endforelse
+                  </div>
+                </div>
+            </div>
+            <!-- Comentarios -->
+            <div class="col-3">
+                <div class="border bg-transparent">
+                  <h4>Comentarios</h4>
+                    <div class="dropdown-divider"></div>
+                    <div class="container">
+                  @forelse($user->establishment as $valor)
+                    @if(empty($valor->pivot->comentarios))
+                    @else
+                    <div class="d-flex justify-content-between">
+                    <p>{{$valor->name}}</p>
+                    <p>{{$valor->pivot->comentarios}}</p>
+>>>>>>> 601a0905c334669d8ec3f79a85321907e8a87c98
                     </div>
                   </div>-->
               </div>
           </div>
     </div>
 
+<<<<<<< HEAD
         @include('includes.footer')
 
 
+=======
+        
+    </div>
+    @include('includes.footer')
+>>>>>>> 601a0905c334669d8ec3f79a85321907e8a87c98
 </body>
 
 </html>

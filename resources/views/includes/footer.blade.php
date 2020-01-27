@@ -9,11 +9,11 @@
             <a href="{{ URL::asset('https://mdbootstrap.com/education/bootstrap/') }}">Esturi.com</a>
         </div>
         <!-- Add font awesome icons -->
-        <div class="col-12 col-md-4 text-center justify-content-center  align-self-center d-flex flex-row-reverse">
+        <!--<div class="col-12 col-md-4 text-center justify-content-center  align-self-center d-flex flex-row-reverse">
             <a href="#" class="fa fa-youtube mr-3"></a>
             <a href="#" class="fa fa-instagram"></a>
             <a href="#" class="fa fa-twitter"></a>
             <a href="#" class="fa fa-facebook "></a>
-        </div>
+        </div>-->
     </div>
 </footer>
