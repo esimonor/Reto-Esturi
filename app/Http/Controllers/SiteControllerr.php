@@ -165,9 +165,11 @@ class SiteController extends Controller
         $users=User::all();
         $site=Establishment::where('id','=',$id)->get();
         $idd=$id;
-        
-        $coment=establishment_user::where('establishment_id',$id)->get();
-            return view('lugaractual',compact('site','idd','coment','users'))/*->with('site',$site)*/;
+        foreach ($site as $valor ) {
+            $lugar=$valor;
+        }
+        $coment=establishment_user::where('establishment_id',$id)->orderBy('created_at', 'asc')->get();
+            return view('lugaractual',compact('idd','coment','users','lugar'))/*->with('site',$site)*/;
             /*return view('modsite',['id'=>$id,'name'=>$name,'type'=>$name,'localization'=>$localization,'ownerId'=>$ownerId]);*/
     }
     /*public function mySites(){
